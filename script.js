@@ -24,15 +24,17 @@ const x = setInterval(updateCountdown, 1000);
 
 let menu_icon_box  = document.querySelector(".menu_icon_box");
 let navbar = document.querySelector(".navbar");
+let body = document.querySelector("body");
 
 menu_icon_box.onclick = function(){
     menu_icon_box.classList.toggle("active");
     navbar.classList.toggle("active");
+    body.classList.toggle("active");
 }
 
 document.onclick = function(e){
     if (!menu_icon_box.contains(e.target) && !navbar.contains(e.target) ) {
         menu_icon_box.classList.remove("active");
-        navbar.classList.remove("active");
+        body.classList.remove("active");
     }
 }

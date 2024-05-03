@@ -1,38 +1,60 @@
+/* General */
+
 *{
     padding: 0;
     margin: 0;
 }
+
+
 .container{
     text-align: center;
-    
-    
 }
+
+/*.part{*/
+/*    height: 100vh!important;*/
+/*}*/
+
+
+/* Nav */
 .navbar{
     width: fit-content;
     height: 100vh;
     background-color: rgb(196, 39, 117);
-    position: relative;
+    position: fixed;
     text-align: left;
     z-index: 1;
     opacity: 0;
-    left: -500px;
+    /*left: -500px;*/
     pointer-events: none;
     transition: 0.3s;
+    left:0px;
+    width: 0px;
 }
+
+/* menu and body animation */
 .active.navbar{
     opacity: 1;
-    left:0px;
     pointer-events: fill;
+    width: 300px;
 }
+
+body.active{
+    width: calc(100vw - 300px); /* 100% of viewport width minus 300px */
+    margin-left: 300px;
+}
+
+
 .menu_icon_box{
-    z-index: 2s;
+    z-index: 2;
     width: fit-content;
     height: auto;
     background-color: #fff;
     margin:30px;
-    position: absolute;
+    position: fixed;
     border-radius: 4px;
     cursor: pointer;
+    left: 50px;
+    top: 50px;
 }
 .line1 , .line2 , .line3{
     width:40px;
@@ -73,6 +95,10 @@ nav ul li a{
     display:block;
     text-decoration: none;
 }
+
+
+
+/* Section 1 */
 #image1{
     background-image: url("imaginiSimi/simona1.jpg");
     background-size:cover;
@@ -172,7 +198,7 @@ nav ul li a{
     margin-left: auto;
     margin-right: auto;
 }
-.part3{
+#part3{
     background-image: url("imaginiSimi/RosesPink1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -190,6 +216,11 @@ nav ul li a{
     overflow: hidden;
     border-radius: 20px;
 }
+
+#part3 #timer{
+    display: flex;
+}
+
 h1{
     font-weight: normal;
     font-size: 40px;
@@ -206,23 +237,25 @@ h1{
     text-shadow: 2px 2px rgb(19, 19, 143);
     font-size: 25px;
 }
-.part3 .time-box{
+#part3 .time-box{
     display: flex;
     flex-direction: row;
 }
-.part4{
-    display: inline-block;
+#part4{
+    display: flex;
     flex-direction:row;
+    align-items: center;
     background-color: #F0FFFF;
     width: 100%;
     height:500px;
+    padding: 0px 50px;
 }
 #image4{
     display: flex;
+    justify-content: center;
     width: 200px;
     height:300px;
-    margin-left: 30px;
-    margin-top: 50px;
+
 }
 #image4 img{
     width: 100%;
@@ -235,8 +268,18 @@ h1{
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    text-align: left;
+}
+#msg2 p {
+    margin-bottom: 25px;
+}
+
+#msg2 h3{
+    margin-bottom: 30px;
 
 }
+
+
 #title1{
     font-family: 'Dancing Script', cursive;
     font-size: 30px;

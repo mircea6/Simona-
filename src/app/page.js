@@ -1,52 +1,166 @@
+'use client';
+import { useState, useEffect } from "react";
+// Custom hook pentru media query
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, [matches, query]);
+  return matches;
+}
 import Image from "next/image";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  // Considerăm md ca 768px, deci mobile = sub 768px
+  const isMobile = useMediaQuery('(max-width: 767px)');
+
   return (
     <main>
-      {/* HERO + NAVBAR cu Tailwind, ajustat după screenshot */}
-      <div className="relative w-full min-h-screen flex flex-col overflow-hidden">
+      {/* HERO + NAVBAR cu Tailwind și meniu responsive corect */}
+      <div className="hero-bg relative w-full min-h-screen flex flex-col overflow-hidden">
         <video
           autoPlay
           muted
           loop
-          className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none blur-[8px] brightness-90 opacity-80 transition-all"
+          className="hero-video absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none blur-[8px] brightness-90 opacity-80 transition-all"
         >
           <source src="/image/intro.mp4" type="video/mp4" />
         </video>
-        <header className="relative z-10 w-full bg-transparent">
-          <div className="max-w-[1100px] mx-auto flex items-center justify-between py-6 px-8">
-            <div className="font-bold text-3xl md:text-4xl flex items-center gap-2 select-none">
-              <span className="text-pink font-serif drop-shadow-lg">
-                💃
-                <span className="ml-2 text-pink">Mimi Dance</span>
+        <header className="header relative z-10 w-full bg-transparent">
+          <div className="navwrap max-w-[1100px] mx-auto flex items-center justify-between py-6 px-8">
+            <div className="logo font-bold text-3xl md:text-4xl flex items-center gap-2 select-none">
+              <span className="accent text-pink font-serif drop-shadow-lg">
+                💃<span className="ml-2 text-pink">Mimi Dance</span>
               </span>
             </div>
-            <button className="flex md:hidden w-14 h-14 rounded-2xl bg-white/80 items-center justify-center cursor-pointer border-2 border-black">
-              <span className="block w-8 h-1 bg-blue-300 rounded-full"></span>
-              <span className="block w-8 h-1 bg-blue-300 rounded-full mt-1"></span>
-              <span className="block w-8 h-1 bg-blue-300 rounded-full mt-1"></span>
-            </button>
+            {/* Navbar: randare condiționată pe baza rezoluției */}
+            {isMobile ? (
+              <>
+                <button
+                  className="menu flex w-14 h-14 rounded-2xl bg-white/80 items-center justify-center cursor-pointer border-2 border-black relative z-20"
+                  aria-label="Meniu"
+                  aria-expanded={menuOpen}
+                  onClick={() => setMenuOpen((v) => !v)}
+                >
+                  <span
+                    className="block w-8 h-1 bg-blue-300 rounded-full transition-all"
+                    style={{
+                      transform: menuOpen ? "rotate(45deg) translateY(8px)" : "none",
+                    }}
+                  ></span>
+                  <span
+                    className="block w-8 h-1 bg-blue-300 rounded-full mt-1 transition-all"
+                    style={{ opacity: menuOpen ? 0 : 1 }}
+                  ></span>
+                  <span
+                    className="block w-8 h-1 bg-blue-300 rounded-full mt-1 transition-all"
+                    style={{
+                      transform: menuOpen ? "rotate(-45deg) translateY(-8px)" : "none",
+                    }}
+                  ></span>
+                </button>
+                {menuOpen && (
+                  <nav className="fixed top-0 left-0 w-full h-full bg-black/60 flex flex-col items-center justify-center gap-8 z-10">
+                    <a
+                      href="#hero"
+                      className="text-white text-2xl font-bold"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Acasă
+                    </a>
+                    <a
+                      href="#about"
+                      className="text-white text-2xl font-bold"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Despre
+                    </a>
+                    <a
+                      href="#classes"
+                      className="text-white text-2xl font-bold"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Clase
+                    </a>
+                    <a
+                      href="#gallery"
+                      className="text-white text-2xl font-bold"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Galerie
+                    </a>
+                    <a
+                      href="#contact"
+                      className="text-white text-2xl font-bold"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Contact
+                    </a>
+                  </nav>
+                )}
+              </>
+            ) : (
+              <nav className="flex gap-6">
+                <a
+                  href="#hero"
+                  className="text-muted font-medium px-2 py-1 rounded-lg hover:bg-baby-blue hover:text-white transition active:bg-baby-blue active:text-white"
+                >
+                  Acasă
+                </a>
+                <a
+                  href="#about"
+                  className="text-muted font-medium px-2 py-1 rounded-lg hover:bg-baby-blue hover:text-white transition"
+                >
+                  Despre
+                </a>
+                <a
+                  href="#classes"
+                  className="text-muted font-medium px-2 py-1 rounded-lg hover:bg-baby-blue hover:text-white transition"
+                >
+                  Clase
+                </a>
+                <a
+                  href="#gallery"
+                  className="text-muted font-medium px-2 py-1 rounded-lg hover:bg-baby-blue hover:text-white transition"
+                >
+                  Galerie
+                </a>
+                <a
+                  href="#contact"
+                  className="text-muted font-medium px-2 py-1 rounded-lg hover:bg-baby-blue hover:text-white transition"
+                >
+                  Contact
+                </a>
+              </nav>
+            )}
           </div>
         </header>
-        <section className="relative z-10 flex flex-col items-center justify-center text-center w-full flex-1 min-h-[calc(100vh-80px)] text-white">
-          <div className="w-full flex flex-col items-center justify-center px-4">
-            <h1 className="text-[2.5rem] md:text-[4.5rem] font-extrabold mb-4 drop-shadow-lg text-white font-serif leading-tight">
+        <section className="hero relative z-10 flex flex-col items-center justify-center text-center w-full flex-1 min-h-[calc(100vh-80px)] text-white">
+          <div className="container w-full flex flex-col items-center justify-center px-4">
+            <h1 className="hero-title text-[2.5rem] md:text-[4.5rem] font-extrabold mb-4 drop-shadow-lg text-white font-serif leading-tight">
               Bine ai venit la{" "}
-              <span className="text-pink">Mimi Dance Academy</span>
+              <span className="accent text-pink">Mimi Dance Academy</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 drop-shadow text-white/90 max-w-2xl mx-auto font-serif">
+            <p className="lead text-xl md:text-2xl mb-10 drop-shadow text-white/90 max-w-2xl mx-auto font-serif">
               Locul unde dansul prinde viață în nuanțe de baby blue și roz pal.
             </p>
-            <div className="flex gap-8 flex-wrap justify-center">
+            <div className="hero-cta flex gap-8 flex-wrap justify-center">
               <a
                 href="#classes"
-                className="bg-pink text-purple-800 text-xl px-10 py-4 rounded-2xl font-bold shadow-custom transition hover:-translate-y-0.5 border-2 border-pink hover:bg-pink/90 focus:outline-none focus:ring-2 focus:ring-pink font-serif"
+                className="btn bg-pink text-purple-800 text-xl px-10 py-4 rounded-2xl font-bold shadow-custom transition hover:-translate-y-0.5 border-2 border-pink hover:bg-pink/90 focus:outline-none focus:ring-2 focus:ring-pink font-serif"
               >
                 Vezi Clasele
               </a>
               <a
                 href="#contact"
-                className="bg-transparent border-2 border-white text-white text-xl px-10 py-4 rounded-2xl font-bold transition hover:bg-white hover:text-pink focus:outline-none focus:ring-2 focus:ring-white font-serif"
+                className="btn ghost bg-transparent border-2 border-white text-white text-xl px-10 py-4 rounded-2xl font-bold transition hover:bg-white hover:text-pink focus:outline-none focus:ring-2 focus:ring-white font-serif"
               >
                 Contactează-ne
               </a>

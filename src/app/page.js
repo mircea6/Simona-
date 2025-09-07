@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
+
 // Custom hook pentru media query
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -14,8 +15,8 @@ function useMediaQuery(query) {
   }, [matches, query]);
   return matches;
 }
-import Image from "next/image";
 
+  
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   // Considerăm md ca 768px, deci mobile = sub 768px
@@ -37,118 +38,13 @@ export default function Home() {
           <header className="header relative z-10 w-full bg-transparent">
             <div className="navwrap w-full flex flex-col items-center justify-start pt-6 px-4">
               {/* Logo centrat, mai mare, deasupra nav-ului */}
-              <div className="logo flex items-center justify-center mb-2">
-                <Image
-                  src="/image/logo3.png"
-                  alt="Mimi Dance logo"
-                  width={90}
-                  height={90}
-                  className="object-contain drop-shadow-lg"
-                  priority
-                />
-              </div>
-              {/* Navbar stilizat */}
-              <div className="w-full flex flex-col items-center">
-                {isMobile ? (
-                  <>
-                    <button
-                      className="menu flex w-14 h-14 rounded-2xl bg-white/80 items-center justify-center cursor-pointer border-2 border-black relative z-20 mb-2"
-                      aria-label="Meniu"
-                      aria-expanded={menuOpen}
-                      onClick={() => setMenuOpen((v) => !v)}
-                    >
-                      <span
-                        className="block w-8 h-1 bg-blue-300 rounded-full transition-all"
-                        style={{
-                          transform: menuOpen ? "rotate(45deg) translateY(8px)" : "none",
-                        }}
-                      ></span>
-                      <span
-                        className="block w-8 h-1 bg-blue-300 rounded-full mt-1 transition-all"
-                        style={{ opacity: menuOpen ? 0 : 1 }}
-                      ></span>
-                      <span
-                        className="block w-8 h-1 bg-blue-300 rounded-full mt-1 transition-all"
-                        style={{
-                          transform: menuOpen ? "rotate(-45deg) translateY(-8px)" : "none",
-                        }}
-                      ></span>
-                    </button>
-                    {menuOpen && (
-                      <nav className="fixed top-0 left-0 w-full h-full bg-black/60 flex flex-col items-center justify-center gap-8 z-10">
-                        <a
-                          href="#hero"
-                          className="text-white text-2xl font-bold"
-                          onClick={() => setMenuOpen(false)}
-                        >
-                          Acasă
-                        </a>
-                        <a
-                          href="#about"
-                          className="text-white text-2xl font-bold"
-                          onClick={() => setMenuOpen(false)}
-                        >
-                          Despre
-                        </a>
-                        <a
-                          href="#classes"
-                          className="text-white text-2xl font-bold"
-                          onClick={() => setMenuOpen(false)}
-                        >
-                          Clase
-                        </a>
-                        <a
-                          href="#gallery"
-                          className="text-white text-2xl font-bold"
-                          onClick={() => setMenuOpen(false)}
-                        >
-                          Galerie
-                        </a>
-                        <a
-                          href="#contact"
-                          className="text-white text-2xl font-bold"
-                          onClick={() => setMenuOpen(false)}
-                        >
-                          Contact
-                        </a>
-                      </nav>
-                    )}
-                  </>
-                ) : (
-                  <nav className="flex justify-center gap-8 bg-white/90 rounded-2xl py-3 px-8 shadow-lg mt-2">
-                    <a
-                      href="#hero"
-                      className="text-purple-800 font-semibold px-4 py-2 rounded-xl transition-colors hover:bg-pink/30 hover:text-pink"
-                    >
-                      Acasă
-                    </a>
-                    <a
-                      href="#about"
-                      className="text-purple-800 font-semibold px-4 py-2 rounded-xl transition-colors hover:bg-pink/30 hover:text-pink"
-                    >
-                      Despre
-                    </a>
-                    <a
-                      href="#classes"
-                      className="text-purple-800 font-semibold px-4 py-2 rounded-xl transition-colors hover:bg-pink/30 hover:text-pink"
-                    >
-                      Clase
-                    </a>
-                    <a
-                      href="#gallery"
-                      className="text-purple-800 font-semibold px-4 py-2 rounded-xl transition-colors hover:bg-pink/30 hover:text-pink"
-                    >
-                      Galerie
-                    </a>
-                    <a
-                      href="#contact"
-                      className="text-purple-800 font-semibold px-4 py-2 rounded-xl transition-colors hover:bg-pink/30 hover:text-pink"
-                    >
-                      Contact
-                    </a>
-                  </nav>
-                )}
-              </div>
+                <header className="w-full shadow-lg z-20">
+                  {isMobile ? (
+                    <MobileNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                  ) : (
+                    <DesktopNav />
+                  )}
+                </header>
             </div>
           </header>
           <section className="hero relative z-10 flex flex-col items-center justify-center text-center w-full flex-1 min-h-[calc(100vh-80px)] text-white">

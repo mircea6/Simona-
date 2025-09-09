@@ -1,5 +1,7 @@
 'use client';
 import { useState, useEffect } from "react";
+import MobileNav from "./components/MobileNav";
+import DesktopNav from "./components/DesktopNav";
 
 // Custom hook pentru media query
 function useMediaQuery(query) {
@@ -74,74 +76,19 @@ export default function Home() {
           </section>
         </div>
 
-        <section id="about">
-          <div className="container">
-            <h2 className="section-title">Despre noi</h2>
-            <p className="section-lead">
-              La Mimi Dance Academy inspirăm copiii și adulții să își descopere
-              pasiunea pentru dans într-un mediu prietenos și colorat.
-            </p>
-            <div className="features">
-              <div className="card">
-                <h3>Povestea Mimi Dance</h3>
-                <p>
-                  Sunt Simona, fondatorul Mimi Dance Academy, iar de la vârsta de 4
-                  ani dansul si gimnastica au fost parte din viata mea si am crescut
-                  odată cu ele, transformându-se intr-o adevarata pasiune.
-                </p>
-                <p>
-                  Am făcut parte din lotul național de gimnastică aerobică pana la
-                  vârsta de 16 ani, iar mai târziu mi-am continuat drumul in lumea
-                  spectacolelor alături de trupa de acrobați ‘Xtreme’, cu experiențe
-                  extraordinare pe scenele din Europa si Emiratele Arabe Unite.
-                </p>
-                <p>
-                  Datorită pasiunii pentru gimnastica si dans, am decis sa înființez
-                  in anul 2022 conceptul Mimi Dance. De 3 ani le transmit celor mici
-                  dragostea pentru mișcare, dans si armonie, intr-un mod jucăuș,
-                  prietenos si plin de entuziasm.
-                </p>
-              </div>
-              <div className="card">
-                <h3>Viziunea noastra</h3>
-                <p>
-                  Credem că dansul si gimnastica sunt mai mult decât mișcare, sunt un
-                  limbaj al bucuriei, al disciplinei si al creativității. Prin dans si
-                  gimnastica cu panglici, ii învățăm pe copii să-și exprime
-                  emoțiile, să-și descopere corpul și să capete încredere in ei.
-                </p>
-                <p>
-                  Fiecare lectie este o combinatie intre joc, arta si educație, unde
-                  cei mici învăța să-și coordoneze mișcările, să-și dezvolte postura,
-                  flexibilitatea si gratia. In acelasi timp, invatam sa lucram
-                  impreuna, sa ne bucuram de reusitele fiecaruia si sa transformam
-                  sportul intr-o experienta plina de entuziasm.
-                </p>
-                <p>
-                  Ce ne face diferiti este modul in care imbinam sportul cu
-                  frumusetea dansului si cu jocul copilariei. La noi fiecare copil se
-                  simte vazut, apreciat si incurajat sa straluceasca in felul lui
-                  unic.
-                </p>
-              </div>
-              <div className="card">
-                <h3>Experienta noastra</h3>
-                <p>
-                  Experiența noastra: In momentul de fata activam in peste 14
-                  gradinite/afteschool-uri private, cat si de stat, acestea avand
-                  diferite sisteme aducationale precum Waldorf, Montessori sau cele
-                  clasice. De la educatia bazata pe explorare si creativitate, pana
-                  la invatarea structurata si orientata pe performanta, diversitatea
-                  sistemelor educationale reflecta nevoia de a oferii copiilor
-                  oportunități variate pentru a invata si a se dezvolta intr-un mod
-                  care le satisface cel mai bine nevoile.
-                </p>
-              </div>
+
+        {/* secțiunea Despre noi modernă */}
+        <section id="about" className="py-20 bg-white">
+          <div className="max-w-3xl mx-auto flex flex-col items-center px-4">
+            <h2 className="text-7xl font-black text-pink-400 mb-10 text-center">Despre noi</h2>
+            <div className="max-w-2xl w-full border-4 border-pink-200 rounded-3xl bg-white/80 p-10 mb-10 shadow-xl mx-auto flex flex-col items-center">
+              <p className="text-3xl text-gray-700 text-center font-bold leading-relaxed">La Mimi Dance Academy inspirăm copiii și adulții să își descopere pasiunea pentru dans într-un mediu prietenos și colorat. Descoperă povestea noastră, viziunea și experiența care ne definesc!</p>
             </div>
+            <a href="/despre-noi" className="inline-block bg-pink-400 text-white text-2xl font-bold px-10 py-5 rounded-full shadow-lg hover:bg-pink-500 transition text-center">Află mai multe</a>
           </div>
         </section>
-
-        <section id="classes">
+        {/* secțiunea Cursuri originală */}
+        <section id="classes" className="py-20 bg-white">
           <div className="container">
             <h2 className="section-title">Cursuri</h2>
             <p className="section-lead">

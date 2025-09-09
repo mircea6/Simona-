@@ -28,7 +28,7 @@
 .logo .accent {
   color: var(--pink);
 }
-.nav {
+/* .nav {
   display: flex;
   gap: 22px;
 }
@@ -38,26 +38,9 @@
   font-weight: 500;
   transition: 0.2s;
   padding: 6px 10px;
-  border-radius: 8px;
-}
-.nav a:hover,
-.nav a.active {
-  background: var(--baby-blue);
-  color: #fff;
-}
-.btn {
-  border: none;
-  padding: 10px 16px;
-  border-radius: 12px;
-  cursor: pointer;
-  background: var(--pink);
-  font-weight: 600;
-  box-shadow: var(--shadow);
-  transition: 0.2s;
-}
-.btn:hover {
+
   transform: translateY(-2px);
-}
+} */
 
 /* Mobile menu */
 .menu {

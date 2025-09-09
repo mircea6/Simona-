@@ -16,11 +16,9 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
       </div>
       {menuOpen && (
         <div className="bg-white/95 px-6 pb-4 pt-2 flex flex-col gap-4 text-gray-900 font-semibold text-lg">
-          <a href="#home" onClick={()=>setMenuOpen(false)}>Home</a>
-          <a href="#about" onClick={()=>setMenuOpen(false)}>About</a>
-          <a href="#menu" onClick={()=>setMenuOpen(false)}>Menu</a>
-          <a href="#testimonials" onClick={()=>setMenuOpen(false)}>Testimonials</a>
-          <a href="#gallery" onClick={()=>setMenuOpen(false)}>Gallery</a>
+          <a href="#about" onClick={()=>setMenuOpen(false)}>Despre noi</a>
+          <a href="#classes" onClick={()=>setMenuOpen(false)}>Cursuri</a>
+          <a href="#gallery" onClick={()=>setMenuOpen(false)}>Galerie</a>
           <a href="#contact" onClick={()=>setMenuOpen(false)}>Contact</a>
         </div>
       )}

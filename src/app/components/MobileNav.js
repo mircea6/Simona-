@@ -6,7 +6,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
       {/* Logo centrat */}
       <div className="flex items-center justify-center py-4">
         <Image src="/image/logo3.png" alt="Logo" width={40} height={40} className="object-contain" priority />
-        <span className="text-gray-900 text-2xl font-bold ml-2">Coffee</span>
+        <span className="text-gray-900 text-2xl font-bold ml-2">Meniu</span>
       </div>
       {/* Meniu mobil */}
       <div className="flex justify-center pb-2">

@@ -20,8 +20,8 @@ export default function FooterSection() {
 
   return (
     <footer className="bg-pink-50 relative">
-      {/* Wave pattern at top */}
-      <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-pink-100 to-transparent"></div>
+      {/* Wave SVG at top */}
+      <div className="wave-svg-footer"></div>
       
       <div className="max-w-7xl mx-auto px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -83,16 +83,15 @@ export default function FooterSection() {
           <div>
             <h4 className="text-lg font-bold text-gray-800 font-serif mb-4">Contact</h4>
             <div className="space-y-2 mb-4">
-              <p className="text-gray-700">Tel. Victoriei: +40 (752) 243 091</p>
-              <p className="text-gray-700">Tel. Universitate: +40 (743) 226 996</p>
+              <p className="text-gray-700">Tel. Contact: 0766694224</p>
               <p className="text-gray-700">E-mail: academy.mimidance@gmail.com</p>
             </div>
             
             <div>
               <h5 className="font-bold text-gray-800 mb-2">Program de funcționare:</h5>
               <div className="space-y-1">
-                <p className="text-gray-700">L-V: 10:00 - 21:00</p>
-                <p className="text-gray-700">S: 09:00 - 16:00</p>
+                <p className="text-gray-700">L-V: 8:00-18:00</p>
+                <p className="text-gray-700">S-D: Liber</p>
               </div>
             </div>
           </div>

@@ -7,7 +7,6 @@ export default function ContactSection() {
     prenume: '',
     email: '',
     telefon: '',
-    locatie: [],
     mesaj: '',
     gdpr: false
   });
@@ -49,10 +48,6 @@ export default function ContactSection() {
       newErrors.telefon = 'Telefonul nu este valid (format: 07xxxxxxxx sau +407xxxxxxxx)';
     }
 
-    // Validare locație
-    if (formData.locatie.length === 0) {
-      newErrors.locatie = 'Selectați cel puțin o locație';
-    }
 
     // Validare mesaj
     if (!formData.mesaj.trim()) {
@@ -73,14 +68,7 @@ export default function ContactSection() {
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     
-    if (type === 'checkbox' && name === 'locatie') {
-      const newLocatie = checked 
-        ? [...formData.locatie, value]
-        : formData.locatie.filter(loc => loc !== value);
-      setFormData({ ...formData, locatie: newLocatie });
-    } else {
-      setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
-    }
+    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
 
     // Clear error when user starts typing
     if (errors[name]) {
@@ -100,11 +88,6 @@ export default function ContactSection() {
     setSubmitStatus('');
 
     try {
-      // Formatare mesaj pentru email
-      const locatiiText = formData.locatie.map(loc => 
-        loc === 'victoriei' ? 'Sala Victoriei' : 'Sala Universitate'
-      ).join(', ');
-
       const emailSubject = `Mesaj nou de la ${formData.nume} ${formData.prenume} - Mimi Dance Academy`;
       
       const emailBody = `Mesaj nou de la formularul de contact:
@@ -113,7 +96,6 @@ Nume: ${formData.nume}
 Prenume: ${formData.prenume}
 Email: ${formData.email}
 Telefon: ${formData.telefon}
-Locație preferată: ${locatiiText}
 
 Mesaj:
 ${formData.mesaj}
@@ -144,7 +126,6 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
           prenume: '',
           email: '',
           telefon: '',
-          locatie: [],
           mesaj: '',
           gdpr: false
         });
@@ -160,9 +141,9 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="container max-w-2xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink-900 font-serif text-center">Formular contact</h2>
+    <section id="contact" className="py-20 bg-white animated-bg">
+      <div className="container max-w-2xl mx-auto px-4 relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink font-serif text-center">Formular contact</h2>
         
         {submitStatus === 'success' && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
@@ -187,7 +168,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 value={formData.nume}
                 onChange={handleInputChange}
                 className={`px-4 py-2 border-2 rounded-xl text-lg focus:outline-none transition ${
-                  errors.nume ? 'border-red-500' : 'border-pink-800 focus:border-pink-400'
+                  errors.nume ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="Introduceți numele"
               />
@@ -202,7 +183,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 value={formData.prenume}
                 onChange={handleInputChange}
                 className={`px-4 py-2 border-2 rounded-xl text-lg focus:outline-none transition ${
-                  errors.prenume ? 'border-red-500' : 'border-pink-800 focus:border-pink-400'
+                  errors.prenume ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="Introduceți prenumele"
               />
@@ -220,7 +201,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 value={formData.email}
                 onChange={handleInputChange}
                 className={`px-4 py-2 border-2 rounded-xl text-lg focus:outline-none transition ${
-                  errors.email ? 'border-red-500' : 'border-pink-800 focus:border-pink-400'
+                  errors.email ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="exemplu@email.com"
               />
@@ -235,7 +216,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 value={formData.telefon}
                 onChange={handleInputChange}
                 className={`px-4 py-2 border-2 rounded-xl text-lg focus:outline-none transition ${
-                  errors.telefon ? 'border-red-500' : 'border-pink-800 focus:border-pink-400'
+                  errors.telefon ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="07xxxxxxxx"
               />
@@ -243,34 +224,6 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             </div>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <span className="text-base font-semibold text-gray-800">Alegeți locația preferată: *</span>
-            <div className="flex gap-6 items-center">
-              <label className="flex items-center gap-2 text-base text-gray-700">
-                <input 
-                  type="checkbox" 
-                  name="locatie" 
-                  value="victoriei" 
-                  checked={formData.locatie.includes('victoriei')}
-                  onChange={handleInputChange}
-                  className="accent-pink-600 w-5 h-5" 
-                />
-                Sala Victoriei
-              </label>
-              <label className="flex items-center gap-2 text-base text-gray-700">
-                <input 
-                  type="checkbox" 
-                  name="locatie" 
-                  value="universitate" 
-                  checked={formData.locatie.includes('universitate')}
-                  onChange={handleInputChange}
-                  className="accent-pink-600 w-5 h-5" 
-                />
-                Sala Universitate
-              </label>
-            </div>
-            {errors.locatie && <span className="text-red-500 text-sm mt-1">{errors.locatie}</span>}
-          </div>
 
           <div className="flex flex-col">
             <label htmlFor="mesaj" className="mb-1 text-base font-semibold text-gray-800">Mesaj *</label>
@@ -281,7 +234,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
               onChange={handleInputChange}
               maxLength={500} 
               className={`px-4 py-2 border-2 rounded-xl text-lg min-h-[100px] focus:outline-none transition resize-none ${
-                errors.mesaj ? 'border-red-500' : 'border-pink-800 focus:border-pink-400'
+                errors.mesaj ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
               }`}
               placeholder="Scrieți mesajul dumneavoastră aici..."
             />
@@ -298,7 +251,8 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 name="gdpr"
                 checked={formData.gdpr}
                 onChange={handleInputChange}
-                className={`accent-pink-600 w-5 h-5 ${errors.gdpr ? 'border-red-500' : ''}`}
+                className={`w-5 h-5 ${errors.gdpr ? 'border-red-500' : ''}`}
+                style={{ accentColor: '#a7d8ff' }}
               />
               Sunt de acord cu politica de confidențialitate. *
             </label>
@@ -311,7 +265,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             className={`w-full border-2 text-lg font-semibold py-3 rounded-xl transition mt-2 ${
               isSubmitting 
                 ? 'border-gray-400 text-gray-400 cursor-not-allowed' 
-                : 'border-pink-800 text-pink-900 hover:bg-pink-800 hover:text-white'
+                : 'border-[#a7d8ff] text-[#a7d8ff] hover:bg-[#a7d8ff] hover:text-white'
             }`}
           >
             {isSubmitting ? 'Se pregătește...' : 'Trimite pe Email'}

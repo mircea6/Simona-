@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DesktopNav() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +20,7 @@ export default function DesktopNav() {
     <>
       {/* Logo-ul sticky care apare doar când se scrollează */}
       {isScrolled && (
-        <a href="/" className="sticky-logo">
+        <Link href="/" className="sticky-logo">
           <Image
             src="/image/logo.png"
             alt="Logo"
@@ -28,13 +29,13 @@ export default function DesktopNav() {
             className="object-contain"
             priority
           />
-        </a>
+        </Link>
       )}
       
       {/* Navigația normală cu logo */}
       <div className="w-full">
         <div className="max-w-7xl mx-auto flex justify-center px-10 py-6">
-          <nav className="flex gap-16 items-center justify-center">
+          <nav className="flex gap-8 items-center justify-center">
             <a
               href="#about"
               className="inline-block px-6 py-2 bg-white rounded-full text-gray-900 text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
@@ -47,16 +48,16 @@ export default function DesktopNav() {
             >
               Cursuri
             </a>
-            <a href="/">
+            <Link href="/">
               <Image
                 src="/image/logo.png"
                 alt="Logo"
                 width={140}
                 height={140}
-                className="object-contain mx-14"
+                className="object-contain mx-6"
                 priority
               />
-            </a>
+            </Link>
             <a
               href="#gallery"
               className="inline-block px-6 py-2 bg-white rounded-full text-gray-900 text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"

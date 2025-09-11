@@ -18,7 +18,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#contact"
-            className="btn ghost bg-transparent border-2 border-white text-white text-xl px-10 py-4 rounded-2xl font-bold transition hover:bg-white hover:text-pink focus:outline-none focus:ring-2 focus:ring-white font-serif"
+            className="btn bg-pink text-[#69657e] text-xl px-10 py-4 rounded-2xl font-bold shadow-custom transition hover:-translate-y-0.5 border-2 border-pink hover:bg-pink/90 focus:outline-none focus:ring-2 focus:ring-pink font-serif"
           >
             Contactează-ne
           </a>

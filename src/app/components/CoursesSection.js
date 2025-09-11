@@ -1,8 +1,8 @@
 export default function CoursesSection() {
   return (
-    <section id="classes" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-5xl font-extrabold text-pink-400 mb-8 text-center">
+    <section id="classes" className="py-20 bg-white animated-bg">
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <h2 className="text-5xl font-extrabold text-pink mb-8 text-center">
           Cursuri
         </h2>
         <p className="text-2xl text-gray-700 text-center mb-12 font-semibold">
@@ -15,11 +15,11 @@ export default function CoursesSection() {
         <div className="flex flex-col md:flex-row gap-8 w-full max-w-5xl mx-auto justify-center items-center">
           {/* Card 1 */}
           <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">
+            <h3 className="text-xl font-bold text-pink mb-4 text-center">
               Happy dance
             </h3>
             <div 
-              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center"
+              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
               style={{ backgroundImage: "url('/image/happy-dance.png.webp')" }}
             >
             </div>
@@ -27,11 +27,11 @@ export default function CoursesSection() {
 
           {/* Card 2 */}
           <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">
+            <h3 className="text-xl font-bold text-pink mb-4 text-center">
               Magic Ribbons
             </h3>
             <div 
-              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center"
+              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
               style={{ backgroundImage: "url('/image/magic-ribbons.png')" }}
             >
             </div>
@@ -39,11 +39,11 @@ export default function CoursesSection() {
 
           {/* Card 3 */}
           <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">
+            <h3 className="text-xl font-bold text-pink mb-4 text-center">
               Dansul Mirilor
             </h3>
             <div 
-              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center"
+              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
               style={{ backgroundImage: "url('/image/dansul-mirilor.png')" }}
             >
             </div>

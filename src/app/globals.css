@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Custom styles */
 @theme {
   --color-baby-blue: #a7d8ff;
@@ -107,4 +112,48 @@
         max-height: 8vh;
         min-height: 40px;
     }
+}
+
+/* Sticky logo styles */
+.sticky-logo {
+    position: fixed !important;
+    top: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 99999!important;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    padding: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: slideInFromTop 0.3s ease-out;
+    pointer-events: auto;
+}
+
+.sticky-logo:hover {
+    transform: translateX(-50%) scale(1.05);
+    background: rgba(255, 255, 255, 1);
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Ensure sticky logo is always on top */
+.sticky-logo,
+.sticky-logo * {
+    z-index: 99999 !important;
+    position: relative;
+}
+
+.sticky-logo img {
+    z-index: 99999 !important;
+    position: relative;
 }

@@ -5,9 +5,9 @@ import CoursesSection from "./components/CoursesSection";
 import GallerySection from "./components/GallerySection";
 import ContactSection from "./components/ContactSection";
 import FooterSection from "./components/FooterSection";
+import Image from "next/image";
 
 export default function Home() {
-
   return (
     <>
       <main>
@@ -24,9 +24,15 @@ export default function Home() {
           </video>
           <Navigation />
           <HeroSection />
-          <img src="/image/wave.svg" alt="Wave" className="wave-svg" />
-        </div>
 
+          <Image
+            src="/image/wave.svg"
+            alt="Mimi Dance Academy"
+            className="wave-svg"
+            width={"100%"}
+            height={"auto"}
+          />
+        </div>
 
         <AboutSection />
         <CoursesSection />

@@ -19,16 +19,12 @@ export default function DespreNoi() {
           <p className="text-lg text-gray-700 mb-6">
             Sunt Simona, fondatorul Mimi Dance Academy, iar de la vârsta de 4 ani
             dansul si gimnastica au fost parte din viata mea si am crescut odată
-            cu ele, transformându-se intr-o adevarata pasiune. Am făcut parte din
-            lotul național de gimnastică aerobică pana la vârsta de 16 ani, iar
-            mai târziu mi-am continuat drumul in lumea spectacolelor alături de
-            trupa de acrobați 'Xtreme', cu experiențe extraordinare pe scenele din
-            Europa si Emiratele Arabe Unite.
-          </p>
+            cu ele, transformându-se intr-o adevarata pasiune.
+            </p>
           <p className="text-lg text-gray-700 mb-6">
-            Am făcut parte din lotul național de gimnastică aerobică pana la
+            Am făcut parte din lotul național de gimnastică aerobică pana la 
             vârsta de 16 ani, iar mai târziu mi-am continuat drumul in lumea
-            spectacolelor alături de trupa de acrobați 'Xtreme', cu experiențe
+            spectacolelor alături de trupa de acrobați &quote;Xtreme&quote;, cu experiențe
             extraordinare pe scenele din Europa si Emiratele Arabe Unite.
           </p>
           <p className="text-lg text-gray-700 mb-6">

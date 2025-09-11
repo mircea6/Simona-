@@ -1,5 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* ...existing code... */
+/* Custom styles */
+@theme {
+  --color-baby-blue: #a7d8ff;
+  --color-pink: #f8c6d4;
+  --color-muted: #555555;
+  --color-card: #fdfdfd;
+  --shadow-custom: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --radius-custom: 16px;
+  --max-width-container: 1100px;
+}

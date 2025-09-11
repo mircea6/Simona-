@@ -25,13 +25,7 @@ export default function Home() {
           <Navigation />
           <HeroSection />
 
-          <Image
-            src="/image/wave.svg"
-            alt="Mimi Dance Academy"
-            className="wave-svg"
-            width={"100%"}
-            height={"auto"}
-          />
+          <div className="wave-svg"></div>
         </div>
 
         <AboutSection />

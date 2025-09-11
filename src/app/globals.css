@@ -88,6 +88,10 @@
     overflow: hidden;
     line-height: 0;
     direction: ltr;
+    background-image: url('/image/wave.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Responsive adjustments for smaller screens */

@@ -10,3 +10,58 @@
   --radius-custom: 16px;
   --max-width-container: 1100px;
 }
+
+/* Wave SVG Styles */
+.elementor-shape[data-negative=false].elementor-shape-bottom, 
+.elementor-shape[data-negative=true].elementor-shape-top {
+    transform: rotate(180deg);
+}
+
+.elementor-shape-bottom {
+    bottom: -1px;
+}
+
+.elementor-shape {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    direction: ltr;
+}
+
+.elementor *, 
+.elementor :after, 
+.elementor :before {
+    box-sizing: border-box;
+}
+
+/* Wave SVG specific styling */
+.wave-svg {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 15vh;
+    min-height: 60px;
+    transform: rotate(180deg);
+    overflow: hidden;
+    line-height: 0;
+    direction: ltr;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .wave-svg {
+        max-height: 12vh;
+        min-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wave-svg {
+        max-height: 8vh;
+        min-height: 40px;
+    }
+}

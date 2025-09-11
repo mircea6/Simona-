@@ -56,15 +56,15 @@ export default function Home() {
             </div>
           </header>
           <HeroSection />
+          <img src="/image/wave.svg" alt="Wave" className="wave-svg" />
         </div>
 
 
-  <AboutSection />
-  <CoursesSection />
-  <GallerySection />
-  <ContactSection />
-  <FooterSection />
-  {/* <script src="/script.js"></script>  // Mută funcționalitățile JS în React la nevoie */}
+        <AboutSection />
+        <CoursesSection />
+        <GallerySection />
+        <ContactSection />
+        <FooterSection />
       </main>
     </>
   );

@@ -9,45 +9,43 @@ export default function CoursesSection() {
           De la balet clasic la dans modern – avem clase pentru fiecare stil și
           nivel.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto">
-          {/* Card 1 */}
-          <h3 className="text-xl font-bold text-pink-400 mt-2 text-center">
-            Happy dance
-          </h3>
 
-          <div className="flex flex-col items-center bg-white rounded-3xl shadow-lg p-8 min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4]">
-            <div className="flex items-center justify-center mb-4 w-20 h-20">
-              <img
-                src="/image/happy-dance.png.webp"
-                alt="Happy dance"
-                className="w-14 h-14 object-contain mx-auto"
-              />
+
+        
+        <div className="flex flex-col md:flex-row gap-8 w-full max-w-5xl mx-auto justify-center items-center">
+          {/* Card 1 */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">
+              Happy dance
+            </h3>
+            <div 
+              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center"
+              style={{ backgroundImage: "url('/image/happy-dance.png.webp')" }}
+            >
             </div>
           </div>
+
           {/* Card 2 */}
-          <h3 className="text-xl font-bold text-pink-400 mt-2 text-center">
-            Magic Ribbons
-          </h3>
-          <div className="flex flex-col items-center bg-white rounded-3xl shadow-lg p-8 min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4]">
-            <div className="flex items-center justify-center mb-4 w-20 h-20">
-              <img
-                src="/image/magic-ribbons.png"
-                alt="Magic Ribbons"
-                className="w-14 h-14 object-contain mx-auto"
-              />
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">
+              Magic Ribbons
+            </h3>
+            <div 
+              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center"
+              style={{ backgroundImage: "url('/image/magic-ribbons.png')" }}
+            >
             </div>
           </div>
+
           {/* Card 3 */}
-          <h3 className="text-xl font-bold text-pink-400 mt-2 text-center">
-            Dansul Mirilor
-          </h3>
-          <div className="flex flex-col items-center bg-white rounded-3xl shadow-lg p-8 min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4]">
-            <div className="flex items-center justify-center mb-4 w-20 h-20">
-              <img
-                src="/image/dansul-mirilor.png"
-                alt="Dansul Mirilor"
-                className="w-14 h-14 object-contain mx-auto"
-              />
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">
+              Dansul Mirilor
+            </h3>
+            <div 
+              className="flex flex-col items-center bg-white rounded-3xl shadow-lg min-h-[300px] max-w-xs w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center"
+              style={{ backgroundImage: "url('/image/dansul-mirilor.png')" }}
+            >
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ export default function DesktopNav() {
           >
             Cursuri
           </a>
-          <Image src="/image/logo3.png" alt="Logo" width={110} height={110} className="object-contain mx-14" priority />
+          <Image src="/image/logo.png" alt="Logo" width={110} height={110} className="object-contain mx-14" priority />
           <a
             href="#gallery"
             className="inline-block px-6 py-2 bg-white rounded-full text-gray-900 text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"

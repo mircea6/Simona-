@@ -18,7 +18,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         {/* Meniu mobil */}
         <div className="flex justify-center pb-2">
           <button
-            className="text-gray-900 text-3xl p-2"
+            className="text-[#69657e] text-3xl p-2"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Meniu"
           >
@@ -28,7 +28,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
       </div>
 
       {menuOpen && (
-        <div className="bg-white/95 px-6 pb-4 pt-2 flex flex-col gap-4 text-gray-900 font-semibold text-lg">
+        <div className="bg-white/95 px-6 pb-4 pt-2 flex flex-col gap-4 text-[#69657e] font-semibold text-lg">
           <a href="#about" onClick={() => setMenuOpen(false)}>
             Despre noi
           </a>

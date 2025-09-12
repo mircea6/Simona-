@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import useFormAnimation from '../hooks/useFormAnimation';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,15 @@ export default function ContactSection() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+
+  // Hook-uri pentru animațiile individuale ale fiecărui câmp
+  const [numeRef, numeVisible] = useFormAnimation();
+  const [prenumeRef, prenumeVisible] = useFormAnimation();
+  const [emailRef, emailVisible] = useFormAnimation();
+  const [telefonRef, telefonVisible] = useFormAnimation();
+  const [mesajRef, mesajVisible] = useFormAnimation();
+  const [gdprRef, gdprVisible] = useFormAnimation();
+  const [buttonRef, buttonVisible] = useFormAnimation();
 
   const validateForm = () => {
     const newErrors = {};
@@ -141,8 +151,8 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
   };
 
   return (
-    <section id="contact" className="py-20 bg-white animated-bg">
-      <div className="container max-w-2xl mx-auto px-4 relative">
+    <section id="contact" className="bg-blue-50 animated-bg">
+      <div className="container max-w-2xl mx-auto px-4 py-16 relative">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink font-serif text-center">Formular contact</h2>
         
         {submitStatus === 'success' && (
@@ -159,7 +169,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
 
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col gap-6">
           <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1 flex flex-col">
+            <div 
+              ref={numeRef}
+              className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
+                numeVisible 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 -translate-x-full'
+              }`}
+            >
               <label htmlFor="nume" className="mb-1 text-base font-semibold text-gray-800">Nume *</label>
               <input 
                 type="text" 
@@ -174,7 +191,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
               />
               {errors.nume && <span className="text-red-500 text-sm mt-1">{errors.nume}</span>}
             </div>
-            <div className="flex-1 flex flex-col">
+            <div 
+              ref={prenumeRef}
+              className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
+                prenumeVisible 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 translate-x-full'
+              }`}
+            >
               <label htmlFor="prenume" className="mb-1 text-base font-semibold text-gray-800">Prenume *</label>
               <input 
                 type="text" 
@@ -192,7 +216,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
           </div>
 
           <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1 flex flex-col">
+            <div 
+              ref={emailRef}
+              className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
+                emailVisible 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 -translate-x-full'
+              }`}
+            >
               <label htmlFor="email" className="mb-1 text-base font-semibold text-gray-800">Email *</label>
               <input 
                 type="email" 
@@ -207,7 +238,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
               />
               {errors.email && <span className="text-red-500 text-sm mt-1">{errors.email}</span>}
             </div>
-            <div className="flex-1 flex flex-col">
+            <div 
+              ref={telefonRef}
+              className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
+                telefonVisible 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 translate-x-full'
+              }`}
+            >
               <label htmlFor="telefon" className="mb-1 text-base font-semibold text-gray-800">Telefon *</label>
               <input 
                 type="tel" 
@@ -225,7 +263,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
           </div>
 
 
-          <div className="flex flex-col">
+          <div 
+            ref={mesajRef}
+            className={`flex flex-col transition-all duration-700 ease-out ${
+              mesajVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-full'
+            }`}
+          >
             <label htmlFor="mesaj" className="mb-1 text-base font-semibold text-gray-800">Mesaj *</label>
             <textarea 
               name="mesaj" 
@@ -244,7 +289,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             </div>
           </div>
 
-          <div className="flex flex-col">
+          <div 
+            ref={gdprRef}
+            className={`flex flex-col transition-all duration-700 ease-out ${
+              gdprVisible 
+                ? 'opacity-100 scale-100' 
+                : 'opacity-0 scale-75'
+            }`}
+          >
             <label className="flex items-center gap-2 text-base text-gray-700">
               <input 
                 type="checkbox" 
@@ -260,12 +312,17 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
           </div>
 
           <button 
+            ref={buttonRef}
             type="submit" 
             disabled={isSubmitting}
-            className={`w-full border-2 text-lg font-semibold py-3 rounded-xl transition mt-2 ${
+            className={`w-full text-lg font-semibold py-3 rounded-full transition-all duration-700 ease-out mt-2 ${
               isSubmitting 
-                ? 'border-gray-400 text-gray-400 cursor-not-allowed' 
-                : 'border-[#a7d8ff] text-[#a7d8ff] hover:bg-[#a7d8ff] hover:text-white'
+                ? 'bg-gray-400 text-white cursor-not-allowed' 
+                : 'bg-[#a7d8ff] text-white hover:bg-[#8bc5ff] shadow-lg'
+            } ${
+              buttonVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-full'
             }`}
           >
             {isSubmitting ? 'Se pregătește...' : 'Trimite pe Email'}

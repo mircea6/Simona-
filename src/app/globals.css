@@ -226,7 +226,7 @@ html {
     transition: all 0.3s ease;
     border-radius: 50%;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: transparent !important;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     animation: slideInFromTop 0.3s ease-out;
@@ -235,7 +235,7 @@ html {
 
 .sticky-logo:hover {
     transform: translateX(-50%) scale(1.05);
-    background: rgba(255, 255, 255, 1);
+    background: transparent;
 }
 
 @keyframes slideInFromTop {
@@ -279,6 +279,26 @@ html {
 .museo-font {
     font-family: 'Oswald', 'Montserrat', 'Poppins', sans-serif;
     font-weight: 900;
+}
+
+/* Optimizări pentru animațiile de scroll pe mobile și tabletă */
+@media (max-width: 768px) {
+    /* Reduce durata animațiilor pe mobile pentru performanță mai bună */
+    .scroll-animation {
+        transition-duration: 0.6s !important;
+    }
+    
+    /* Optimizează transform-urile pentru performanță */
+    .scroll-animation * {
+        will-change: transform, opacity;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Animații și mai rapide pe telefoane mici */
+    .scroll-animation {
+        transition-duration: 0.4s !important;
+    }
 }
 
 /* Responsive loading screen styles */

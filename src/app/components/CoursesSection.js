@@ -1,7 +1,19 @@
+'use client';
+import useScrollAnimation from '../hooks/useScrollAnimation';
+
 export default function CoursesSection() {
+  const [ref, isVisible] = useScrollAnimation();
+
   return (
-    <section id="classes" className="py-20 bg-white animated-bg">
-      <div className="max-w-6xl mx-auto px-4 relative">
+    <section id="classes" className="bg-white animated-bg">
+      <div 
+        ref={ref}
+        className={`max-w-6xl mx-auto px-4 py-16 relative scroll-animation transition-all duration-1000 ease-out ${
+          isVisible 
+            ? 'opacity-100 translate-x-0' 
+            : 'opacity-0 translate-x-full'
+        }`}
+      >
         <h2 className="text-5xl font-extrabold text-pink mb-8 text-center">
           Cursuri
         </h2>
@@ -12,10 +24,10 @@ export default function CoursesSection() {
 
 
         
-        <div className="flex flex-col md:flex-row gap-8 w-full max-w-5xl mx-auto justify-center items-center">
+        <div className="flex flex-col md:flex-row gap-16 w-full max-w-5xl mx-auto justify-center items-center">
           {/* Card 1 */}
           <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold text-pink mb-4 text-center">
+            <h3 className="text-3xl font-extrabold text-pink mb-6 text-center">
               Happy dance
             </h3>
             <div 
@@ -27,7 +39,7 @@ export default function CoursesSection() {
 
           {/* Card 2 */}
           <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold text-pink mb-4 text-center">
+            <h3 className="text-3xl font-extrabold text-pink mb-6 text-center">
               Magic Ribbons
             </h3>
             <div 
@@ -39,7 +51,7 @@ export default function CoursesSection() {
 
           {/* Card 3 */}
           <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold text-pink mb-4 text-center">
+            <h3 className="text-3xl font-extrabold text-pink mb-6 text-center">
               Dansul Mirilor
             </h3>
             <div 

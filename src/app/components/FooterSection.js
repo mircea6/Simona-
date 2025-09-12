@@ -57,22 +57,6 @@ export default function FooterSection() {
               </li>
               <li>
                 <a href="#" className="text-gray-700 hover:text-pink-600 transition-colors">
-                  Termeni și condiții
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:text-pink-600 transition-colors flex items-center gap-2">
-                  Politică de comandă și anulare
-                  <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:text-pink-600 transition-colors">
-                  Contul Meu
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:text-pink-600 transition-colors">
                   ANPC
                 </a>
               </li>

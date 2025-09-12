@@ -1,7 +1,7 @@
 export default function CoursesSection() {
   return (
     <section id="classes" className="py-20 bg-white animated-bg">
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 relative">
         <h2 className="text-5xl font-extrabold text-pink mb-8 text-center">
           Cursuri
         </h2>

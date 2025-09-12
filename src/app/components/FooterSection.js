@@ -23,7 +23,7 @@ export default function FooterSection() {
       {/* Wave SVG at top */}
       <div className="wave-svg-footer"></div>
       
-      <div className="max-w-7xl mx-auto px-4 py-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 py-12 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Logo and Slogan Section */}
@@ -51,7 +51,7 @@ export default function FooterSection() {
             <h4 className="text-lg font-bold text-gray-800 font-serif mb-4">Link-uri utile</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-700 hover:text-pink-600 transition-colors">
+                <a href="/politica-confidentialitate" className="text-gray-700 hover:text-pink-600 transition-colors">
                   Politica de confidențialitate
                 </a>
               </li>
@@ -151,7 +151,7 @@ export default function FooterSection() {
         <div className="border-t border-gray-300 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-600">
-              © {new Date().getFullYear()} Mimi Dance Academy
+              © {new Date().getFullYear()} Mimi Dance Academy - Made With ❤️
             </p>
             
             <div className="flex gap-4">

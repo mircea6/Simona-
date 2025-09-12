@@ -190,7 +190,7 @@ html {
         radial-gradient(circle at var(--mouse-x-2, 30%) var(--mouse-y-2, 70%), rgba(248, 198, 212, 0.35) 0%, transparent 35%);
     transition: all 0.1s ease-out;
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
 }
 
 .animated-bg::after {
@@ -205,7 +205,7 @@ html {
         radial-gradient(circle at var(--mouse-x-4, 20%) var(--mouse-y-4, 80%), rgba(167, 216, 255, 0.25) 0%, transparent 45%);
     transition: all 0.15s ease-out;
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
 }
 
 /* Hide animated background on touch devices */
@@ -222,10 +222,11 @@ html {
     top: 20px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    z-index: 99999!important;
+    z-index: 9999999 !important;
     transition: all 0.3s ease;
     border-radius: 50%;
     padding: 10px;
+    background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     animation: slideInFromTop 0.3s ease-out;
@@ -251,7 +252,7 @@ html {
 /* Ensure sticky logo is always on top */
 .sticky-logo,
 .sticky-logo * {
-    z-index: 99999 !important;
+    z-index: 9999999 !important;
     position: relative;
 }
 
@@ -376,6 +377,6 @@ html {
 }
 
 .sticky-logo img {
-    z-index: 99999 !important;
+    z-index: 9999999 !important;
     position: relative;
 }

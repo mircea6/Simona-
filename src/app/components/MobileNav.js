@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function MobileNav({ menuOpen, setMenuOpen }) {
+  const pathname = usePathname();
+  
   return (
     <>
       <div className="flex justify-between items-center w-full">
@@ -29,16 +32,16 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
 
       {menuOpen && (
         <div className="bg-white/95 px-6 pb-4 pt-2 flex flex-col gap-4 text-[#69657e] font-semibold text-lg">
-          <a href="#about" onClick={() => setMenuOpen(false)}>
+          <a href={pathname === '/despre-noi' ? '/#about' : '#about'} onClick={() => setMenuOpen(false)}>
             Despre noi
           </a>
-          <a href="#classes" onClick={() => setMenuOpen(false)}>
+          <a href={pathname === '/despre-noi' ? '/#classes' : '#classes'} onClick={() => setMenuOpen(false)}>
             Cursuri
           </a>
-          <a href="#gallery" onClick={() => setMenuOpen(false)}>
+          <a href={pathname === '/despre-noi' ? '/#gallery' : '#gallery'} onClick={() => setMenuOpen(false)}>
             Galerie
           </a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
+          <a href={pathname === '/despre-noi' ? '/#contact' : '#contact'} onClick={() => setMenuOpen(false)}>
             Contact
           </a>
         </div>

@@ -2,9 +2,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function DesktopNav() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,13 +39,13 @@ export default function DesktopNav() {
         <div className="max-w-7xl mx-auto flex justify-center px-10 py-6">
           <nav className="flex gap-8 items-center justify-center">
             <a
-              href="#about"
+              href={pathname === '/despre-noi' ? '/#about' : '#about'}
               className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
             >
               Despre noi
             </a>
             <a
-              href="#classes"
+              href={pathname === '/despre-noi' ? '/#classes' : '#classes'}
               className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
             >
               Cursuri
@@ -59,13 +61,13 @@ export default function DesktopNav() {
               />
             </Link>
             <a
-              href="#gallery"
+              href={pathname === '/despre-noi' ? '/#gallery' : '#gallery'}
               className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
             >
               Galerie
             </a>
             <a
-              href="#contact"
+              href={pathname === '/despre-noi' ? '/#contact' : '#contact'}
               className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
             >
               Contact

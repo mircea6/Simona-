@@ -255,6 +255,126 @@ html {
     position: relative;
 }
 
+/* Loading screen animations */
+@keyframes logoGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+    }
+}
+
+.logo-glow {
+    animation: logoGlow 2s ease-in-out infinite;
+}
+
+/* Loading screen gradient */
+.loading-gradient {
+    background: linear-gradient(to right, #f8c6d4, #a7d8ff);
+}
+
+/* Modern font for loading screen */
+.museo-font {
+    font-family: 'Oswald', 'Montserrat', 'Poppins', sans-serif;
+    font-weight: 900;
+}
+
+/* Responsive loading screen styles */
+@media (max-width: 768px) {
+    .loading-logo-container {
+        width: 12rem !important;
+        height: 12rem !important;
+        padding: 15px !important;
+        margin: 0 auto !important;
+    }
+    
+    .loading-text {
+        font-size: 1.5rem !important;
+        font-family: 'Oswald', 'Montserrat', 'Poppins', sans-serif !important;
+        font-weight: 900 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .loading-dots {
+        margin-top: 1rem !important;
+    }
+    
+    /* Ensure smooth rotation on mobile */
+    .loading-logo-container {
+        will-change: transform;
+        transform-origin: center;
+    }
+    
+    /* Ensure perfect centering on tablet */
+    .flex.flex-col.items-center.justify-center {
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-logo-container {
+        width: 10rem !important;
+        height: 10rem !important;
+        padding: 12px !important;
+        margin: 0 auto !important;
+    }
+    
+    .loading-text {
+        font-size: 1.25rem !important;
+        font-family: 'Oswald', 'Montserrat', 'Poppins', sans-serif !important;
+        font-weight: 900 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    /* Ensure perfect centering on mobile */
+    .flex.flex-col.items-center.justify-center {
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    /* Mobile text adjustments */
+    .loading-text h1 {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .loading-text p {
+        text-align: center !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Ensure loading screen works on all devices */
+@media (hover: none) and (pointer: coarse) {
+    .loading-logo-container {
+        will-change: transform;
+        transform-origin: center;
+        margin: 0 auto !important;
+    }
+    
+    .logo-glow {
+        animation: logoGlow 2s ease-in-out infinite;
+    }
+    
+    /* Perfect centering for touch devices */
+    .flex.flex-col.items-center.justify-center {
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .loading-text {
+        text-align: center !important;
+        width: 100% !important;
+    }
+}
+
 .sticky-logo img {
     z-index: 99999 !important;
     position: relative;

@@ -15,6 +15,7 @@ html {
   --radius-custom: 16px;
   --max-width-container: 1100px;
   
+  
   /* Custom animations */
   --animate-fade-in-left: fadeInLeft 0.8s ease-out forwards;
   --animate-fade-in-left-delay-1: fadeInLeft 0.8s ease-out 0.2s forwards;
@@ -281,24 +282,46 @@ html {
     font-weight: 900;
 }
 
+
 /* Optimizări pentru animațiile de scroll pe mobile și tabletă */
 @media (max-width: 768px) {
-    /* Reduce durata animațiilor pe mobile pentru performanță mai bună */
-    .scroll-animation {
-        transition-duration: 0.6s !important;
+    /* Pe mobile și tabletă, elimină complet animațiile pentru a evita crash-ul */
+    .scroll-animation,
+    .form-animation {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
     }
     
-    /* Optimizează transform-urile pentru performanță */
-    .scroll-animation * {
-        will-change: transform, opacity;
+    /* Forțează toate elementele să fie vizibile pe mobile */
+    .transition-all {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
     }
 }
 
 @media (max-width: 480px) {
-    /* Animații și mai rapide pe telefoane mici */
-    .scroll-animation {
-        transition-duration: 0.4s !important;
+    /* Pe telefoane mici, elimină complet toate animațiile */
+    .scroll-animation,
+    .form-animation {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
     }
+    
+    /* Forțează toate elementele să fie vizibile pe telefoane mici */
+    .transition-all {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    
+    /* Reduce complexitatea animațiilor pe telefoane mici */
+    .animated-bg {
+        background-attachment: scroll !important;
+    }
+    
 }
 
 /* Responsive loading screen styles */

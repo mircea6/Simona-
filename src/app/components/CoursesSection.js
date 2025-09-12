@@ -1,19 +1,7 @@
-'use client';
-import useScrollAnimation from '../hooks/useScrollAnimation';
-
 export default function CoursesSection() {
-  const [ref, isVisible] = useScrollAnimation();
-
   return (
-    <section id="classes" className="bg-white animated-bg">
-      <div 
-        ref={ref}
-        className={`max-w-6xl mx-auto px-4 py-16 relative scroll-animation transition-all duration-1000 ease-out ${
-          isVisible 
-            ? 'opacity-100 translate-x-0' 
-            : 'opacity-0 translate-x-full'
-        }`}
-      >
+    <section id="classes" className="py-20 bg-white animated-bg">
+      <div className="max-w-6xl mx-auto px-4 relative">
         <h2 className="text-5xl font-extrabold text-pink mb-8 text-center">
           Cursuri
         </h2>

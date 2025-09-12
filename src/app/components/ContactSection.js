@@ -151,8 +151,8 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
   };
 
   return (
-    <section id="contact" className="bg-blue-50 animated-bg">
-      <div className="container max-w-2xl mx-auto px-4 py-16 relative">
+    <section id="contact" className="py-20 bg-white animated-bg">
+      <div className="container max-w-2xl mx-auto px-4 relative">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink font-serif text-center">Formular contact</h2>
         
         {submitStatus === 'success' && (

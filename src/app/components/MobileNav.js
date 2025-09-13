@@ -6,22 +6,22 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
   
   return (
     <>
-      <div className="flex justify-between items-center w-full">
-        {/* Logo centrat */}
-        <div className="flex items-center justify-center py-4">
+      <div className="flex justify-between items-center w-full py-4">
+        {/* Logo în stânga */}
+        <div className="flex items-center">
           <Image
             src="/image/logo.png"
             alt="Logo"
-            width={80}
-            height={80}
+            width={60}
+            height={60}
             className="object-contain"
             priority
           />
         </div>
-        {/* Meniu mobil */}
-        <div className="flex justify-center pb-2">
+        {/* Meniu mobil în dreapta */}
+        <div className="flex items-center">
           <button
-            className="text-[#69657e] text-3xl p-2"
+            className="text-[#69657e] text-3xl p-2 hover:bg-gray-100 rounded-lg transition-colors"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Meniu"
           >

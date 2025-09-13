@@ -4,36 +4,44 @@ import Image from 'next/image';
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
-  const [rotationCount, setRotationCount] = useState(0);
+  const [rotation, setRotation] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    // Simulate loading time with logo rotations
+    // Simple rotation sequence
     const rotationSequence = () => {
       // First rotation
-      setTimeout(() => setRotationCount(1), 0);
-      
-      // Second rotation (after 0.5s pause)
-      setTimeout(() => setRotationCount(2), 1000);
-      
-      // Third rotation (after 0.5s pause)
-      setTimeout(() => setRotationCount(3), 2000);
-      
-      // Start transition after 3rd rotation + 0.5s pause
       setTimeout(() => {
+        console.log('First rotation');
+        setRotation(360);
+      }, 500);
+      
+      // Second rotation
+      setTimeout(() => {
+        console.log('Second rotation');
+        setRotation(720);
+      }, 1500);
+      
+      // Third rotation
+      setTimeout(() => {
+        console.log('Third rotation');
+        setRotation(1080);
+      }, 2500);
+      
+      // Start transition after 3rd rotation
+      setTimeout(() => {
+        console.log('Starting transition');
         setIsTransitioning(true);
         // Hide loading screen after transition
         setTimeout(() => {
+          console.log('Hiding loading screen');
           setIsLoading(false);
-        }, 800); // Match transition duration
-      }, 3000); // 3 rotations * 0.5s rotation + 0.5s pause = 3s total
+        }, 1200);
+      }, 3500);
     };
 
     rotationSequence();
   }, []);
-
-  // Calculate total rotation based on rotation count
-  const totalRotation = rotationCount * 360;
 
   if (!isLoading) {
     return null;
@@ -41,20 +49,20 @@ export default function LoadingScreen() {
 
   return (
     <div 
-      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-800 ease-in-out ${
-        isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-1200 ease-out ${
+        isTransitioning ? 'opacity-0' : 'opacity-100'
       }`}
       style={{
         background: 'linear-gradient(to right, #f8c6d4, #a7d8ff)'
       }}
     >
-      {/* Logo with rotation animation - same style as navigation */}
+      {/* Logo with rotation animation */}
       <div className="flex flex-col items-center justify-center">
         <div 
-          className="loading-logo-container relative w-48 h-48 rounded-full transition-all duration-300 ease backdrop-filter blur-10px shadow-lg mx-auto"
+          className="loading-logo-container relative w-48 h-48 rounded-full shadow-lg mx-auto"
           style={{
-            transform: `rotate(${totalRotation}deg)`,
-            transition: 'transform 0.5s ease-in-out',
+            transform: `rotate(${rotation}deg)`,
+            transition: 'transform 0.6s ease-in-out',
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
             backdropFilter: 'blur(10px)',
             padding: '20px'
@@ -65,17 +73,17 @@ export default function LoadingScreen() {
             alt="Mimi Dance Academy Logo"
             width={200}
             height={200}
-            className="object-contain w-full h-full logo-glow"
+            className="object-contain w-full h-full"
             priority
           />
         </div>
 
         {/* Text under the rotating logo */}
         <div className="text-center mt-8 w-full">
-          <h1 className="text-white text-3xl md:text-4xl font-black tracking-wider animate-pulse drop-shadow-2xl mb-2" 
+          <h1 className="text-white text-3xl md:text-4xl font-black tracking-wider drop-shadow-2xl mb-2" 
               style={{ 
                 fontFamily: 'Oswald, Montserrat, Poppins, sans-serif',
-                textShadow: '2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.5)',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
                 letterSpacing: '0.1em',
                 fontWeight: '900'
               }}>
@@ -103,9 +111,9 @@ export default function LoadingScreen() {
       {/* Loading dots at bottom */}
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
         <div className="loading-dots flex justify-center space-x-2">
-          <div className="w-3 h-3 bg-white/70 rounded-full animate-bounce shadow-lg" style={{ animationDelay: '0ms' }}></div>
-          <div className="w-3 h-3 bg-white/70 rounded-full animate-bounce shadow-lg" style={{ animationDelay: '150ms' }}></div>
-          <div className="w-3 h-3 bg-white/70 rounded-full animate-bounce shadow-lg" style={{ animationDelay: '300ms' }}></div>
+          <div className="w-3 h-3 bg-white/70 rounded-full shadow-lg"></div>
+          <div className="w-3 h-3 bg-white/70 rounded-full shadow-lg"></div>
+          <div className="w-3 h-3 bg-white/70 rounded-full shadow-lg"></div>
         </div>
       </div>
     </div>

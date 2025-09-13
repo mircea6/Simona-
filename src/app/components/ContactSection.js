@@ -153,21 +153,21 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
   return (
     <section id="contact" className="py-20 bg-white animated-bg">
       <div className="container max-w-2xl mx-auto px-4 relative">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pink font-serif text-center">Formular contact</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-pink font-serif text-center px-2">Formular contact</h2>
         
         {submitStatus === 'success' && (
-          <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+          <div className="bg-green-100 border border-green-400 text-green-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
             ✅ Mesajul a fost pregătit cu succes! Clientul de email se va deschide automat.
           </div>
         )}
 
         {submitStatus === 'error' && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+          <div className="bg-red-100 border border-red-400 text-red-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
             ❌ Vă rugăm să corectați erorile din formular.
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col gap-6">
+        <form onSubmit={handleSubmit} className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-2 sm:p-6 md:p-10 flex flex-col gap-2 sm:gap-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div 
               ref={numeRef}
@@ -177,14 +177,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                   : 'opacity-0 -translate-x-full'
               }`}
             >
-              <label htmlFor="nume" className="mb-1 text-base font-semibold text-gray-800">Nume *</label>
+              <label htmlFor="nume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Nume *</label>
               <input 
                 type="text" 
                 name="nume" 
                 id="nume" 
                 value={formData.nume}
                 onChange={handleInputChange}
-                className={`px-4 py-2 border-2 rounded-xl text-lg focus:outline-none transition ${
+                className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg focus:outline-none transition ${
                   errors.nume ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="Introduceți numele"
@@ -199,14 +199,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                   : 'opacity-0 translate-x-full'
               }`}
             >
-              <label htmlFor="prenume" className="mb-1 text-base font-semibold text-gray-800">Prenume *</label>
+              <label htmlFor="prenume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Prenume *</label>
               <input 
                 type="text" 
                 name="prenume" 
                 id="prenume" 
                 value={formData.prenume}
                 onChange={handleInputChange}
-                className={`px-4 py-2 border-2 rounded-xl text-lg focus:outline-none transition ${
+                className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg focus:outline-none transition ${
                   errors.prenume ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="Introduceți prenumele"
@@ -224,14 +224,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                   : 'opacity-0 -translate-x-full'
               }`}
             >
-              <label htmlFor="email" className="mb-1 text-base font-semibold text-gray-800">Email *</label>
+              <label htmlFor="email" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Email *</label>
               <input 
                 type="email" 
                 name="email" 
                 id="email" 
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`px-4 py-2 border-2 rounded-xl text-lg focus:outline-none transition ${
+                className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg focus:outline-none transition ${
                   errors.email ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="exemplu@email.com"
@@ -246,14 +246,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                   : 'opacity-0 translate-x-full'
               }`}
             >
-              <label htmlFor="telefon" className="mb-1 text-base font-semibold text-gray-800">Telefon *</label>
+              <label htmlFor="telefon" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Telefon *</label>
               <input 
                 type="tel" 
                 name="telefon" 
                 id="telefon" 
                 value={formData.telefon}
                 onChange={handleInputChange}
-                className={`px-4 py-2 border-2 rounded-xl text-lg focus:outline-none transition ${
+                className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg focus:outline-none transition ${
                   errors.telefon ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="07xxxxxxxx"
@@ -271,14 +271,14 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 : 'opacity-0 translate-y-full'
             }`}
           >
-            <label htmlFor="mesaj" className="mb-1 text-base font-semibold text-gray-800">Mesaj *</label>
+            <label htmlFor="mesaj" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Mesaj *</label>
             <textarea 
               name="mesaj" 
               id="mesaj" 
               value={formData.mesaj}
               onChange={handleInputChange}
               maxLength={500} 
-              className={`px-4 py-2 border-2 rounded-xl text-lg min-h-[100px] focus:outline-none transition resize-none ${
+              className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg min-h-[60px] sm:min-h-[100px] focus:outline-none transition resize-none ${
                 errors.mesaj ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
               }`}
               placeholder="Scrieți mesajul dumneavoastră aici..."
@@ -297,13 +297,13 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 : 'opacity-0 scale-75'
             }`}
           >
-            <label className="flex items-center gap-2 text-base text-gray-700">
+            <label className="flex items-center gap-2 text-sm sm:text-base text-gray-700">
               <input 
                 type="checkbox" 
                 name="gdpr"
                 checked={formData.gdpr}
                 onChange={handleInputChange}
-                className={`w-5 h-5 ${errors.gdpr ? 'border-red-500' : ''}`}
+                className={`w-4 h-4 sm:w-5 sm:h-5 ${errors.gdpr ? 'border-red-500' : ''}`}
                 style={{ accentColor: '#a7d8ff' }}
               />
               Sunt de acord cu politica de confidențialitate. *
@@ -315,7 +315,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             ref={buttonRef}
             type="submit" 
             disabled={isSubmitting}
-            className={`w-full text-lg font-semibold py-3 rounded-full transition-all duration-700 ease-out mt-2 ${
+            className={`w-full text-sm sm:text-base md:text-lg font-semibold py-1.5 sm:py-3 rounded-full transition-all duration-700 ease-out mt-2 ${
               isSubmitting 
                 ? 'bg-gray-400 text-white cursor-not-allowed' 
                 : 'bg-[#a7d8ff] text-white hover:bg-[#8bc5ff] shadow-lg'

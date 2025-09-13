@@ -6,6 +6,15 @@ export default function useFormAnimation(threshold = 0.1) {
   const ref = useRef(null);
 
   useEffect(() => {
+    // Check if we're on mobile
+    const isMobile = window.innerWidth <= 480;
+    
+    // On mobile, make elements visible immediately
+    if (isMobile) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);

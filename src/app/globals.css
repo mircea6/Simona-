@@ -283,30 +283,19 @@ html {
 }
 
 
-/* Optimizări pentru animațiile de scroll pe mobile și tabletă */
-@media (max-width: 768px) {
-    /* Pe mobile și tabletă, elimină complet animațiile pentru a evita crash-ul */
-    .scroll-animation,
-    .form-animation {
-        transition: none !important;
-        transform: none !important;
-        opacity: 1 !important;
-    }
-    
-    /* Forțează toate elementele să fie vizibile pe mobile */
+/* Optimizări pentru animațiile de scroll pe tabletă */
+@media (max-width: 768px) and (min-width: 481px) {
+    /* Pe tabletă, păstrează animațiile dar le fac mai rapide */
     .transition-all {
-        transition: none !important;
-        transform: none !important;
-        opacity: 1 !important;
+        transition-duration: 0.6s !important;
     }
 }
 
 @media (max-width: 480px) {
-    /* Pe telefoane mici, elimină complet toate animațiile */
-    .scroll-animation,
-    .form-animation {
-        transition: none !important;
-        transform: none !important;
+    /* Pe telefoane mici, elimină complet toate animațiile pentru a evita problemele */
+    .transition-all.-translate-x-full,
+    .transition-all.translate-x-full {
+        transform: translateX(0) !important;
         opacity: 1 !important;
     }
     
@@ -320,6 +309,11 @@ html {
     /* Reduce complexitatea animațiilor pe telefoane mici */
     .animated-bg {
         background-attachment: scroll !important;
+    }
+    
+    /* Păstrează animațiile pentru loading screen pe mobile */
+    .loading-logo-container {
+        transition: transform 0.6s ease-in-out !important;
     }
     
 }

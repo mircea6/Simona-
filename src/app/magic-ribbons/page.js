@@ -1,11 +1,13 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function MagicRibbonsPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const videoRef = useRef(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,13 +71,13 @@ export default function MagicRibbonsPage() {
             <nav className="flex gap-8 items-center justify-center">
               <Link
                 href="/#about"
-                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
+                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-[#a7d8ff] hover:text-white hover:border-[#a7d8ff] focus:bg-[#a7d8ff] focus:text-white focus:border-[#a7d8ff] no-underline"
               >
                 Despre noi
               </Link>
               <Link
                 href="/#classes"
-                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
+                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-[#a7d8ff] hover:text-white hover:border-[#a7d8ff] focus:bg-[#a7d8ff] focus:text-white focus:border-[#a7d8ff] no-underline"
               >
                 Cursuri
               </Link>
@@ -90,13 +92,13 @@ export default function MagicRibbonsPage() {
               </Link>
               <Link
                 href="/#gallery"
-                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
+                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-[#a7d8ff] hover:text-white hover:border-[#a7d8ff] focus:bg-[#a7d8ff] focus:text-white focus:border-[#a7d8ff] no-underline"
               >
                 Galerie
               </Link>
               <Link
                 href="/#contact"
-                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
+                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-[#a7d8ff] hover:text-white hover:border-[#a7d8ff] focus:bg-[#a7d8ff] focus:text-white focus:border-[#a7d8ff] no-underline"
               >
                 Contact
               </Link>
@@ -106,23 +108,23 @@ export default function MagicRibbonsPage() {
 
         {/* Mobile Navigation */}
         <div className="md:hidden">
-          <div className="flex justify-between items-center w-full py-4 px-4">
-            {/* Logo în stânga */}
-            <div className="flex items-center">
-              <Link href="/">
+          <div className="flex justify-between items-center w-full py-4 px-4 relative">
+            {/* Logo - se mișcă în dreapta când meniul e deschis */}
+            <div className={`flex items-center transition-all duration-[5000ms] ease-in-out relative z-[60] ${menuOpen ? 'translate-x-[70vw]' : 'translate-x-[5vw]'}`}>
+              <Link href="/" onClick={() => setMenuOpen(false)}>
                 <img
                   src="/image/logo.png"
                   alt="Logo"
-                  width={60}
-                  height={60}
-                  className="object-contain"
+                  width={80}
+                  height={80}
+                  className="object-contain cursor-pointer"
                 />
               </Link>
             </div>
             {/* Meniu mobil în dreapta */}
             <div className="flex items-center">
               <button
-                className="text-[#69657e] text-3xl p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                className="text-[#69657e] text-3xl p-2 hover:bg-[#a7d8ff] hover:text-white rounded-lg transition-colors"
                 onClick={() => setMenuOpen((v) => !v)}
                 aria-label="Meniu"
               >
@@ -130,26 +132,53 @@ export default function MagicRibbonsPage() {
               </button>
             </div>
           </div>
-
-          {/* Mobile Menu */}
-          {menuOpen && (
-            <div className="bg-white/95 px-6 pb-4 pt-2 flex flex-col gap-4 text-[#69657e] font-semibold text-lg">
-              <Link href="/#about" onClick={() => setMenuOpen(false)}>
-                Despre noi
-              </Link>
-              <Link href="/#classes" onClick={() => setMenuOpen(false)}>
-                Cursuri
-              </Link>
-              <Link href="/#gallery" onClick={() => setMenuOpen(false)}>
-                Galerie
-              </Link>
-              <Link href="/#contact" onClick={() => setMenuOpen(false)}>
-                Contact
-              </Link>
-            </div>
-          )}
         </div>
       </div>
+
+      {/* Meniul care se deschide din stânga - în afara containerului principal */}
+      {menuOpen && (
+        <>
+           {/* Overlay cu blur pentru fundal */}
+           <div 
+             className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-all duration-[5000ms] ease-in-out"
+             onClick={() => setMenuOpen(false)}
+           />
+           
+           {/* Meniul propriu-zis */}
+           <div className="fixed top-0 left-0 w-1/2 h-full bg-[#b8e0ff] z-50 transform transition-all duration-[5000ms] ease-in-out">
+            <div className="flex flex-col gap-6 text-white font-semibold text-lg pt-20 px-6">
+              <a 
+                href="/#about" 
+                onClick={() => setMenuOpen(false)} 
+                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+              >
+                Despre noi
+              </a>
+              <a 
+                href="/#classes" 
+                onClick={() => setMenuOpen(false)} 
+                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+              >
+                Cursuri
+              </a>
+              <a 
+                href="/#gallery" 
+                onClick={() => setMenuOpen(false)} 
+                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+              >
+                Galerie
+              </a>
+              <a 
+                href="/#contact" 
+                onClick={() => setMenuOpen(false)} 
+                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Main Content - întreaga pagină cu video background */}
       <div className="relative z-10 min-h-screen pt-20">

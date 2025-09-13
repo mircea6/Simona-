@@ -1,27 +1,35 @@
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function MobileNav({ menuOpen, setMenuOpen }) {
   const pathname = usePathname();
-  
+
   return (
     <>
-      <div className="flex justify-between items-center w-full py-4">
-        {/* Logo în stânga */}
-        <div className="flex items-center">
-          <Image
-            src="/image/logo.png"
-            alt="Logo"
-            width={60}
-            height={60}
-            className="object-contain"
-            priority
-          />
+      <div className="flex justify-between items-center w-full py-4 relative">
+        {/* Logo - se mișcă în dreapta când meniul e deschis */}
+        <div
+          className={`flex items-center transition-all duration-[5000ms] ease-in-out relative z-[60] ${
+            menuOpen ? "translate-x-[70vw]" : "translate-x-[5vw]"
+          }`}
+        >
+          <Link href="/" onClick={() => setMenuOpen(false)}>
+            <Image
+              src="/image/logo.png"
+              alt="Logo"
+              width={80}
+              height={80}
+              className="object-contain cursor-pointer"
+              priority
+            />
+          </Link>
         </div>
+
         {/* Meniu mobil în dreapta */}
         <div className="flex items-center">
           <button
-            className="text-[#69657e] text-3xl p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="text-[#69657e] text-3xl p-2 hover:bg-[#a7d8ff] hover:text-white rounded-lg transition-colors"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Meniu"
           >
@@ -30,21 +38,49 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         </div>
       </div>
 
+      {/* Meniul care se deschide din stânga */}
       {menuOpen && (
-        <div className="bg-white/95 px-6 pb-4 pt-2 flex flex-col gap-4 text-[#69657e] font-semibold text-lg">
-          <a href={pathname === '/despre-noi' ? '/#about' : '#about'} onClick={() => setMenuOpen(false)}>
-            Despre noi
-          </a>
-          <a href={pathname === '/despre-noi' ? '/#classes' : '#classes'} onClick={() => setMenuOpen(false)}>
-            Cursuri
-          </a>
-          <a href={pathname === '/despre-noi' ? '/#gallery' : '#gallery'} onClick={() => setMenuOpen(false)}>
-            Galerie
-          </a>
-          <a href={pathname === '/despre-noi' ? '/#contact' : '#contact'} onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
-        </div>
+        <>
+          {/* Overlay cu blur pentru fundal */}
+          <div
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-all duration-[5000ms] ease-in-out"
+            onClick={() => setMenuOpen(false)}
+          />
+
+          {/* Meniul propriu-zis */}
+          <div className="fixed top-0 left-0 w-1/2 h-full bg-[#b8e0ff] z-50 transform transition-all duration-[5000ms] ease-in-out">
+            <div className="flex flex-col gap-6 text-white font-semibold text-lg pt-20 px-6">
+              <a
+                href={pathname === "/despre-noi" ? "/#about" : "#about"}
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+              >
+                Despre noi
+              </a>
+              <a
+                href={pathname === "/despre-noi" ? "/#classes" : "#classes"}
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+              >
+                Cursuri
+              </a>
+              <a
+                href={pathname === "/despre-noi" ? "/#gallery" : "#gallery"}
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+              >
+                Galerie
+              </a>
+              <a
+                href={pathname === "/despre-noi" ? "/#contact" : "#contact"}
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </>
       )}
     </>
   );

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function FooterSection() {
   const [email, setEmail] = useState('');
@@ -29,13 +30,15 @@ export default function FooterSection() {
           {/* Logo and Slogan Section */}
           <div className="flex flex-col items-center lg:items-start">
             <div className="flex flex-col items-center lg:items-start mb-4">
-              <Image
-                src="/image/logo.png"
-                alt="Mimi Dance Academy Logo"
-                width={120}
-                height={120}
-                className="mb-2"
-              />
+              <Link href="/">
+                <Image
+                  src="/image/logo.png"
+                  alt="Mimi Dance Academy Logo"
+                  width={120}
+                  height={120}
+                  className="mb-2 cursor-pointer"
+                />
+              </Link>
               <div className="text-center lg:text-left">
                 <h3 className="text-2xl font-bold text-gray-800 font-serif">Mimi Dance</h3>
                 <p className="text-lg text-gray-700 font-serif">ACADEMY</p>

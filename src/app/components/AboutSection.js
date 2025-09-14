@@ -33,8 +33,8 @@ export default function AboutSection() {
         className={`max-w-3xl mx-auto flex flex-col items-center justify-center px-4 relative z-10 h-full ${isMobile
             ? 'opacity-100 translate-x-0'
             : `transition-all duration-700 ease-out ${isVisible
-              ? 'opacity-100 translate-x-0'
-              : 'opacity-0 -translate-x-full'
+              ? 'translate-x-0'
+              : '-translate-x-full'
             }`
           }`}
       >

@@ -151,7 +151,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
   };
 
   return (
-    <section id="contact" className="py-20 bg-white animated-bg">
+    <section id="contact" className="py-20 bg-white">
       <div className="container max-w-2xl mx-auto px-4 relative">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-pink font-serif text-center px-2">Formular contact</h2>
         

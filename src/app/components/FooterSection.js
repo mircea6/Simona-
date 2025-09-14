@@ -144,9 +144,7 @@ export default function FooterSection() {
             <div className="flex gap-4">
               <a href="#" className="flex flex-col items-center p-3 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition-colors">
                 <div className="flex items-center gap-2 mb-1">
-                  <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
+        
                   <span className="text-sm text-gray-700">SOLUȚIONAREA ONLINE</span>
                 </div>
                 <span className="text-xs text-gray-600">A LITIGIILOR</span>
@@ -155,9 +153,7 @@ export default function FooterSection() {
               
               <a href="https://www.anpc.ro" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center p-3 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition-colors">
                 <div className="flex items-center gap-2 mb-1">
-                  <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
-                  </svg>
+              
                   <span className="text-sm text-gray-700">ANPC SOLUȚIONAREA</span>
                 </div>
                 <span className="text-xs text-gray-600">ALTERNATIVA A LITIGIILOR</span>

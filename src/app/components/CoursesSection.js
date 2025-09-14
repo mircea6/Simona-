@@ -17,7 +17,7 @@ export default function CoursesSection() {
   }, []);
 
   return (
-    <section id="classes" className="py-20 bg-white animated-bg">
+    <section id="classes" className="py-20 bg-white">
       <div 
         ref={ref}
         className={`max-w-6xl mx-auto px-4 relative ${

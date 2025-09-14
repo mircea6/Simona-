@@ -19,7 +19,7 @@ export default function AboutSection() {
   return (
     <section 
       id="about" 
-      className="py-20 relative bg-contain bg-center bg-no-repeat h-screen"
+      className="py-20 relative bg-cover bg-center-bottom bg-no-repeat h-screen"
       style={{ backgroundImage: "url('/image/bg-about.png')" }}
     >
       {/* Overlay pentru a îmbunătăți lizibilitatea */}

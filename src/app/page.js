@@ -11,7 +11,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="overflow-x-hidden">
         {/* HERO + NAVBAR cu Tailwind și meniu responsive corect */}
         {/* HERO + NAVBAR cu video background */}
         <div className="hero-bg relative w-full min-h-screen flex flex-col overflow-hidden">

@@ -5,6 +5,31 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Disable animations on low-end devices to prevent crashes */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimize for low-end devices */
+@media (max-width: 480px) {
+  * {
+    will-change: auto !important;
+  }
+  
+  .animate-fade-in-left,
+  .animate-fade-in-left-delay-1,
+  .animate-fade-in-left-delay-2,
+  .animate-fade-in-left-delay-3 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Custom styles */
 @theme {
   --color-baby-blue: #a7d8ff;

@@ -6,7 +6,7 @@ export default function DespreNoi() {
     <div>
       <Navigation />
     <main className="min-h-screen bg-white py-16 px-4 flex flex-col items-center">
-      <h1 className="text-5xl font-extrabold text-pink-400 mb-12 text-center animate-fade-in-left">
+      <h1 className="text-5xl font-extrabold text-pink mb-12 text-center animate-fade-in-left">
         Despre noi
       </h1>
       

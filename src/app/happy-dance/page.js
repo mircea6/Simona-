@@ -1,12 +1,12 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import FooterSection from '../components/FooterSection';
 
 export default function HappyDancePage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const videoRef = useRef(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -18,53 +18,36 @@ export default function HappyDancePage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      const handleCanPlay = () => {
-        video.play().catch(console.error);
-      };
-      
-      if (video.readyState >= 3) {
-        // Video is already loaded enough to play
-        video.play().catch(console.error);
-      } else {
-        // Wait for video to be ready
-        video.addEventListener('canplay', handleCanPlay);
-      }
-      
-      return () => {
-        video.removeEventListener('canplay', handleCanPlay);
-      };
-    }
-  }, []);
 
   return (
     <div className="min-h-screen relative">
-      {/* Video Background - întreaga pagină */}
-      <div className="fixed inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover"
-          style={{ 
-            opacity: 0.4,
-            filter: 'brightness(0.8)'
-          }}
-        >
-          <source src="/video-happydance.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Overlay subtil pentru contrast */}
-        <div className="absolute inset-0 bg-black/20"></div>
-      </div>
+      {/* Background Image - întreaga pagină */}
+      <div 
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: "url('/image/dans-cu-copii-fericiti.png')",
+          opacity: 0.2,
+          filter: 'brightness(0.8)'
+        }}
+      />
+      {/* Overlay subtil pentru contrast */}
+      <div className="fixed inset-0 z-0 bg-black/20"></div>
+
+      {/* Logo-ul sticky care apare doar când se scrollează */}
+      {isScrolled && (
+        <Link href="/" className="sticky-logo">
+          <img
+            src="/image/logo.png"
+            alt="Logo"
+            width={80}
+            height={80}
+            className="object-contain"
+          />
+        </Link>
+      )}
 
       {/* Navigation */}
-      <div className="w-full fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-lg">
+      <div className={`w-full fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${isScrolled ? '-translate-y-full' : 'translate-y-0'}`}>
         {/* Desktop Navigation */}
         <div className="hidden md:block">
           <div className="max-w-7xl mx-auto flex justify-center px-10 py-6">
@@ -181,12 +164,12 @@ export default function HappyDancePage() {
       )}
 
       {/* Main Content - întreaga pagină cu video background */}
-      <div className="relative z-10 min-h-screen pt-20">
+      <div className="relative z-10 min-h-screen pt-20"> 
         {/* Prima secțiune - Hero cu video background */}
         <div className="flex items-center justify-center min-h-screen px-4 py-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* Gradient Frame */}
-            <div className="bg-gradient-to-r from-pink-200 to-blue-200 p-2 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-2xl backdrop-blur-sm">
+            <div className="bg-white p-2 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-2xl backdrop-blur-sm">
               {/* Title */}
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-pink mb-4 sm:mb-6 md:mb-8">
                 Happy Dance
@@ -206,7 +189,7 @@ export default function HappyDancePage() {
               <div className="mt-4 sm:mt-6 md:mt-8">
                 <Link
                   href="/#classes"
-                  className="inline-block bg-pink text-white text-sm sm:text-base md:text-xl font-bold px-2 sm:px-6 md:px-8 py-1.5 sm:py-3 md:py-4 rounded-full shadow-lg hover:bg-pink-600 transition-all duration-300 hover:scale-105 w-full max-w-xs sm:max-w-none"
+                  className="inline-block bg-pink text-white text-sm sm:text-base md:text-lg font-bold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full shadow-lg hover:bg-[#87CEEB] transition-all duration-300 hover:scale-105"
                 >
                   ← Înapoi la Cursuri
                 </Link>
@@ -266,8 +249,11 @@ export default function HappyDancePage() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+         </div>
+       </div>
+
+       {/* Footer */}
+       <FooterSection />
+     </div>
+   );
+ }

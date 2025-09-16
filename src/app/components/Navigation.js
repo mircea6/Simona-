@@ -18,8 +18,7 @@ function useMediaQuery(query) {
   return matches;
 }
 
-export default function Navigation() {
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function Navigation({ menuOpen, setMenuOpen }) {
   // Considerăm md ca 768px, deci mobile = sub 768px
   const isMobile = useMediaQuery('(max-width: 767px)');
 

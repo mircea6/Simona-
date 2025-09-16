@@ -35,7 +35,7 @@ export default function DesktopNav() {
       )}
       
       {/* Navigația normală cu logo */}
-      <div className="w-full">
+      <div className="w-full relative z-50">
         <div className="max-w-7xl mx-auto flex justify-center px-10 py-6">
           <nav className="flex gap-8 items-center justify-center">
             <a

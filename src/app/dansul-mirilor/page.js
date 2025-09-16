@@ -124,9 +124,22 @@ export default function DansulMirilorPage() {
         <>
            {/* Overlay cu blur pentru fundal */}
            <div 
-             className="fixed inset-0 bg-black bg-opacity-30 z-40 transition-all duration-300 ease-in-out"
+             className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out"
              onClick={() => setMenuOpen(false)}
            />
+           
+           {/* Logo-ul pe partea stângă când meniul e deschis */}
+           <div className="fixed top-4 left-4 z-[60]">
+             <Link href="/" onClick={() => setMenuOpen(false)}>
+               <img
+                 src="/image/logo.png"
+                 alt="Logo"
+                 width={60}
+                 height={60}
+                 className="object-contain cursor-pointer"
+               />
+             </Link>
+           </div>
            
            {/* Meniul propriu-zis */}
            <div className="fixed top-0 left-0 w-1/2 h-full bg-[#b8e0ff] z-50 transform transition-all duration-300 ease-in-out">

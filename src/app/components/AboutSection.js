@@ -2,7 +2,7 @@
 import useFormAnimation from '../hooks/useFormAnimation';
 import { useEffect, useState } from 'react';
 
-export default function AboutSection() {
+export default function AboutSection({ menuOpen = false }) {
   const [ref, isVisible] = useFormAnimation();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -19,7 +19,9 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-20 relative bg-cover bg-no-repeat h-screen"
+      className={`py-20 relative bg-cover bg-no-repeat h-screen transition-all duration-300 ${
+        menuOpen ? 'blur-sm' : 'blur-0'
+      }`}
       style={{
         backgroundImage: "url('/image/bg-about.png')",
         backgroundPosition: "center 20%"

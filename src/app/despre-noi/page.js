@@ -5,13 +5,25 @@ export default function DespreNoi() {
   return (
     <div>
       <Navigation />
-    <main className="min-h-screen bg-white py-16 px-4 flex flex-col items-center">
-      <h1 className="text-5xl font-extrabold text-pink mb-12 text-center animate-fade-in-left">
-        Despre noi
-      </h1>
+    <main 
+      className="min-h-screen py-16 px-4 flex flex-col items-center relative"
+      style={{
+        backgroundImage: "url('/image/note-muzicale-panglici.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Overlay pentru a îmbunătăți lizibilitatea */}
+      <div className="absolute inset-0 bg-white/80"></div>
       
-      {/* Container pentru carduri - flex pe desktop, coloane pe mobile */}
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-8">
+      <div className="relative z-10 w-full flex flex-col items-center">
+        <h1 className="text-5xl font-extrabold text-pink mb-12 text-center animate-fade-in-left">
+          Despre noi
+        </h1>
+        
+        {/* Container pentru carduri - flex pe desktop, coloane pe mobile */}
+        <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-8">
         <section className="flex-1 bg-pink-50 rounded-3xl shadow-lg p-10 animate-fade-in-left-delay-1">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Povestea Mimi Dance
@@ -76,6 +88,7 @@ export default function DespreNoi() {
             bine nevoile.
           </p>
         </section>
+        </div>
       </div>
     </main>
 

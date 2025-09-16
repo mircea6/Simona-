@@ -108,14 +108,6 @@ export default function LoadingScreen() {
         </div>
       </div>
 
-      {/* Loading dots at bottom */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
-        <div className="loading-dots flex justify-center space-x-2">
-          <div className="w-3 h-3 bg-white/70 rounded-full shadow-lg"></div>
-          <div className="w-3 h-3 bg-white/70 rounded-full shadow-lg"></div>
-          <div className="w-3 h-3 bg-white/70 rounded-full shadow-lg"></div>
-        </div>
-      </div>
     </div>
   );
 }

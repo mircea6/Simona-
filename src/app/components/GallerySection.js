@@ -31,8 +31,8 @@ export default function GallerySection({ menuOpen = false }) {
     
     // Initial setup - arrange slides in arc formation
     gsap.set(slides, { 
-      x: (i) => (i - currentIndex) * 200 + '%',
-      y: (i) => Math.abs(i - currentIndex) * 20,
+      x: (i) => (i - currentIndex) * 120 + '%',
+      y: (i) => Math.abs(i - currentIndex) * 15,
       scale: i => i === currentIndex ? 1 : 0.7,
       opacity: i => i === currentIndex ? 1 : 0.4,
       rotationY: i => i === currentIndex ? 0 : (i < currentIndex ? -30 : 30),
@@ -68,8 +68,8 @@ export default function GallerySection({ menuOpen = false }) {
 
     // Animate all slides to new positions with arc effect
     gsap.to(slides, {
-      x: (i) => (i - index) * 200 + '%',
-      y: (i) => Math.abs(i - index) * 20,
+      x: (i) => (i - index) * 120 + '%',
+      y: (i) => Math.abs(i - index) * 15,
       scale: i => i === index ? 1 : 0.7,
       opacity: i => i === index ? 1 : 0.4,
       rotationY: i => i === index ? 0 : (i < index ? -30 : 30),

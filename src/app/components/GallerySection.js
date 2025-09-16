@@ -29,13 +29,14 @@ export default function GallerySection({ menuOpen = false }) {
     const slider = sliderRef.current;
     const slides = slider.querySelectorAll('.gallery-slide');
     
-    // Initial setup - arrange slides horizontally with perspective
+    // Initial setup - arrange slides in arc formation
     gsap.set(slides, { 
-      x: (i) => (i - currentIndex) * 120 + '%',
-      scale: i => i === currentIndex ? 1 : 0.8,
-      opacity: i => i === currentIndex ? 1 : 0.6,
-      rotationY: i => i === currentIndex ? 0 : (i < currentIndex ? -15 : 15),
-      z: i => i === currentIndex ? 0 : -100
+      x: (i) => (i - currentIndex) * 200 + '%',
+      y: (i) => Math.abs(i - currentIndex) * 20,
+      scale: i => i === currentIndex ? 1 : 0.7,
+      opacity: i => i === currentIndex ? 1 : 0.4,
+      rotationY: i => i === currentIndex ? 0 : (i < currentIndex ? -30 : 30),
+      z: i => i === currentIndex ? 50 : -200
     });
 
     // ScrollTrigger animation
@@ -65,14 +66,15 @@ export default function GallerySection({ menuOpen = false }) {
     const slides = sliderRef.current?.querySelectorAll('.gallery-slide');
     if (!slides) return;
 
-    // Animate all slides to new positions with 3D effect
+    // Animate all slides to new positions with arc effect
     gsap.to(slides, {
-      x: (i) => (i - index) * 120 + '%',
-      scale: i => i === index ? 1 : 0.8,
-      opacity: i => i === index ? 1 : 0.6,
-      rotationY: i => i === index ? 0 : (i < index ? -15 : 15),
-      z: i => i === index ? 0 : -100,
-      duration: 0.8,
+      x: (i) => (i - index) * 200 + '%',
+      y: (i) => Math.abs(i - index) * 20,
+      scale: i => i === index ? 1 : 0.7,
+      opacity: i => i === index ? 1 : 0.4,
+      rotationY: i => i === index ? 0 : (i < index ? -30 : 30),
+      z: i => i === index ? 50 : -200,
+      duration: 1,
       ease: "power2.inOut",
       onComplete: () => {
         setCurrentIndex(index);
@@ -125,24 +127,32 @@ export default function GallerySection({ menuOpen = false }) {
         </div>
 
         {/* Image Slider */}
-        <div className="relative overflow-visible">
+        <div className="relative overflow-visible py-20">
           <div 
             ref={sliderRef}
-            className="gallery-slider relative h-96 md:h-[500px] overflow-visible rounded-3xl shadow-2xl bg-white"
-            style={{ perspective: '1000px' }}
+            className="gallery-slider relative h-96 md:h-[500px] overflow-visible"
+            style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
           >
             {galleryImages.map((image, index) => (
               <div
                 key={index}
-                className="gallery-slide absolute inset-0 cursor-pointer"
+                className="gallery-slide absolute cursor-pointer"
                 onClick={() => goToSlide(index)}
-                style={{ transformStyle: 'preserve-3d' }}
+                style={{ 
+                  transformStyle: 'preserve-3d',
+                  width: '300px',
+                  height: '400px',
+                  left: '50%',
+                  top: '50%',
+                  marginLeft: '-150px',
+                  marginTop: '-200px'
+                }}
               >
-                <div className="relative w-full h-full group">
+                <div className="relative w-full h-full group rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src={image}
                     alt={`Gallery image ${index + 1}`}
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">

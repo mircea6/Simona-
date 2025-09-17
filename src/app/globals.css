@@ -5,6 +5,90 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Ensure full width on mobile */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  body {
+    width: 100vw;
+    max-width: 100vw;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* iPhone SE (375x667) */
+@media (max-width: 375px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .text-3xl { font-size: 1.5rem; }
+  .text-2xl { font-size: 1.25rem; }
+  .text-xl { font-size: 1.125rem; }
+}
+
+/* iPhone XR (414x896) */
+@media (min-width: 376px) and (max-width: 414px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Samsung Galaxy A51/71 (412x914) */
+@media (min-width: 415px) and (max-width: 412px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* iPhone 12 Pro (390x844) */
+@media (min-width: 390px) and (max-width: 390px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* iPhone 14 Pro Max (430x932) */
+@media (min-width: 430px) and (max-width: 430px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* iPad Mini (768x1024) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .text-5xl { font-size: 2.5rem; }
+  .text-4xl { font-size: 2rem; }
+  .text-3xl { font-size: 1.75rem; }
+}
+
+/* iPad Air (820x1180) */
+@media (min-width: 820px) and (max-width: 1180px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* iPad Pro (1024x1366) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body {
+    font-size: 18px;
+  }
+}
+
 /* Disable animations on low-end devices to prevent crashes */
 @media (prefers-reduced-motion: reduce) {
   * {

@@ -151,9 +151,9 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="container max-w-2xl mx-auto px-4 relative">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-pink font-serif text-center px-2">Formular contact</h2>
+    <section id="contact" className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white">
+      <div className="container w-full max-w-2xl mx-auto px-2 md:px-4 relative">
+        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-pink font-serif text-center px-2">Formular contact</h2>
         
         {submitStatus === 'success' && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
@@ -184,7 +184,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 id="nume" 
                 value={formData.nume}
                 onChange={handleInputChange}
-                className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg focus:outline-none transition ${
+                className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 border-2 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base lg:text-lg focus:outline-none transition ${
                   errors.nume ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="Introduceți numele"
@@ -206,7 +206,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 id="prenume" 
                 value={formData.prenume}
                 onChange={handleInputChange}
-                className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg focus:outline-none transition ${
+                className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 border-2 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base lg:text-lg focus:outline-none transition ${
                   errors.prenume ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="Introduceți prenumele"
@@ -231,7 +231,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 id="email" 
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg focus:outline-none transition ${
+                className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 border-2 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base lg:text-lg focus:outline-none transition ${
                   errors.email ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="exemplu@email.com"
@@ -253,7 +253,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 id="telefon" 
                 value={formData.telefon}
                 onChange={handleInputChange}
-                className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg focus:outline-none transition ${
+                className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 border-2 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base lg:text-lg focus:outline-none transition ${
                   errors.telefon ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
                 }`}
                 placeholder="07xxxxxxxx"
@@ -278,7 +278,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
               value={formData.mesaj}
               onChange={handleInputChange}
               maxLength={500} 
-              className={`px-2 sm:px-4 py-1.5 sm:py-2 border-2 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg min-h-[60px] sm:min-h-[100px] focus:outline-none transition resize-none ${
+              className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 border-2 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base lg:text-lg min-h-[50px] sm:min-h-[80px] md:min-h-[100px] focus:outline-none transition resize-none ${
                 errors.mesaj ? 'border-red-500' : 'border-[#a7d8ff] focus:border-[#8bc5ff]'
               }`}
               placeholder="Scrieți mesajul dumneavoastră aici..."
@@ -315,7 +315,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             ref={buttonRef}
             type="submit" 
             disabled={isSubmitting}
-            className={`w-full text-sm sm:text-base md:text-lg font-semibold py-1.5 sm:py-3 rounded-full transition-all duration-700 ease-out mt-2 ${
+            className={`w-full text-xs sm:text-sm md:text-base lg:text-lg font-semibold py-2 sm:py-2.5 md:py-3 rounded-full transition-all duration-700 ease-out mt-2 ${
               isSubmitting 
                 ? 'bg-gray-400 text-white cursor-not-allowed' 
                 : 'bg-[#a7d8ff] text-white hover:bg-[#8bc5ff] shadow-lg'

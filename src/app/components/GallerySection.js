@@ -12,6 +12,19 @@ export default function GallerySection({ menuOpen = false }) {
   const sliderRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const width = window.innerWidth;
+      // Consider mobile for devices up to 768px, tablet for 768-1024px
+      setIsMobile(width < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Sample gallery images - replace with your actual images
   const galleryImages = [
@@ -30,10 +43,14 @@ export default function GallerySection({ menuOpen = false }) {
     const slides = slider.querySelectorAll('.gallery-slide');
     
     // Initial setup - arrange slides in arc formation
+    const width = window.innerWidth;
+    const isSmallMobile = width < 375;
+    const isMediumMobile = width >= 375 && width < 414;
+    
     gsap.set(slides, { 
-      x: (i) => (i - currentIndex) * 120 + '%',
-      y: (i) => Math.abs(i - currentIndex) * 15,
-      scale: i => i === currentIndex ? 1 : 0.7,
+      x: (i) => (i - currentIndex) * (isMobile ? (isSmallMobile ? 50 : isMediumMobile ? 55 : 60) : 120) + '%',
+      y: (i) => Math.abs(i - currentIndex) * (isMobile ? (isSmallMobile ? 6 : isMediumMobile ? 7 : 8) : 15),
+      scale: i => i === currentIndex ? 1 : (isMobile ? (isSmallMobile ? 0.9 : isMediumMobile ? 0.88 : 0.85) : 0.7),
       opacity: i => i === currentIndex ? 1 : 0.4,
       rotationY: i => i === currentIndex ? 0 : (i < currentIndex ? -30 : 30),
       z: i => i === currentIndex ? 50 : -200
@@ -67,10 +84,14 @@ export default function GallerySection({ menuOpen = false }) {
     if (!slides) return;
 
     // Animate all slides to new positions with arc effect
+    const width = window.innerWidth;
+    const isSmallMobile = width < 375;
+    const isMediumMobile = width >= 375 && width < 414;
+    
     gsap.to(slides, {
-      x: (i) => (i - index) * 120 + '%',
-      y: (i) => Math.abs(i - index) * 15,
-      scale: i => i === index ? 1 : 0.7,
+      x: (i) => (i - index) * (isMobile ? (isSmallMobile ? 50 : isMediumMobile ? 55 : 60) : 120) + '%',
+      y: (i) => Math.abs(i - index) * (isMobile ? (isSmallMobile ? 6 : isMediumMobile ? 7 : 8) : 15),
+      scale: i => i === index ? 1 : (isMobile ? (isSmallMobile ? 0.9 : isMediumMobile ? 0.88 : 0.85) : 0.7),
       opacity: i => i === index ? 1 : 0.4,
       rotationY: i => i === index ? 0 : (i < index ? -30 : 30),
       z: i => i === index ? 50 : -200,
@@ -96,7 +117,7 @@ export default function GallerySection({ menuOpen = false }) {
   return (
     <section 
       id="gallery" 
-      className={`py-20 h-full relative overflow-visible transition-all duration-300 z-0 ${
+      className={`py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen relative overflow-visible transition-all duration-300 z-0 mb-8 sm:mb-12 md:mb-0 ${
         menuOpen ? 'blur-sm' : 'blur-0'
       }`}
       style={{
@@ -115,22 +136,22 @@ export default function GallerySection({ menuOpen = false }) {
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-300 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold text-pink mb-6 text-center">
+      <div className="w-full px-2 md:max-w-7xl md:mx-auto md:px-4 relative z-10">
+        <div className="text-center mb-6 sm:mb-8 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-pink mb-3 sm:mb-4 md:mb-6 text-center">
             Galerie
           </h2>
-          <p className="text-2xl text-gray-700 text-center mb-8 font-semibold">
+          <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-gray-700 text-center mb-4 sm:mb-6 md:mb-8 font-semibold px-2 sm:px-4">
             Imagini din spectacole și antrenamentele noastre
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-pink to-blue mx-auto rounded-full"></div>
+          <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-1 bg-gradient-to-r from-pink to-blue mx-auto rounded-full"></div>
         </div>
 
         {/* Image Slider */}
-        <div className="relative overflow-visible py-20">
+        <div className="relative overflow-visible py-8 sm:py-12 md:py-20">
           <div 
             ref={sliderRef}
-            className="gallery-slider relative h-96 md:h-[500px] overflow-visible"
+            className="gallery-slider relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-visible"
             style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
           >
             {galleryImages.map((image, index) => (
@@ -140,12 +161,12 @@ export default function GallerySection({ menuOpen = false }) {
                 onClick={() => goToSlide(index)}
                 style={{ 
                   transformStyle: 'preserve-3d',
-                  width: '300px',
-                  height: '400px',
+                  width: isMobile ? (window.innerWidth < 375 ? '180px' : '200px') : '300px',
+                  height: isMobile ? (window.innerWidth < 375 ? '220px' : '250px') : '400px',
                   left: '50%',
                   top: '50%',
-                  marginLeft: '-150px',
-                  marginTop: '-200px'
+                  marginLeft: isMobile ? (window.innerWidth < 375 ? '-90px' : '-100px') : '-150px',
+                  marginTop: isMobile ? (window.innerWidth < 375 ? '-110px' : '-125px') : '-200px'
                 }}
               >
                 <div className="relative w-full h-full group rounded-2xl overflow-hidden shadow-2xl">
@@ -201,12 +222,6 @@ export default function GallerySection({ menuOpen = false }) {
           </div>
         </div>
 
-        {/* Auto-play indicator */}
-        <div className="text-center mt-6">
-          <p className="text-gray-600 text-sm">
-            Click pe imagini sau folosește săgețile pentru navigare
-          </p>
-        </div>
       </div>
     </section>
   );

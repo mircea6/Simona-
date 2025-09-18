@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useFormAnimation from '../hooks/useFormAnimation';
 
 export default function ContactSection() {
@@ -15,6 +15,17 @@ export default function ContactSection() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Hook-uri pentru animațiile individuale ale fiecărui câmp
   const [numeRef, numeVisible] = useFormAnimation();
@@ -151,8 +162,8 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white">
-      <div className="container w-full max-w-2xl mx-auto px-2 md:px-4 relative">
+    <section id="contact" className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white flex items-center justify-center">
+      <div className="container w-full max-w-2xl mx-auto px-2 md:px-4 relative flex flex-col justify-center min-h-[80vh] sm:min-h-[90vh] md:h-full">
         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-pink font-serif text-center px-2">Formular contact</h2>
         
         {submitStatus === 'success' && (
@@ -172,7 +183,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             <div 
               ref={numeRef}
               className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
-                numeVisible 
+                isMobile || numeVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-full'
               }`}
@@ -194,7 +205,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             <div 
               ref={prenumeRef}
               className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
-                prenumeVisible 
+                isMobile || prenumeVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-full'
               }`}
@@ -219,7 +230,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             <div 
               ref={emailRef}
               className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
-                emailVisible 
+                isMobile || emailVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-full'
               }`}
@@ -241,7 +252,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
             <div 
               ref={telefonRef}
               className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
-                telefonVisible 
+                isMobile || telefonVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-full'
               }`}
@@ -266,7 +277,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
           <div 
             ref={mesajRef}
             className={`flex flex-col transition-all duration-700 ease-out ${
-              mesajVisible 
+              isMobile || mesajVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-full'
             }`}
@@ -292,7 +303,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
           <div 
             ref={gdprRef}
             className={`flex flex-col transition-all duration-700 ease-out ${
-              gdprVisible 
+              isMobile || gdprVisible 
                 ? 'opacity-100 scale-100' 
                 : 'opacity-0 scale-75'
             }`}
@@ -320,7 +331,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 ? 'bg-gray-400 text-white cursor-not-allowed' 
                 : 'bg-[#a7d8ff] text-white hover:bg-[#8bc5ff] shadow-lg'
             } ${
-              buttonVisible 
+              isMobile || buttonVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-full'
             }`}

@@ -17,10 +17,10 @@ export default function CoursesSection() {
   }, []);
 
   return (
-    <section id="classes" className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white mb-8 sm:mb-12 md:mb-0">
+    <section id="classes" className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white mb-8 sm:mb-12 md:mb-0 flex items-center justify-center">
       <div 
         ref={ref}
-        className={`w-full max-w-6xl mx-auto px-2 md:px-4 relative ${
+        className={`w-full max-w-6xl mx-auto px-2 md:px-4 relative flex flex-col justify-center items-center min-h-[80vh] sm:min-h-[90vh] md:h-full ${
           isMobile 
             ? 'opacity-100 translate-x-0' 
             : `transition-all duration-700 ease-out ${

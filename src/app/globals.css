@@ -34,6 +34,23 @@ html, body {
   .text-3xl { font-size: 1.5rem; }
   .text-2xl { font-size: 1.25rem; }
   .text-xl { font-size: 1.125rem; }
+  
+  /* Optimizări pentru iPhone SE */
+  .gallery-slide {
+    width: 140px !important;
+    height: 200px !important;
+  }
+  
+  /* Navigation buttons positioning for iPhone SE - fixed at page margins */
+  .fixed.left-2 {
+    left: 4px !important;
+    position: fixed !important;
+  }
+  
+  .fixed.right-2 {
+    right: 4px !important;
+    position: fixed !important;
+  }
 }
 
 /* iPhone XR (414x896) */
@@ -41,12 +58,46 @@ html, body {
   body {
     font-size: 15px;
   }
+  
+  /* Optimizări pentru iPhone XR */
+  .gallery-slide {
+    width: 150px !important;
+    height: 220px !important;
+  }
+  
+  /* Navigation buttons positioning for iPhone XR - fixed at page margins */
+  .fixed.left-2 {
+    left: 6px !important;
+    position: fixed !important;
+  }
+  
+  .fixed.right-2 {
+    right: 6px !important;
+    position: fixed !important;
+  }
 }
 
 /* Samsung Galaxy A51/71 (412x914) */
-@media (min-width: 415px) and (max-width: 412px) {
+@media (min-width: 415px) and (max-width: 430px) {
   body {
     font-size: 15px;
+  }
+  
+  /* Optimizări pentru Samsung Galaxy */
+  .gallery-slide {
+    width: 160px !important;
+    height: 230px !important;
+  }
+  
+  /* Navigation buttons positioning for Samsung Galaxy - fixed at page margins */
+  .fixed.left-2 {
+    left: 8px !important;
+    position: fixed !important;
+  }
+  
+  .fixed.right-2 {
+    right: 8px !important;
+    position: fixed !important;
   }
 }
 
@@ -55,12 +106,60 @@ html, body {
   body {
     font-size: 15px;
   }
+  
+  /* Optimizări pentru iPhone 12 Pro */
+  .gallery-slide {
+    width: 160px !important;
+    height: 190px !important;
+  }
 }
 
 /* iPhone 14 Pro Max (430x932) */
 @media (min-width: 430px) and (max-width: 430px) {
   body {
     font-size: 16px;
+  }
+  
+  /* Optimizări pentru iPhone 14 Pro Max */
+  .gallery-slide {
+    width: 180px !important;
+    height: 210px !important;
+  }
+}
+
+/* Samsung Galaxy S8+ (360x740) */
+@media (min-width: 360px) and (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .gallery-slide {
+    width: 140px !important;
+    height: 170px !important;
+  }
+}
+
+/* Samsung Galaxy S20 Ultra (412x915) */
+@media (min-width: 412px) and (max-width: 412px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .gallery-slide {
+    width: 170px !important;
+    height: 200px !important;
+  }
+}
+
+/* Pixel 7 (412x915) */
+@media (min-width: 412px) and (max-width: 412px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .gallery-slide {
+    width: 170px !important;
+    height: 200px !important;
   }
 }
 
@@ -73,6 +172,29 @@ html, body {
   .text-5xl { font-size: 2.5rem; }
   .text-4xl { font-size: 2rem; }
   .text-3xl { font-size: 1.75rem; }
+  
+  /* Centrare perfectă pentru tablete */
+  #classes .flex {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Optimizări galerie pentru iPad Mini */
+  .gallery-slide {
+    width: 240px !important;
+    height: 350px !important;
+  }
+  
+  /* Navigation buttons positioning for iPad Mini - fixed at page margins */
+  .fixed.left-4 {
+    left: 12px !important;
+    position: fixed !important;
+  }
+  
+  .fixed.right-4 {
+    right: 12px !important;
+    position: fixed !important;
+  }
 }
 
 /* iPad Air (820x1180) */
@@ -80,12 +202,133 @@ html, body {
   body {
     font-size: 17px;
   }
+  
+  /* Centrare perfectă pentru tablete */
+  #classes .flex {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Optimizări galerie pentru iPad Air */
+  .gallery-slide {
+    width: 270px !important;
+    height: 400px !important;
+  }
+  
+  /* Navigation buttons positioning for iPad Air - fixed at page margins */
+  .fixed.left-6 {
+    left: 16px !important;
+    position: fixed !important;
+  }
+  
+  .fixed.right-6 {
+    right: 16px !important;
+    position: fixed !important;
+  }
 }
 
 /* iPad Pro (1024x1366) */
 @media (min-width: 1024px) and (max-width: 1366px) {
   body {
     font-size: 18px;
+  }
+  
+  /* Centrare perfectă pentru tablete */
+  #classes .flex {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Optimizări galerie pentru iPad Pro */
+  .gallery-slide {
+    width: 290px !important;
+    height: 450px !important;
+  }
+  
+  /* Navigation buttons positioning for iPad Pro - fixed at page margins */
+  .fixed.left-8 {
+    left: 20px !important;
+    position: fixed !important;
+  }
+  
+  .fixed.right-8 {
+    right: 20px !important;
+    position: fixed !important;
+  }
+}
+
+/* Surface Pro 7 (912x1368) */
+@media (min-width: 912px) and (max-width: 1368px) {
+  body {
+    font-size: 17px;
+  }
+  
+  .gallery-slide {
+    width: 280px !important;
+    height: 350px !important;
+  }
+}
+
+/* Surface Duo (540x720) */
+@media (min-width: 540px) and (max-width: 720px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .gallery-slide {
+    width: 200px !important;
+    height: 250px !important;
+  }
+}
+
+/* Galaxy Z Fold 5 (374x932) */
+@media (min-width: 374px) and (max-width: 374px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .gallery-slide {
+    width: 150px !important;
+    height: 180px !important;
+  }
+}
+
+/* Asus Zenbook Fold (2560x1920) */
+@media (min-width: 2560px) and (max-width: 1920px) {
+  body {
+    font-size: 20px;
+  }
+  
+  .gallery-slide {
+    width: 400px !important;
+    height: 500px !important;
+  }
+}
+
+/* Perfect centering for all devices */
+@media (min-width: 1024px) {
+  #gallery, #contact {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  #gallery .w-full, #contact .container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Navigation buttons positioning for desktop - fixed at page margins */
+  .fixed.left-8 {
+    left: 24px !important;
+    position: fixed !important;
+  }
+  
+  .fixed.right-8 {
+    right: 24px !important;
+    position: fixed !important;
   }
 }
 
@@ -95,6 +338,72 @@ html, body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Performance optimizations for low-end devices */
+@media (max-width: 480px) {
+  .gallery-slide {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  
+  /* Reduce complex animations on small screens */
+  .gallery-slider {
+    transform-style: preserve-3d;
+  }
+  
+  /* Disable slide animations on mobile for better performance */
+  .transition-all {
+    transition: none !important;
+  }
+  
+  /* Ensure all content is visible on mobile */
+  .opacity-0 {
+    opacity: 1 !important;
+  }
+  
+  .translate-x-full,
+  .-translate-x-full,
+  .translate-y-full {
+    transform: translateX(0) translateY(0) !important;
+  }
+  
+  /* Perfect centering for mobile */
+  #gallery, #contact {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  #gallery .w-full, #contact .container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+/* Optimizations for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .gallery-slide {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  
+  /* Perfect centering for tablets */
+  #gallery, #contact {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  #gallery .w-full, #contact .container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 }
 

@@ -17,7 +17,7 @@ export default function GallerySection({ menuOpen = false }) {
   useEffect(() => {
     const checkMobile = () => {
       const width = window.innerWidth;
-      // Consider mobile for devices up to 768px, tablet for 768-1024px
+      // Consider mobile for devices up to 768px, tablet for 768-1024px, desktop for 1024px+
       setIsMobile(width < 768);
     };
     
@@ -43,16 +43,12 @@ export default function GallerySection({ menuOpen = false }) {
     const slides = slider.querySelectorAll('.gallery-slide');
     
     // Initial setup - arrange slides in arc formation
-    const width = window.innerWidth;
-    const isSmallMobile = width < 375;
-    const isMediumMobile = width >= 375 && width < 414;
-    
-    gsap.set(slides, { 
-      x: (i) => (i - currentIndex) * (isMobile ? (isSmallMobile ? 50 : isMediumMobile ? 55 : 60) : 120) + '%',
-      y: (i) => Math.abs(i - currentIndex) * (isMobile ? (isSmallMobile ? 6 : isMediumMobile ? 7 : 8) : 15),
-      scale: i => i === currentIndex ? 1 : (isMobile ? (isSmallMobile ? 0.9 : isMediumMobile ? 0.88 : 0.85) : 0.7),
+    gsap.set(slides, {
+      x: (i) => (i - currentIndex) * (isMobile ? 70 : 130) + '%',
+      y: (i) => Math.abs(i - currentIndex) * (isMobile ? 10 : 18),
+      scale: i => i === currentIndex ? 1 : (isMobile ? 0.8 : 0.65),
       opacity: i => i === currentIndex ? 1 : 0.4,
-      rotationY: i => i === currentIndex ? 0 : (i < currentIndex ? -30 : 30),
+      rotationY: i => i === currentIndex ? 0 : (i < currentIndex ? -35 : 35),
       z: i => i === currentIndex ? 50 : -200
     });
 
@@ -84,16 +80,12 @@ export default function GallerySection({ menuOpen = false }) {
     if (!slides) return;
 
     // Animate all slides to new positions with arc effect
-    const width = window.innerWidth;
-    const isSmallMobile = width < 375;
-    const isMediumMobile = width >= 375 && width < 414;
-    
     gsap.to(slides, {
-      x: (i) => (i - index) * (isMobile ? (isSmallMobile ? 50 : isMediumMobile ? 55 : 60) : 120) + '%',
-      y: (i) => Math.abs(i - index) * (isMobile ? (isSmallMobile ? 6 : isMediumMobile ? 7 : 8) : 15),
-      scale: i => i === index ? 1 : (isMobile ? (isSmallMobile ? 0.9 : isMediumMobile ? 0.88 : 0.85) : 0.7),
+      x: (i) => (i - index) * (isMobile ? 70 : 130) + '%',
+      y: (i) => Math.abs(i - index) * (isMobile ? 10 : 18),
+      scale: i => i === index ? 1 : (isMobile ? 0.8 : 0.65),
       opacity: i => i === index ? 1 : 0.4,
-      rotationY: i => i === index ? 0 : (i < index ? -30 : 30),
+      rotationY: i => i === index ? 0 : (i < index ? -35 : 35),
       z: i => i === index ? 50 : -200,
       duration: 1,
       ease: "power2.inOut",
@@ -117,7 +109,7 @@ export default function GallerySection({ menuOpen = false }) {
   return (
     <section 
       id="gallery" 
-      className={`py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen relative overflow-visible transition-all duration-300 z-0 mb-8 sm:mb-12 md:mb-0 ${
+      className={`py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen relative overflow-visible transition-all duration-300 z-0 mb-8 sm:mb-12 md:mb-0 flex items-center justify-center ${
         menuOpen ? 'blur-sm' : 'blur-0'
       }`}
       style={{
@@ -136,7 +128,7 @@ export default function GallerySection({ menuOpen = false }) {
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-300 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="w-full px-2 md:max-w-7xl md:mx-auto md:px-4 relative z-10">
+      <div className="w-full px-2 md:max-w-7xl md:mx-auto md:px-4 relative z-10 flex flex-col justify-center min-h-[80vh] sm:min-h-[90vh] md:h-full">
         <div className="text-center mb-6 sm:mb-8 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-pink mb-3 sm:mb-4 md:mb-6 text-center">
             Galerie
@@ -151,7 +143,7 @@ export default function GallerySection({ menuOpen = false }) {
         <div className="relative overflow-visible py-8 sm:py-12 md:py-20">
           <div 
             ref={sliderRef}
-            className="gallery-slider relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-visible"
+            className="gallery-slider relative h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] overflow-visible"
             style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
           >
             {galleryImages.map((image, index) => (
@@ -161,12 +153,12 @@ export default function GallerySection({ menuOpen = false }) {
                 onClick={() => goToSlide(index)}
                 style={{ 
                   transformStyle: 'preserve-3d',
-                  width: isMobile ? (window.innerWidth < 375 ? '180px' : '200px') : '300px',
-                  height: isMobile ? (window.innerWidth < 375 ? '220px' : '250px') : '400px',
+                  width: isMobile ? '160px' : '280px',
+                  height: isMobile ? '240px' : '420px',
                   left: '50%',
                   top: '50%',
-                  marginLeft: isMobile ? (window.innerWidth < 375 ? '-90px' : '-100px') : '-150px',
-                  marginTop: isMobile ? (window.innerWidth < 375 ? '-110px' : '-125px') : '-200px'
+                  marginLeft: isMobile ? '-80px' : '-140px',
+                  marginTop: isMobile ? '-120px' : '-210px'
                 }}
               >
                 <div className="relative w-full h-full group rounded-2xl overflow-hidden shadow-2xl">
@@ -183,46 +175,45 @@ export default function GallerySection({ menuOpen = false }) {
               </div>
             ))}
           </div>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            disabled={isAnimating}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 disabled:opacity-50"
-          >
-            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          <button
-            onClick={nextSlide}
-            disabled={isAnimating}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 disabled:opacity-50"
-          >
-            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-3">
-            {galleryImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                disabled={isAnimating}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-pink scale-125' 
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
         </div>
 
+        {/* Dots Indicator */}
+        <div className="flex justify-center mt-8 space-x-4 sm:space-x-5 md:space-x-6">
+          {galleryImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              disabled={isAnimating}
+              className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-pink scale-125' 
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+            />
+          ))}
+        </div>
       </div>
+
+      {/* Navigation Arrows - sticky only in gallery section */}
+      <button
+        onClick={prevSlide}
+        disabled={isAnimating}
+        className="fixed right-2 sm:right-4 md:right-6 lg:right-8 xl:right-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 disabled:opacity-50 z-50"
+      >
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        disabled={isAnimating}
+        className="fixed left-2 sm:left-4 md:left-6 lg:left-8 xl:left-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 disabled:opacity-50 z-50"
+      >
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
     </section>
   );
 }

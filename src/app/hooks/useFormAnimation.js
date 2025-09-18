@@ -6,10 +6,10 @@ export default function useFormAnimation(threshold = 0.1) {
   const ref = useRef(null);
 
   useEffect(() => {
-    // Check if we're on mobile
-    const isMobile = window.innerWidth <= 480;
+    // Check if we're on mobile or tablet
+    const isMobile = window.innerWidth <= 768;
     
-    // On mobile, make elements visible immediately
+    // On mobile and tablet, make elements visible immediately for better performance
     if (isMobile) {
       setIsVisible(true);
       return;

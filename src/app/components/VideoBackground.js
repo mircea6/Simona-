@@ -54,7 +54,7 @@ export default function VideoBackground() {
       loop
       playsInline
       preload="auto"
-      className="hero-video absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none blur-[8px] brightness-90 opacity-80 transition-all"
+      className="hero-video absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none blur-[10px] brightness-90 opacity-90 transition-all"
     >
       <source src="/image/intro.mp4" type="video/mp4" />
       Your browser does not support the video tag.

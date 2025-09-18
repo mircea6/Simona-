@@ -40,13 +40,13 @@ export default function DesktopNav() {
           <nav className="flex gap-2 sm:gap-4 md:gap-6 lg:gap-8 items-center justify-center">
             <a
               href={pathname === '/despre-noi' ? '/#about' : '#about'}
-              className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white rounded-full text-gray-900 text-sm sm:text-base md:text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
+              className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white rounded-full text-gray-900 text-sm sm:text-base md:text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-sky-300 hover:text-white hover:border-sky-300 focus:bg-sky-300 focus:text-white focus:border-sky-300 no-underline"
             >
               Despre noi
             </a>
             <a
               href={pathname === '/despre-noi' ? '/#classes' : '#classes'}
-              className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white rounded-full text-gray-900 text-sm sm:text-base md:text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
+              className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white rounded-full text-gray-900 text-sm sm:text-base md:text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-sky-300 hover:text-white hover:border-sky-300 focus:bg-sky-300 focus:text-white focus:border-sky-300 no-underline"
             >
               Cursuri
             </a>
@@ -62,13 +62,13 @@ export default function DesktopNav() {
             </Link>
             <a
               href={pathname === '/despre-noi' ? '/#gallery' : '#gallery'}
-              className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white rounded-full text-gray-900 text-sm sm:text-base md:text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
+              className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white rounded-full text-gray-900 text-sm sm:text-base md:text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-sky-300 hover:text-white hover:border-sky-300 focus:bg-sky-300 focus:text-white focus:border-sky-300 no-underline"
             >
               Galerie
             </a>
             <a
               href={pathname === '/despre-noi' ? '/#contact' : '#contact'}
-              className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white rounded-full text-gray-900 text-sm sm:text-base md:text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-400 hover:text-white hover:border-pink-400 focus:bg-pink-400 focus:text-white focus:border-pink-400 no-underline"
+              className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white rounded-full text-gray-900 text-sm sm:text-base md:text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-sky-300 hover:text-white hover:border-sky-300 focus:bg-sky-300 focus:text-white focus:border-sky-300 no-underline"
             >
               Contact
             </a>

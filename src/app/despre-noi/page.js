@@ -80,6 +80,26 @@ export default function DespreNoi() {
             private, cat si de stat, acestea avand diferite sisteme aducationale
             precum Waldorf, Montessori sau cele clasice.
           </p>
+        
+          <div className="text-sm text-gray-700 mb-6">
+            <ul className="list-disc list-inside space-y-2">
+              <li>Montessori Land 1</li>
+              <li>Montessori Land 2</li>
+              <li>Ana Lugojana</li> 
+              <li>Ana Lugojana 2</li>
+              <li>Ana Lugojana 3</li>
+              <li>Ana Lugojana 4</li>
+              <li>ABCDINO</li>
+              <li>Clubul Diandra</li>
+              <li>Exploria</li>
+              <li>Liebe kinder 1</li>
+              <li>Liebe kinder 2</li>
+              <li>Liebe kinder 3</li>
+              <li>Odyssey Kindergarten</li>
+              <li>Kid2Kids</li>
+            </ul>
+          </div>
+          
           <p className="text-lg text-gray-700 mb-6">
             De la educatia bazata pe explorare si creativitate, pana la invatarea
             structurata si orientata pe performanta, diversitatea sistemelor

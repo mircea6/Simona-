@@ -182,14 +182,22 @@ export default function HappyDancePage() {
         <div className="flex items-center justify-center min-h-screen px-4 py-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* Gradient Frame */}
-            <div className="bg-white p-2 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-2xl backdrop-blur-sm">
+            <div 
+              className="p-8 sm:p-12 md:p-16 lg:p-20 rounded-2xl "
+              style={{
+                backgroundImage: "url('/image/Frame1.png')",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center'
+              }}
+            >
               {/* Title */}
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-pink mb-4 sm:mb-6 md:mb-8" style={{ fontFamily: 'Courgette, cursive' }}>
                 Happy Dance
               </h1>
               
               {/* Content */}
-              <div className="bg-white/90 rounded-xl sm:rounded-2xl p-2 sm:p-6 md:p-8 shadow-lg">
+              <div className="rounded-xl sm:rounded-2xl p-2 sm:p-6 md:p-8">
                 <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium" style={{ fontFamily: 'Dancing Script, cursive' }}>
                   Conceptul nostru are la baza pasi de dans sportiv (latino și de societate) combinați cu dans modern. 
                   Prin joc și ritm, copiii învață pași simpli, își dezvoltă coordonarea și simțul muzical, dar mai ales 

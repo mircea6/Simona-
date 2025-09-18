@@ -109,49 +109,41 @@ export default function ContactSection() {
     setSubmitStatus('');
 
     try {
-      const emailSubject = `Mesaj nou de la ${formData.nume} ${formData.prenume} - Mimi Dance Academy`;
-      
-      const emailBody = `Mesaj nou de la formularul de contact:
+      // Trimite datele către API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nume: formData.nume,
+          prenume: formData.prenume,
+          email: formData.email,
+          telefon: formData.telefon,
+          mesaj: formData.mesaj
+        }),
+      });
 
-Nume: ${formData.nume}
-Prenume: ${formData.prenume}
-Email: ${formData.email}
-Telefon: ${formData.telefon}
+      const result = await response.json();
 
-Mesaj:
-${formData.mesaj}
-
----
-Trimis prin formularul de contact Mimi Dance Academy
-Data: ${new Date().toLocaleString('ro-RO')}`;
-
-      // Encodare pentru mailto
-      const encodedSubject = encodeURIComponent(emailSubject);
-      const encodedBody = encodeURIComponent(emailBody);
-      
-      // Adresa de email
-      const emailAddress = 'academy.mimidance@gmail.com';
-      
-      // URL mailto
-      const mailtoUrl = `mailto:${emailAddress}?subject=${encodedSubject}&body=${encodedBody}`;
-      
-      // Deschidere client email
-      window.location.href = mailtoUrl;
-      
-      setSubmitStatus('success');
-      
-      // Reset form după 2 secunde
-      setTimeout(() => {
-        setFormData({
-          nume: '',
-          prenume: '',
-          email: '',
-          telefon: '',
-          mesaj: '',
-          gdpr: false
-        });
-        setSubmitStatus('');
-      }, 2000);
+      if (response.ok) {
+        setSubmitStatus('success');
+        
+        // Reset form după 2 secunde
+        setTimeout(() => {
+          setFormData({
+            nume: '',
+            prenume: '',
+            email: '',
+            telefon: '',
+            mesaj: '',
+            gdpr: false
+          });
+          setSubmitStatus('');
+        }, 2000);
+      } else {
+        throw new Error(result.error || 'A apărut o eroare la trimiterea mesajului');
+      }
 
     } catch (error) {
       setSubmitStatus('error');

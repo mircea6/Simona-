@@ -46,7 +46,7 @@ export default function CoursesSection() {
             </h3>
             <a href="/happy-dance" className="w-full">
               <div 
-                className="flex flex-col items-center bg-white rounded-lg sm:rounded-2xl lg:rounded-3xl shadow-lg min-h-[60px] sm:min-h-[120px] md:min-h-[200px] lg:min-h-[250px] xl:min-h-[300px] w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+                className="flex flex-col items-center bg-white rounded-lg sm:rounded-2xl lg:rounded-3xl shadow-lg min-h-[60px] sm:min-h-[120px] md:min-h-[200px] lg:min-h-[250px] xl:min-h-[300px] w-2/3 sm:w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
                 style={{ backgroundImage: "url('/image/dans-cu-copii-fericiti.png')" }}
               >
               </div>
@@ -60,7 +60,7 @@ export default function CoursesSection() {
             </h3>
             <a href="/magic-ribbons" className="w-full">
               <div 
-                className="flex flex-col items-center bg-white rounded-lg sm:rounded-2xl lg:rounded-3xl shadow-lg min-h-[60px] sm:min-h-[120px] md:min-h-[200px] lg:min-h-[250px] xl:min-h-[300px] w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+                className="flex flex-col items-center bg-white rounded-lg sm:rounded-2xl lg:rounded-3xl shadow-lg min-h-[60px] sm:min-h-[120px] md:min-h-[200px] lg:min-h-[250px] xl:min-h-[300px] w-2/3 sm:w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
                 style={{ backgroundImage: "url('/image/dans-cu-panglici.png')" }}
               >
               </div>
@@ -74,7 +74,7 @@ export default function CoursesSection() {
             </h3>
             <a href="/dansul-mirilor" className="w-full">
               <div 
-                className="flex flex-col items-center bg-white rounded-lg sm:rounded-2xl lg:rounded-3xl shadow-lg min-h-[60px] sm:min-h-[120px] md:min-h-[200px] lg:min-h-[250px] xl:min-h-[300px] w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+                className="flex flex-col items-center bg-white rounded-lg sm:rounded-2xl lg:rounded-3xl shadow-lg min-h-[60px] sm:min-h-[120px] md:min-h-[200px] lg:min-h-[250px] xl:min-h-[300px] w-2/3 sm:w-full mx-auto justify-center aspect-[3/4] bg-cover bg-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
                 style={{ backgroundImage: "url('/image/vals-pe-dansul-mirilor.png')" }}
               >
               </div>

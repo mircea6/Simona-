@@ -43,7 +43,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         <>
           {/* Overlay pentru fundal */}
            <div
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out"
+              className="fixed inset-0 bg-black/20 backdrop-blur-md z-40 transition-all duration-300 ease-in-out"
               onClick={() => setMenuOpen(false)}
             />
 

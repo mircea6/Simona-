@@ -110,7 +110,7 @@ export default function GallerySection({ menuOpen = false }) {
     <section 
       id="gallery" 
       className={`py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen relative overflow-visible transition-all duration-300 z-0 mb-8 sm:mb-12 md:mb-0 flex items-center justify-center ${
-        menuOpen ? 'blur-sm' : 'blur-0'
+        menuOpen ? 'blur-md' : 'blur-0'
       }`}
       style={{
         backgroundImage: "url('/image/note-muzicale-panglici.png')",

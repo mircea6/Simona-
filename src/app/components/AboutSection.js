@@ -20,7 +20,7 @@ export default function AboutSection({ menuOpen = false }) {
     <section
       id="about"
       className={`py-16 sm:py-20 md:py-20 relative bg-cover bg-no-repeat min-h-[80vh] sm:min-h-[90vh] md:h-screen transition-all duration-300 mb-8 sm:mb-12 md:mb-0 ${
-        menuOpen ? 'blur-sm' : 'blur-0'
+        menuOpen ? 'blur-md' : 'blur-10'
       }`}
       style={{
         backgroundImage: "url('/image/bg-about.png')",

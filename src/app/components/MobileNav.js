@@ -47,14 +47,14 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
               onClick={() => setMenuOpen(false)}
             />
 
-          {/* Logo-ul pe partea stângă când meniul e deschis */}
-          <div className="fixed top-4 left-4 z-[60]">
+          {/* Logo-ul centrat când meniul e deschis */}
+          <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-[60]">
             <Link href="/" onClick={() => setMenuOpen(false)}>
               <Image
                 src="/image/logo.png"
                 alt="Logo"
-                width={60}
-                height={60}
+                width={100}
+                height={100}
                 className="object-contain cursor-pointer"
                 priority
               />
@@ -62,33 +62,37 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
           </div>
 
           {/* Meniul propriu-zis */}
-          <div className="fixed top-0 left-0 w-1/2 h-full bg-[#b8e0ff] z-50 transform transition-all duration-300 ease-in-out">
-            <div className="flex flex-col gap-6 text-white font-semibold text-lg pt-20 px-6">
+          <div className="fixed top-0 left-0 w-1/2 h-full bg-white z-50 transform transition-all duration-300 ease-in-out">
+            <div className="flex flex-col gap-8 pt-45 px-6">
               <Link
                 href={pathname === "/despre-noi" ? "/#about" : "#about"}
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+                className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
+                style={{ fontFamily: 'Dancing Script, cursive' }}
               >
                 Despre noi
               </Link>
               <Link
                 href={pathname === "/despre-noi" ? "/#classes" : "#classes"}
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+                className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
+                style={{ fontFamily: 'Dancing Script, cursive' }}
               >
                 Cursuri
               </Link>
               <Link
                 href={pathname === "/despre-noi" ? "/#gallery" : "#gallery"}
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+                className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
+                style={{ fontFamily: 'Dancing Script, cursive' }}
               >
                 Galerie
               </Link>
               <Link
                 href={pathname === "/despre-noi" ? "/#contact" : "#contact"}
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
+                className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
+                style={{ fontFamily: 'Dancing Script, cursive' }}
               >
                 Contact
               </Link>

@@ -82,7 +82,7 @@ export default function LoadingScreen() {
         <div className="text-center mt-8 w-full">
           <h1 className="text-white text-3xl md:text-4xl font-black tracking-wider drop-shadow-2xl mb-2" 
               style={{ 
-                fontFamily: 'Oswald, Montserrat, Poppins, sans-serif',
+                fontFamily: 'Courgette, cursive',
                 textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
                 letterSpacing: '0.1em',
                 fontWeight: '900'
@@ -92,7 +92,7 @@ export default function LoadingScreen() {
           
           <p className="text-white/90 text-lg md:text-xl font-medium mb-1" 
              style={{ 
-               fontFamily: 'Montserrat, Poppins, sans-serif',
+               fontFamily: 'Dancing Script, cursive',
                textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
              }}>
             by
@@ -100,7 +100,7 @@ export default function LoadingScreen() {
           
           <p className="text-white text-xl md:text-2xl font-bold" 
              style={{ 
-               fontFamily: 'Montserrat, Poppins, sans-serif',
+               fontFamily: 'Dancing Script, cursive',
                textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
              }}>
             Simona Moise

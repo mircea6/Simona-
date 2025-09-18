@@ -40,18 +40,18 @@ export default function FooterSection() {
                 />
               </Link>
               <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold text-gray-800 font-serif">Mimi Dance</h3>
-                <p className="text-lg text-gray-700 font-serif">ACADEMY</p>
+                <h3 className="text-2xl font-bold text-gray-800 font-serif" style={{ fontFamily: 'Courgette, cursive' }}>Mimi Dance</h3>
+                <p className="text-lg text-gray-700 font-serif" style={{ fontFamily: 'Dancing Script, cursive' }}>ACADEMY</p>
               </div>
             </div>
-            <p className="text-gray-700 text-center lg:text-left">
+            <p className="text-gray-700 text-center lg:text-left" style={{ fontFamily: 'Dancing Script, cursive' }}>
               Dezvoltare prin artă!
             </p>
           </div>
 
           {/* Useful Links Section */}
           <div>
-            <h4 className="text-lg font-bold text-gray-800 font-serif mb-4">Link-uri utile</h4>
+            <h4 className="text-lg font-bold text-gray-800 font-serif mb-4" style={{ fontFamily: 'Courgette, cursive' }}>Link-uri utile</h4>
             <ul className="space-y-2">
               <li>
                 <a href="/politica-confidentialitate" className="text-gray-700 hover:text-pink-600 transition-colors">
@@ -68,14 +68,14 @@ export default function FooterSection() {
 
           {/* Contact Section */}
           <div>
-            <h4 className="text-lg font-bold text-gray-800 font-serif mb-4">Contact</h4>
+            <h4 className="text-lg font-bold text-gray-800 font-serif mb-4" style={{ fontFamily: 'Courgette, cursive' }}>Contact</h4>
             <div className="space-y-2 mb-4">
               <p className="text-gray-700">Tel. Contact: 0766694224</p>
               <p className="text-gray-700">E-mail: academy.mimidance@gmail.com</p>
             </div>
 
             <div>
-              <h5 className="font-bold text-gray-800 mb-2">Program de funcționare:</h5>
+              <h5 className="font-bold text-gray-800 mb-2" style={{ fontFamily: 'Courgette, cursive' }}>Program de funcționare:</h5>
               <div className="space-y-1">
                 <p className="text-gray-700">L-V: 8:00-18:00</p>
                 <p className="text-gray-700">S-D: Liber</p>
@@ -85,8 +85,8 @@ export default function FooterSection() {
 
           {/* Newsletter Section */}
           <div>
-            <h4 className="text-lg font-bold text-gray-800 font-serif mb-4">Newsletter</h4>
-            <p className="text-gray-700 mb-4">
+            <h4 className="text-lg font-bold text-gray-800 font-serif mb-4" style={{ fontFamily: 'Courgette, cursive' }}>Newsletter</h4>
+            <p className="text-gray-700 mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
               Abonează-te la newsletter pentru a avea acces la ultimele noutăți.
             </p>
 

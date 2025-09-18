@@ -184,13 +184,13 @@ export default function HappyDancePage() {
             {/* Gradient Frame */}
             <div className="bg-white p-2 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-2xl backdrop-blur-sm">
               {/* Title */}
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-pink mb-4 sm:mb-6 md:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-pink mb-4 sm:mb-6 md:mb-8" style={{ fontFamily: 'Courgette, cursive' }}>
                 Happy Dance
               </h1>
               
               {/* Content */}
               <div className="bg-white/90 rounded-xl sm:rounded-2xl p-2 sm:p-6 md:p-8 shadow-lg">
-                <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium">
+                <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium" style={{ fontFamily: 'Dancing Script, cursive' }}>
                   Conceptul nostru are la baza pasi de dans sportiv (latino și de societate) combinați cu dans modern. 
                   Prin joc și ritm, copiii învață pași simpli, își dezvoltă coordonarea și simțul muzical, dar mai ales 
                   descoperă cât de frumos este să-ți exprimi emoțiile prin dans. Atmosfera este veselă, prietenoasă și 
@@ -217,21 +217,21 @@ export default function HappyDancePage() {
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Secțiunea stânga */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-2 sm:p-6 md:p-8 shadow-xl">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-pink mb-4 sm:mb-6">Beneficiile Happy Dance</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-pink mb-4 sm:mb-6" style={{ fontFamily: 'Courgette, cursive' }}>Beneficiile Happy Dance</h2>
                 <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg text-gray-700">
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-pink rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                     Dezvoltă coordonarea și simțul muzical
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-pink rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                     Îmbunătățește încrederea în sine
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-pink rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                     Creează atmosferă veselă și prietenoasă
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-pink rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                     Exprimă emoțiile prin dans
                   </li>
@@ -240,21 +240,21 @@ export default function HappyDancePage() {
 
               {/* Secțiunea dreapta */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-2 sm:p-6 md:p-8 shadow-xl">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-pink mb-4 sm:mb-6">Ce înveți la Happy Dance</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-pink mb-4 sm:mb-6" style={{ fontFamily: 'Courgette, cursive' }}>Ce înveți la Happy Dance</h2>
                 <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg text-gray-700">
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-400 rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                     Pași de dans sportiv (latino și de societate)
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-400 rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                     Elemente de dans modern
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-400 rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                     Ritm și sincronizare
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-400 rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
                     Exprimare artistică prin mișcare
                   </li>

@@ -185,13 +185,13 @@ export default function DansulMirilorPage() {
             {/* Gradient Frame */}
             <div className="bg-white p-2 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-2xl backdrop-blur-sm">
               {/* Title */}
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-pink mb-4 sm:mb-6 md:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-pink mb-4 sm:mb-6 md:mb-8" style={{ fontFamily: 'Courgette, cursive' }}>
                 Dansul Mirilor
               </h1>
               
               {/* Content */}
               <div className="bg-white/90 rounded-xl sm:rounded-2xl p-2 sm:p-6 md:p-8 shadow-lg">
-                <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium">
+                <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium" style={{ fontFamily: 'Dancing Script, cursive' }}>
                   Primul dans este un moment unic, încărcat de emoție și semnificație. Noi îl transformăm într-o 
                   experiență memorabilă, creând coregrafii elegante care pun în valoare frumusețea momentului și 
                   povestea voastră. Fie că vă doriți un dans clasic, modern sau plin de surprize, ținem cont de 
@@ -218,21 +218,21 @@ export default function DansulMirilorPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Secțiunea stânga */}
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
-                <h2 className="text-4xl font-bold text-pink mb-6">Beneficiile Dansului Mirilor</h2>
+                <h2 className="text-4xl font-bold text-pink mb-6" style={{ fontFamily: 'Courgette, cursive' }}>Beneficiile Dansului Mirilor</h2>
                 <ul className="space-y-4 text-lg text-gray-700">
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-pink rounded-full mr-3"></span>
                     Moment unic și memorabil
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-pink rounded-full mr-3"></span>
                     Coregrafii elegante personalizate
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-pink rounded-full mr-3"></span>
                     Povestea voastră pusă în valoare
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-pink rounded-full mr-3"></span>
                     Experiență plină de emoții
                   </li>
@@ -241,21 +241,21 @@ export default function DansulMirilorPage() {
 
               {/* Secțiunea dreapta */}
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
-                <h2 className="text-4xl font-bold text-pink mb-6">Stiluri de Dans</h2>
+                <h2 className="text-4xl font-bold text-pink mb-6" style={{ fontFamily: 'Courgette, cursive' }}>Stiluri de Dans</h2>
                 <ul className="space-y-4 text-lg text-gray-700">
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-blue-400 rounded-full mr-3"></span>
                     Dans clasic și elegant
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-blue-400 rounded-full mr-3"></span>
                     Dans modern și contemporan
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-blue-400 rounded-full mr-3"></span>
                     Coregrafii pline de surprize
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-blue-400 rounded-full mr-3"></span>
                     Stil personalizat pentru fiecare cuplu
                   </li>

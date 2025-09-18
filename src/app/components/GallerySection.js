@@ -130,12 +130,9 @@ export default function GallerySection({ menuOpen = false }) {
 
       <div className="w-full px-2 md:max-w-7xl md:mx-auto md:px-4 relative z-10 flex flex-col justify-center min-h-[80vh] sm:min-h-[90vh] md:h-full">
         <div className="text-center mb-6 sm:mb-8 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-pink mb-3 sm:mb-4 md:mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-pink mb-3 sm:mb-4 md:mb-6 text-center" style={{ fontFamily: 'Courgette, cursive' }}>
             Galerie
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-gray-700 text-center mb-4 sm:mb-6 md:mb-8 font-semibold px-2 sm:px-4">
-            Imagini din spectacole și antrenamentele noastre
-          </p>
           <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-1 bg-gradient-to-r from-pink to-blue mx-auto rounded-full"></div>
         </div>
 
@@ -169,7 +166,7 @@ export default function GallerySection({ menuOpen = false }) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-sm font-medium">Imagine {index + 1}</p>
+                    <p className="text-sm font-medium" style={{ fontFamily: 'Dancing Script, cursive' }}>Imagine {index + 1}</p>
                   </div>
                 </div>
               </div>

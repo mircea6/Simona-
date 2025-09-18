@@ -185,13 +185,13 @@ export default function MagicRibbonsPage() {
             {/* Gradient Frame */}
             <div className="bg-white p-2 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-2xl backdrop-blur-sm">
               {/* Title */}
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-pink mb-4 sm:mb-6 md:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-pink mb-4 sm:mb-6 md:mb-8" style={{ fontFamily: 'Courgette, cursive' }}>
                 Magic Ribbons
               </h1>
               
               {/* Content */}
               <div className="bg-white/90 rounded-xl sm:rounded-2xl p-2 sm:p-6 md:p-8 shadow-lg">
-                <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium">
+                <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium" style={{ fontFamily: 'Dancing Script, cursive' }}>
                   Un opțional spectaculos și plin de culoare, unde mișcarea se împlețește cu magia panglicilor. 
                   Copiii învață elemente de gimnastică ușoare și elegante, care îi ajută să-și dezvolte mobilitatea, 
                   grația și expresivitatea. Panglicile transformă fiecare exercițiu într-un joc creativ și fascinant, 
@@ -218,21 +218,21 @@ export default function MagicRibbonsPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Secțiunea stânga */}
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
-                <h2 className="text-4xl font-bold text-pink mb-6">Beneficiile Magic Ribbons</h2>
+                <h2 className="text-4xl font-bold text-pink mb-6" style={{ fontFamily: 'Courgette, cursive' }}>Beneficiile Magic Ribbons</h2>
                 <ul className="space-y-4 text-lg text-gray-700">
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-pink rounded-full mr-3"></span>
                     Dezvoltă mobilitatea și grația
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-pink rounded-full mr-3"></span>
                     Îmbunătățește expresivitatea artistică
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-pink rounded-full mr-3"></span>
                     Stimulează creativitatea prin joc
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-pink rounded-full mr-3"></span>
                     Creează experiențe spectaculoase
                   </li>
@@ -241,21 +241,21 @@ export default function MagicRibbonsPage() {
 
               {/* Secțiunea dreapta */}
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
-                <h2 className="text-4xl font-bold text-pink mb-6">Ce înveți la Magic Ribbons</h2>
+                <h2 className="text-4xl font-bold text-pink mb-6" style={{ fontFamily: 'Courgette, cursive' }}>Ce înveți la Magic Ribbons</h2>
                 <ul className="space-y-4 text-lg text-gray-700">
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-blue-400 rounded-full mr-3"></span>
                     Elemente de gimnastică ușoare și elegante
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-blue-400 rounded-full mr-3"></span>
                     Manipularea panglicilor cu grație
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-blue-400 rounded-full mr-3"></span>
                     Coregrafii creative și fascinante
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                     <span className="w-3 h-3 bg-blue-400 rounded-full mr-3"></span>
                     Exprimare artistică prin mișcare
                   </li>

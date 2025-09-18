@@ -164,7 +164,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
   return (
     <section id="contact" className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white flex items-center justify-center">
       <div className="container w-full max-w-2xl mx-auto px-2 md:px-4 relative flex flex-col justify-center min-h-[80vh] sm:min-h-[90vh] md:h-full">
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-pink font-serif text-center px-2">Formular contact</h2>
+        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-pink font-serif text-center px-2" style={{ fontFamily: 'Courgette, cursive' }}>Formular contact</h2>
         
         {submitStatus === 'success' && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
@@ -188,7 +188,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                   : 'opacity-0 -translate-x-full'
               }`}
             >
-              <label htmlFor="nume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Nume *</label>
+              <label htmlFor="nume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Dancing Script, cursive' }}>Nume *</label>
               <input 
                 type="text" 
                 name="nume" 
@@ -210,7 +210,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                   : 'opacity-0 translate-x-full'
               }`}
             >
-              <label htmlFor="prenume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Prenume *</label>
+              <label htmlFor="prenume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Dancing Script, cursive' }}>Prenume *</label>
               <input 
                 type="text" 
                 name="prenume" 
@@ -235,7 +235,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                   : 'opacity-0 -translate-x-full'
               }`}
             >
-              <label htmlFor="email" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Email *</label>
+              <label htmlFor="email" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Dancing Script, cursive' }}>Email *</label>
               <input 
                 type="email" 
                 name="email" 
@@ -257,7 +257,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                   : 'opacity-0 translate-x-full'
               }`}
             >
-              <label htmlFor="telefon" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Telefon *</label>
+              <label htmlFor="telefon" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Dancing Script, cursive' }}>Telefon *</label>
               <input 
                 type="tel" 
                 name="telefon" 
@@ -282,7 +282,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 : 'opacity-0 translate-y-full'
             }`}
           >
-            <label htmlFor="mesaj" className="mb-1 text-sm sm:text-base font-semibold text-gray-800">Mesaj *</label>
+            <label htmlFor="mesaj" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Dancing Script, cursive' }}>Mesaj *</label>
             <textarea 
               name="mesaj" 
               id="mesaj" 
@@ -335,6 +335,7 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-full'
             }`}
+            style={{ fontFamily: 'Dancing Script, cursive' }}
           >
             {isSubmitting ? 'Se pregătește...' : 'Trimite pe Email'}
           </button>

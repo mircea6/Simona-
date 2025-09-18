@@ -1,10 +1,14 @@
+'use client';
+import { useState } from 'react';
 import Navigation from "../components/Navigation";
 import FooterSection from "../components/FooterSection";
 
 export default function DespreNoi() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div>
-      <Navigation />
+      <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     <main 
       className="min-h-screen py-16 px-4 flex flex-col items-center relative"
       style={{
@@ -18,28 +22,28 @@ export default function DespreNoi() {
       <div className="absolute inset-0 bg-white/80"></div>
       
       <div className="relative z-10 w-full flex flex-col items-center">
-        <h1 className="text-5xl font-extrabold text-pink mb-12 text-center animate-fade-in-left">
+        <h1 className="text-5xl font-extrabold text-pink mb-12 text-center animate-fade-in-left" style={{ fontFamily: 'Courgette, cursive' }}>
           Despre noi
         </h1>
         
         {/* Container pentru carduri - flex pe desktop, coloane pe mobile */}
         <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-8">
         <section className="flex-1 bg-pink-50 rounded-3xl shadow-lg p-10 animate-fade-in-left-delay-1">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Courgette, cursive' }}>
             Povestea Mimi Dance
           </h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
             Sunt Simona, fondatorul Mimi Dance Academy, iar de la vârsta de 4 ani
             dansul si gimnastica au fost parte din viata mea si am crescut odată
             cu ele, transformându-se intr-o adevarata pasiune.
             </p>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
             Am făcut parte din lotul național de gimnastică aerobică pana la 
             vârsta de 16 ani, iar mai târziu mi-am continuat drumul in lumea
             spectacolelor alături de trupa de acrobați &quote;Xtreme&quote;, cu experiențe
             extraordinare pe scenele din Europa si Emiratele Arabe Unite.
           </p>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
             Datorită pasiunii pentru gimnastica si dans, am decis sa înființez in
             anul 2022 conceptul Mimi Dance. De 3 ani le transmit celor mici
             dragostea pentru mișcare, dans si armonie, intr-un mod jucăuș,
@@ -48,23 +52,23 @@ export default function DespreNoi() {
         </section>
         
         <section className="flex-1 bg-pink-50 rounded-3xl shadow-lg p-10 animate-fade-in-left-delay-2">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Courgette, cursive' }}>
             Viziunea noastră
           </h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
             Credem că dansul si gimnastica sunt mai mult decât mișcare, sunt un
             limbaj al bucuriei, al disciplinei si al creativității. Prin dans si
             gimnastica cu panglici, ii învățăm pe copii să-și exprime emoțiile,
             să-și descopere corpul și să capete încredere in ei.
           </p>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
             Fiecare lectie este o combinatie intre joc, arta si educație, unde cei
             mici învăța să-și coordoneze mișcările, să-și dezvolte postura,
             flexibilitatea si gratia. In acelasi timp, invatam sa lucram impreuna,
             sa ne bucuram de reusitele fiecaruia si sa transformam sportul intr-o
             experienta plina de entuziasm.
           </p>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
             Ce ne face diferiti este modul in care imbinam sportul cu frumusetea
             dansului si cu jocul copilariei. La noi fiecare copil se simte vazut,
             apreciat si incurajat sa straluceasca in felul lui unic.
@@ -72,10 +76,10 @@ export default function DespreNoi() {
         </section>
         
         <section className="flex-1 bg-pink-50 rounded-3xl shadow-lg p-10 animate-fade-in-left-delay-3">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Courgette, cursive' }}>
             Experiența noastră
           </h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
             In momentul de fata activam in peste 14 gradinite/afteschool-uri
             private, cat si de stat, acestea avand diferite sisteme aducationale
             precum Waldorf, Montessori sau cele clasice.
@@ -100,7 +104,7 @@ export default function DespreNoi() {
             </ul>
           </div>
           
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
             De la educatia bazata pe explorare si creativitate, pana la invatarea
             structurata si orientata pe performanta, diversitatea sistemelor
             educationale reflecta nevoia de a oferii copiilor oportunități variate

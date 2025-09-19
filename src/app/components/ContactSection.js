@@ -383,65 +383,43 @@ export default function ContactSection() {
 
           {/* Butonul WhatsApp */}
           <div className="w-full lg:w-1/3 flex justify-center items-center mt-8 lg:mt-50">
-            <div className="relative group">
-              {/* SVG "Apasă aici" cu animație */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <img
-                  src="/image/apasa aici.svg"
-                  alt="Apasă aici"
-                  className="w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] h-auto"
-                  style={{
-                    animation: 'bounce-gentle 2s ease-in-out infinite',
-                    maxWidth: '100%',
-                    height: 'auto',
-                    filter: 'invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)',
-                    opacity: 0.8
-                  }}
-                />
-              </div>
-              
-              {/* Butonul WhatsApp */}
-              <button
-                onClick={handleWhatsAppClick}
-                className="relative z-10"
-                aria-label="Contactează-ne pe WhatsApp"
+            <button
+              onClick={handleWhatsAppClick}
+              className="focus:outline-none"
+              aria-label="Contactează-ne pe WhatsApp"
+              style={{ 
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                padding: '0',
+                margin: '0',
+                width: 'fit-content',
+                height: 'fit-content',
+                boxShadow: 'none',
+                borderRadius: '0'
+              }}
+              onMouseDown={(e) => e.preventDefault()}
+              onMouseUp={(e) => e.preventDefault()}
+            >
+              <img
+                src="/image/whatsapp-button.png"
+                alt="Contactează-ne pe WhatsApp"
+                className="w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[28rem] h-auto transition-all duration-300 hover:scale-105"
                 style={{ 
+                  maxWidth: '100%', 
+                  height: 'auto',
+                  display: 'block',
                   background: 'transparent',
                   border: 'none',
                   outline: 'none',
-                  padding: '0',
-                  margin: '0',
-                  width: 'fit-content',
-                  height: 'fit-content',
-                  boxShadow: 'none',
-                  borderRadius: '0',
-                  cursor: 'pointer'
+                  boxShadow: 'none'
                 }}
-                onMouseDown={(e) => e.preventDefault()}
-                onMouseUp={(e) => e.preventDefault()}
-                onFocus={(e) => e.target.style.outline = 'none'}
-                onBlur={(e) => e.target.style.outline = 'none'}
-              >
-                <img
-                  src="/image/whatsapp-button.png"
-                  alt="Contactează-ne pe WhatsApp"
-                  className="w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[28rem] h-auto transition-all duration-300 hover:scale-105"
-                  style={{ 
-                    maxWidth: '100%', 
-                    height: 'auto',
-                    display: 'block',
-                    background: 'transparent',
-                    border: 'none',
-                    outline: 'none',
-                    boxShadow: 'none'
-                  }}
-                  onError={(e) => {
-                    console.error('Error loading WhatsApp image:', e);
-                    e.target.style.display = 'none';
-                  }}
-                />
-              </button>
-            </div>
+                onError={(e) => {
+                  console.error('Error loading WhatsApp image:', e);
+                  e.target.style.display = 'none';
+                }}
+              />
+            </button>
           </div>
         </div>
       </div>

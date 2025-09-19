@@ -203,7 +203,7 @@ export default function DansulMirilorPage() {
               </h1>
               
               {/* Content */}
-              <div className="px-2 sm:px-4 md:px-6 mb-4 sm:mb-5 md:mb-6">
+              <div className="px-2 sm:px-4 md:px-6 mb-2 sm:mb-3 md:mb-4">
                 <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed font-medium text-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
                   Primul dans este un moment unic, încărcat de emoție și semnificație. Noi îl transformăm într-o 
                   experiență memorabilă, creând coregrafii elegante care pun în valoare frumusețea momentului și 
@@ -213,7 +213,7 @@ export default function DansulMirilorPage() {
               </div>
 
               {/* Back Button */}
-              <div className="mt-2 sm:mt-3 md:mt-4">
+              <div className="mt-1 sm:mt-2 md:mt-3">
                 <Link
                   href="/#classes"
                   className="inline-block bg-pink text-white text-xs sm:text-sm md:text-base font-bold px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full shadow-lg hover:bg-[#87CEEB] transition-all duration-300 hover:scale-105"

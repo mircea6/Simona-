@@ -9,13 +9,15 @@ export default function ContactSection() {
     email: '',
     telefon: '',
     mesaj: '',
-    gdpr: false
+    gdpr: false,
+    company: '' // Honeypot field
   });
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
   const [isMobile, setIsMobile] = useState(false);
+  const [csrfToken, setCsrfToken] = useState('');
 
   useEffect(() => {
     const checkMobile = () => {
@@ -25,6 +27,21 @@ export default function ContactSection() {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Get CSRF token on component mount
+  useEffect(() => {
+    const getCsrfToken = async () => {
+      try {
+        const response = await fetch('/api/contact');
+        const data = await response.json();
+        setCsrfToken(data.csrfToken);
+      } catch (error) {
+        console.error('Error getting CSRF token:', error);
+      }
+    };
+    
+    getCsrfToken();
   }, []);
 
   // Hook-uri pentru animațiile individuale ale fiecărui câmp
@@ -105,57 +122,59 @@ export default function ContactSection() {
       return;
     }
 
+    if (!csrfToken) {
+      setSubmitStatus('error');
+      setErrors({ general: 'Token de securitate lipsă. Te rugăm să reîmprospătezi pagina.' });
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('');
+    setErrors({});
 
     try {
-      const emailSubject = `Mesaj nou de la ${formData.nume} ${formData.prenume} - Mimi Dance Academy`;
-      
-      const emailBody = `Mesaj nou de la formularul de contact:
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          csrfToken
+        }),
+      });
 
-Nume: ${formData.nume}
-Prenume: ${formData.prenume}
-Email: ${formData.email}
-Telefon: ${formData.telefon}
+      const data = await response.json();
 
-Mesaj:
-${formData.mesaj}
-
----
-Trimis prin formularul de contact Mimi Dance Academy
-Data: ${new Date().toLocaleString('ro-RO')}`;
-
-      // Encodare pentru mailto
-      const encodedSubject = encodeURIComponent(emailSubject);
-      const encodedBody = encodeURIComponent(emailBody);
-      
-      // Adresa de email
-      const emailAddress = 'academy.mimidance@gmail.com';
-      
-      // URL mailto
-      const mailtoUrl = `mailto:${emailAddress}?subject=${encodedSubject}&body=${encodedBody}`;
-      
-      // Deschidere client email
-      window.location.href = mailtoUrl;
-      
-      setSubmitStatus('success');
-      
-      // Reset form după 2 secunde
-      setTimeout(() => {
+      if (data.ok) {
+        setSubmitStatus('success');
+        
+        // Reset form
         setFormData({
           nume: '',
           prenume: '',
           email: '',
           telefon: '',
           mesaj: '',
-          gdpr: false
+          gdpr: false,
+          company: ''
         });
-        setSubmitStatus('');
-      }, 2000);
-
+        setErrors({});
+        
+        // Get new CSRF token for next submission
+        const tokenResponse = await fetch('/api/contact');
+        const tokenData = await tokenResponse.json();
+        setCsrfToken(tokenData.csrfToken);
+        
+      } else {
+        setSubmitStatus('error');
+        setErrors({ general: data.error || 'Eroare la trimiterea mesajului' });
+      }
+      
     } catch (error) {
+      console.error('Error:', error);
       setSubmitStatus('error');
-      console.error('Error submitting form:', error);
+      setErrors({ general: 'Eroare de conexiune. Te rugăm să încerci din nou.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -168,17 +187,28 @@ Data: ${new Date().toLocaleString('ro-RO')}`;
         
         {submitStatus === 'success' && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
-            ✅ Mesajul a fost pregătit cu succes! Clientul de email se va deschide automat.
+            ✅ Mesajul a fost trimis cu succes! Veți primi un răspuns în cel mai scurt timp.
           </div>
         )}
 
         {submitStatus === 'error' && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
-            ❌ Vă rugăm să corectați erorile din formular.
+            ❌ {errors.general || 'Vă rugăm să corectați erorile din formular.'}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-2 sm:p-6 md:p-10 flex flex-col gap-2 sm:gap-6">
+          {/* Honeypot field - hidden from users */}
+          <input
+            type="text"
+            name="company"
+            value={formData.company}
+            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            style={{ display: 'none' }}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+          
           <div className="flex flex-col md:flex-row gap-4">
             <div 
               ref={numeRef}

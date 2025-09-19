@@ -73,7 +73,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
       }`}>
         <div className="flex flex-col gap-8 pt-45 px-6">
           <Link
-            href={pathname === "/despre-noi" ? "/#about" : "#about"}
+            href={pathname !== "/" ? "/#about" : "#about"}
             onClick={() => setMenuOpen(false)}
             className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
             style={{ fontFamily: 'Dancing Script, cursive' }}
@@ -81,7 +81,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
             Despre noi
           </Link>
           <Link
-            href={pathname === "/despre-noi" ? "/#classes" : "#classes"}
+            href={pathname !== "/" ? "/#classes" : "#classes"}
             onClick={() => setMenuOpen(false)}
             className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
             style={{ fontFamily: 'Dancing Script, cursive' }}
@@ -89,7 +89,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
             Cursuri
           </Link>
           <Link
-            href={pathname === "/despre-noi" ? "/#gallery" : "#gallery"}
+            href={pathname !== "/" ? "/#gallery" : "#gallery"}
             onClick={() => setMenuOpen(false)}
             className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
             style={{ fontFamily: 'Dancing Script, cursive' }}
@@ -97,7 +97,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
             Galerie
           </Link>
           <Link
-            href={pathname === "/despre-noi" ? "/#contact" : "#contact"}
+            href={pathname !== "/" ? "/#contact" : "#contact"}
             onClick={() => setMenuOpen(false)}
             className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
             style={{ fontFamily: 'Dancing Script, cursive' }}

@@ -10,7 +10,7 @@ export default function DespreNoi() {
     <div>
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     <main 
-      className="min-h-screen py-16 px-4 flex flex-col items-center relative"
+      className={`min-h-screen py-16 px-4 flex flex-col items-center relative transition-all duration-300 ${menuOpen ? 'blur-md' : 'blur-0'}`}
       style={{
         backgroundImage: "url('/image/note-muzicale-panglici.png')",
         backgroundSize: 'cover',

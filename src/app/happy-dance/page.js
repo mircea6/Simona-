@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Navigation from '../components/Navigation';
 import FooterSection from '../components/FooterSection';
 
 export default function HappyDancePage() {
@@ -46,138 +47,12 @@ export default function HappyDancePage() {
         </Link>
       )}
 
+
       {/* Navigation */}
-      <div className={`w-full fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${isScrolled ? '-translate-y-full' : 'translate-y-0'}`}>
-        {/* Desktop Navigation */}
-        <div className="hidden md:block">
-          <div className="max-w-7xl mx-auto flex justify-center px-10 py-6">
-            <nav className="flex gap-8 items-center justify-center">
-              <Link
-                href="/#about"
-                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-[#a7d8ff] hover:text-white hover:border-[#a7d8ff] focus:bg-[#a7d8ff] focus:text-white focus:border-[#a7d8ff] no-underline"
-              >
-                Despre noi
-              </Link>
-              <Link
-                href="/#classes"
-                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-[#a7d8ff] hover:text-white hover:border-[#a7d8ff] focus:bg-[#a7d8ff] focus:text-white focus:border-[#a7d8ff] no-underline"
-              >
-                Cursuri
-              </Link>
-              <Link href="/">
-                <img
-                  src="/image/logo.png"
-                  alt="Logo"
-                  width={140}
-                  height={140}
-                  className="object-contain mx-6"
-                />
-              </Link>
-              <Link
-                href="/#gallery"
-                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-[#a7d8ff] hover:text-white hover:border-[#a7d8ff] focus:bg-[#a7d8ff] focus:text-white focus:border-[#a7d8ff] no-underline"
-              >
-                Galerie
-              </Link>
-              <Link
-                href="/#contact"
-                className="inline-block px-6 py-2 bg-white rounded-full text-[#69657e] text-lg font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-[#a7d8ff] hover:text-white hover:border-[#a7d8ff] focus:bg-[#a7d8ff] focus:text-white focus:border-[#a7d8ff] no-underline"
-              >
-                Contact
-              </Link>
-            </nav>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div className="md:hidden">
-          <div className="flex justify-between items-center w-full py-4 px-4 relative">
-             {/* Logo - se mișcă în dreapta când meniul e deschis */}
-             <div className={`flex items-center transition-all duration-500 ease-in-out relative z-50 ${menuOpen ? 'translate-x-[70%]' : 'translate-x-[5%]'}`}>
-               <Link href="/" onClick={() => setMenuOpen(false)}>
-                 <img
-                   src="/image/logo.png"
-                   alt="Logo"
-                   width={100}
-                   height={100}
-                   className="object-contain cursor-pointer"
-                 />
-               </Link>
-             </div>
-            {/* Meniu mobil în dreapta */}
-            <div className="flex items-center">
-              <button
-                className="text-[#69657e] text-3xl p-2 hover:bg-[#a7d8ff] hover:text-white rounded-lg transition-colors"
-                onClick={() => setMenuOpen((v) => !v)}
-                aria-label="Meniu"
-              >
-                ☰
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Meniul care se deschide din stânga - în afara containerului principal */}
-      {menuOpen && (
-        <>
-           {/* Overlay cu blur pentru fundal */}
-           <div 
-             className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out"
-             onClick={() => setMenuOpen(false)}
-           />
-           
-           {/* Logo-ul pe partea stângă când meniul e deschis */}
-           <div className="fixed top-4 left-4 z-[60]">
-             <Link href="/" onClick={() => setMenuOpen(false)}>
-               <img
-                 src="/image/logo.png"
-                 alt="Logo"
-                 width={60}
-                 height={60}
-                 className="object-contain cursor-pointer"
-               />
-             </Link>
-           </div>
-           
-           {/* Meniul propriu-zis */}
-           <div className="fixed top-0 left-0 w-1/2 h-full bg-[#b8e0ff] z-50 transform transition-all duration-300 ease-in-out">
-            <div className="flex flex-col gap-6 text-white font-semibold text-lg pt-20 px-6">
-              <Link 
-                href="/#about" 
-                onClick={() => setMenuOpen(false)} 
-                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
-              >
-                Despre noi
-              </Link>
-              <Link 
-                href="/#classes" 
-                onClick={() => setMenuOpen(false)} 
-                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
-              >
-                Cursuri
-              </Link>
-              <Link 
-                href="/#gallery" 
-                onClick={() => setMenuOpen(false)} 
-                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
-              >
-                Galerie
-              </Link>
-              <Link 
-                href="/#contact" 
-                onClick={() => setMenuOpen(false)} 
-                className="hover:text-pink-300 hover:bg-white/10 transition-all duration-300 py-3 px-4 rounded-lg border-b border-white/20"
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-        </>
-      )}
+      <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       {/* Main Content - întreaga pagină cu video background */}
-      <div className="relative z-10 min-h-screen pt-20"> 
+      <div className={`relative z-0 min-h-screen pt-20 transition-all duration-300 ${menuOpen ? 'blur-md' : 'blur-0'}`}> 
         {/* Prima secțiune - Hero cu video background */}
         <div className="flex items-center justify-center min-h-screen px-4 py-8">
           <div className="max-w-4xl mx-auto text-center">

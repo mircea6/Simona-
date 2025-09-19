@@ -627,7 +627,7 @@ html, body {
     /* Ensure video is visible on very small screens */
     .hero-video {
         opacity: 0.95 !important;
-        filter: blur(2px) brightness(1) !important;
+        filter: blur(2.5px) brightness(1) !important;
     }
 }
 

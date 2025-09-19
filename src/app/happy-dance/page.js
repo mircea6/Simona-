@@ -8,6 +8,7 @@ import FooterSection from '../components/FooterSection';
 export default function HappyDancePage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [backgroundImage, setBackgroundImage] = useState('');
   const pathname = usePathname();
 
   useEffect(() => {
@@ -15,8 +16,20 @@ export default function HappyDancePage() {
       setIsScrolled(window.scrollY > 50);
     };
 
+    const handleResize = () => {
+      setBackgroundImage(window.innerWidth <= 1020 ? "url('/image/mobile-border.png')" : "url('/image/Frame1.png')");
+    };
+
+    // Set initial background image
+    handleResize();
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
 
@@ -35,7 +48,7 @@ export default function HappyDancePage() {
       <div className="fixed inset-0 z-0 bg-black/20"></div>
 
       {/* Logo-ul sticky care apare doar când se scrollează */}
-      {isScrolled && (
+      {isScrolled && !menuOpen && (
         <Link href="/" className="sticky-logo">
           <img
             src="/image/logo.png"
@@ -52,19 +65,19 @@ export default function HappyDancePage() {
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       {/* Main Content - întreaga pagină cu video background */}
-      <div className={`relative z-0 min-h-screen pt-20 transition-all duration-300 ${menuOpen ? 'blur-md' : 'blur-0'}`}> 
+      <div className={`relative z-0 lg:pt-20 transition-all duration-300 ${menuOpen ? 'blur-md' : 'blur-0'}`}> 
         {/* Prima secțiune - Hero cu video background */}
-        <div className="flex items-center justify-center min-h-screen px-4 py-8">
+        <div className="flex items-center justify-center px-4 py-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* Gradient Frame */}
             <div 
-              className="p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl max-w-2xl mx-auto"
+              className="px-20 sm:p-8 md:p-16 rounded-2xl mx-auto min-w-md lg:min-w-4xl"
               style={{
-                backgroundImage: "url('/image/Frame1.png')",
+                backgroundImage: backgroundImage,
                 backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
-                minHeight: '500px',
+                minHeight: '700px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -78,7 +91,7 @@ export default function HappyDancePage() {
               
               {/* Content */}
               <div className="px-2 sm:px-4 md:px-6 mb-2 sm:mb-3 md:mb-4">
-                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed font-medium text-center" style={{ fontFamily: 'Dancing Script, cursive' }}>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed font-medium text-center max-w-xs lg:max-w-2xl" style={{ fontFamily: 'Dancing Script, cursive' }}>
                   Conceptul nostru are la baza pasi de dans sportiv (latino și de societate) combinați cu dans modern. 
                   Prin joc și ritm, copiii învață pași simpli, își dezvoltă coordonarea și simțul muzical, dar mai ales 
                   descoperă cât de frumos este să-ți exprimi emoțiile prin dans. Atmosfera este veselă, prietenoasă și 

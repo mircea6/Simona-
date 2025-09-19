@@ -29,7 +29,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         {/* Meniu mobil în dreapta */}
         <div className="flex items-center">
           <button
-            className="p-2 hover:bg-[#a7d8ff] rounded-xl sm:rounded-2xl shadow-lg "
+            className={`p-2 ${pathname === '/despre-noi' ? 'bg-pink-200' : ''} hover:bg-[#a7d8ff] rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl`}
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Meniu"
           >

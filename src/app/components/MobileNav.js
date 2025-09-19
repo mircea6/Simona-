@@ -29,77 +29,83 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         {/* Meniu mobil în dreapta */}
         <div className="flex items-center">
           <button
-            className="text-[#69657e] text-3xl p-2 hover:bg-[#a7d8ff] hover:text-white rounded-lg transition-colors"
+            className="p-2 hover:bg-[#a7d8ff] rounded-xl sm:rounded-2xl shadow-lg "
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Meniu"
           >
-            ☰
+            <img 
+              src="/image/menu-svgrepo-com.svg" 
+              alt="Menu" 
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
+            />
           </button>
         </div>
       </div>
 
       {/* Meniul care se deschide din stânga */}
-      {menuOpen && (
-        <>
-          {/* Overlay pentru fundal */}
-           <div
-              className="fixed inset-0 bg-black/20 backdrop-blur-md z-40 transition-all duration-300 ease-in-out"
-              onClick={() => setMenuOpen(false)}
-            />
+      {/* Overlay pentru fundal */}
+      <div
+        className={`fixed inset-0 bg-black/20 backdrop-blur-md z-40 transition-all duration-300 ease-in-out ${
+          menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        onClick={() => setMenuOpen(false)}
+      />
 
-          {/* Logo-ul centrat când meniul e deschis */}
-          <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-[60]">
-            <Link href="/" onClick={() => setMenuOpen(false)}>
-              <Image
-                src="/image/logo.png"
-                alt="Logo"
-                width={100}
-                height={100}
-                className="object-contain cursor-pointer"
-                priority
-              />
-            </Link>
-          </div>
+      {/* Logo-ul centrat când meniul e deschis */}
+      <div className={`fixed top-8 left-1/2 transform -translate-x-1/2 z-[60] transition-all duration-300 ease-in-out ${
+        menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}>
+        <Link href="/" onClick={() => setMenuOpen(false)}>
+          <Image
+            src="/image/logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="object-contain cursor-pointer"
+            priority
+          />
+        </Link>
+      </div>
 
-          {/* Meniul propriu-zis */}
-          <div className="fixed top-0 left-0 w-1/2 h-full bg-white z-50 transform transition-all duration-300 ease-in-out">
-            <div className="flex flex-col gap-8 pt-45 px-6">
-              <Link
-                href={pathname === "/despre-noi" ? "/#about" : "#about"}
-                onClick={() => setMenuOpen(false)}
-                className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
-                style={{ fontFamily: 'Dancing Script, cursive' }}
-              >
-                Despre noi
-              </Link>
-              <Link
-                href={pathname === "/despre-noi" ? "/#classes" : "#classes"}
-                onClick={() => setMenuOpen(false)}
-                className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
-                style={{ fontFamily: 'Dancing Script, cursive' }}
-              >
-                Cursuri
-              </Link>
-              <Link
-                href={pathname === "/despre-noi" ? "/#gallery" : "#gallery"}
-                onClick={() => setMenuOpen(false)}
-                className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
-                style={{ fontFamily: 'Dancing Script, cursive' }}
-              >
-                Galerie
-              </Link>
-              <Link
-                href={pathname === "/despre-noi" ? "/#contact" : "#contact"}
-                onClick={() => setMenuOpen(false)}
-                className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
-                style={{ fontFamily: 'Dancing Script, cursive' }}
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-        </>
-      )}
+      {/* Meniul propriu-zis */}
+      <div className={`fixed top-0 left-0 w-1/2 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+        menuOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
+        <div className="flex flex-col gap-8 pt-45 px-6">
+          <Link
+            href={pathname === "/despre-noi" ? "/#about" : "#about"}
+            onClick={() => setMenuOpen(false)}
+            className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
+          >
+            Despre noi
+          </Link>
+          <Link
+            href={pathname === "/despre-noi" ? "/#classes" : "#classes"}
+            onClick={() => setMenuOpen(false)}
+            className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
+          >
+            Cursuri
+          </Link>
+          <Link
+            href={pathname === "/despre-noi" ? "/#gallery" : "#gallery"}
+            onClick={() => setMenuOpen(false)}
+            className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
+          >
+            Galerie
+          </Link>
+          <Link
+            href={pathname === "/despre-noi" ? "/#contact" : "#contact"}
+            onClick={() => setMenuOpen(false)}
+            className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
+          >
+            Contact
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

@@ -188,11 +188,11 @@ export default function GallerySection({ menuOpen = false }) {
         </div>
       </div>
 
-      {/* Navigation Arrows - sticky only in gallery section */}
+      {/* Navigation Arrows - positioned relative to gallery section */}
       <button
         onClick={nextSlide}
         disabled={isAnimating}
-        className="fixed right-2 sm:right-4 md:right-6 lg:right-8 xl:right-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 disabled:opacity-50 z-50"
+        className="absolute right-2 sm:right-4 md:right-6 lg:right-8 xl:right-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 disabled:opacity-50 z-50"
       >
         <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -202,7 +202,7 @@ export default function GallerySection({ menuOpen = false }) {
       <button
         onClick={prevSlide}
         disabled={isAnimating}
-        className="fixed left-2 sm:left-4 md:left-6 lg:left-8 xl:left-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 disabled:opacity-50 z-50"
+        className="absolute left-2 sm:left-4 md:left-6 lg:left-8 xl:left-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 disabled:opacity-50 z-50"
       >
         <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

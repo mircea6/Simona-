@@ -44,7 +44,7 @@ export default function ContactSection() {
     getCsrfToken();
   }, []);
 
-  // Hook-uri pentru animațiile individuale ale fiecărui câmp
+  // Hook-uri pentru animațiile individuale ale fiecărui câmp (doar pe desktop)
   const [numeRef, numeVisible] = useFormAnimation();
   const [prenumeRef, prenumeVisible] = useFormAnimation();
   const [emailRef, emailVisible] = useFormAnimation();
@@ -189,10 +189,10 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white flex items-center justify-center">
-      <div className="container w-full max-w-6xl mx-auto px-2 md:px-4 relative flex flex-col justify-center min-h-[80vh] sm:min-h-[90vh] md:h-full">
+      <div className="container w-full  mx-auto px-2 md:px-4 relative flex flex-col justify-center min-h-[80vh] sm:min-h-[90vh] md:h-full">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start justify-center w-full">
           {/* Formularul de contact */}
-          <div className="w-full lg:w-2/3">
+          <div className="w-full lg:w-2/4">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-pink font-serif text-center px-2" style={{ fontFamily: 'Courgette, cursive' }}>Formular contact</h2>
             {submitStatus === 'success' && (
               <div className="bg-green-100 border border-green-400 text-green-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
@@ -221,7 +221,7 @@ export default function ContactSection() {
           <div className="flex flex-col md:flex-row gap-4">
             <div 
               ref={numeRef}
-              className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
+              className={`flex-1 flex flex-col ${isMobile ? '' : 'transition-all duration-700 ease-out'} ${
                 isMobile || numeVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-full'
@@ -243,7 +243,7 @@ export default function ContactSection() {
             </div>
             <div 
               ref={prenumeRef}
-              className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
+              className={`flex-1 flex flex-col ${isMobile ? '' : 'transition-all duration-700 ease-out'} ${
                 isMobile || prenumeVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-full'
@@ -268,7 +268,7 @@ export default function ContactSection() {
           <div className="flex flex-col md:flex-row gap-4">
             <div 
               ref={emailRef}
-              className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
+              className={`flex-1 flex flex-col ${isMobile ? '' : 'transition-all duration-700 ease-out'} ${
                 isMobile || emailVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-full'
@@ -290,7 +290,7 @@ export default function ContactSection() {
             </div>
             <div 
               ref={telefonRef}
-              className={`flex-1 flex flex-col transition-all duration-700 ease-out ${
+              className={`flex-1 flex flex-col ${isMobile ? '' : 'transition-all duration-700 ease-out'} ${
                 isMobile || telefonVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-full'
@@ -315,7 +315,7 @@ export default function ContactSection() {
 
           <div 
             ref={mesajRef}
-            className={`flex flex-col transition-all duration-700 ease-out ${
+            className={`flex flex-col ${isMobile ? '' : 'transition-all duration-700 ease-out'} ${
               isMobile || mesajVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-full'
@@ -341,7 +341,7 @@ export default function ContactSection() {
 
           <div 
             ref={gdprRef}
-            className={`flex flex-col transition-all duration-700 ease-out ${
+            className={`flex flex-col ${isMobile ? '' : 'transition-all duration-700 ease-out'} ${
               isMobile || gdprVisible 
                 ? 'opacity-100 scale-100' 
                 : 'opacity-0 scale-75'
@@ -369,7 +369,7 @@ export default function ContactSection() {
               isSubmitting 
                 ? 'bg-gray-400 text-white cursor-not-allowed' 
                 : 'bg-[#a7d8ff] text-white hover:bg-[#8bc5ff] shadow-lg'
-            } ${
+            } ${isMobile ? '' : 'transition-all duration-700 ease-out'} ${
               isMobile || buttonVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-full'
@@ -382,7 +382,31 @@ export default function ContactSection() {
           </div>
 
           {/* Butonul WhatsApp */}
-          <div className="w-full lg:w-1/3 flex justify-center items-center mt-8 lg:mt-50">
+          <div className="w-full lg:w-2/4 flex flex-col justify-center lg:justify-end items-center mt-8 lg:mt-50">
+
+
+{/* 
+          <div 
+            className="p-8 sm:p-12 md:p-16 lg:p-20 rounded-2xl mx-auto min-w-md lg:min-w-4xl mb-8"
+            style={{
+              backgroundImage: "url('/image/Frame2.png')",
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              minHeight: '300px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center'  
+            }}
+          >
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-medium text-center max-w-xs lg:max-w-2xl" style={{ fontFamily: 'Dancing Script, cursive' }}>
+              Intrebari despre programele noastre? Click pe butonul de mai jos si intra in contact cu noi pentru mai multe detalii!
+            </p>
+          </div> */}
+
+
+
             <button
               onClick={handleWhatsAppClick}
               className="focus:outline-none"
@@ -404,7 +428,7 @@ export default function ContactSection() {
               <img
                 src="/image/whatsapp-button.png"
                 alt="Contactează-ne pe WhatsApp"
-                className="w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[28rem] h-auto transition-all duration-300 hover:scale-105"
+                className="w-80 lg:w-96 xl:w-[28rem] h-auto transition-all duration-300 hover:scale-105"
                 style={{ 
                   maxWidth: '100%', 
                   height: 'auto',

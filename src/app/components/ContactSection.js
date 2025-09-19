@@ -180,24 +180,33 @@ export default function ContactSection() {
     }
   };
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '40766694224';
+    const message = 'Bună! Am o întrebare despre cursurile de dans de la Mimi Dance Academy.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="contact" className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white flex items-center justify-center">
-      <div className="container w-full max-w-2xl mx-auto px-2 md:px-4 relative flex flex-col justify-center min-h-[80vh] sm:min-h-[90vh] md:h-full">
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-pink font-serif text-center px-2" style={{ fontFamily: 'Courgette, cursive' }}>Formular contact</h2>
-        
-        {submitStatus === 'success' && (
-          <div className="bg-green-100 border border-green-400 text-green-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
-            ✅ Mesajul a fost trimis cu succes! Veți primi un răspuns în cel mai scurt timp.
-          </div>
-        )}
+      <div className="container w-full max-w-6xl mx-auto px-2 md:px-4 relative flex flex-col justify-center min-h-[80vh] sm:min-h-[90vh] md:h-full">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start justify-center w-full">
+          {/* Formularul de contact */}
+          <div className="w-full lg:w-2/3">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-pink font-serif text-center px-2" style={{ fontFamily: 'Courgette, cursive' }}>Formular contact</h2>
+            {submitStatus === 'success' && (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
+                ✅ Mesajul a fost trimis cu succes! Veți primi un răspuns în cel mai scurt timp.
+              </div>
+            )}
 
-        {submitStatus === 'error' && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
-            ❌ {errors.general || 'Vă rugăm să corectați erorile din formular.'}
-          </div>
-        )}
+            {submitStatus === 'error' && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-4 sm:mb-6 text-sm sm:text-base">
+                ❌ {errors.general || 'Vă rugăm să corectați erorile din formular.'}
+              </div>
+            )}
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-2 sm:p-6 md:p-10 flex flex-col gap-2 sm:gap-6">
+            <form onSubmit={handleSubmit} className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-2 sm:p-6 md:p-10 flex flex-col gap-2 sm:gap-6">
           {/* Honeypot field - hidden from users */}
           <input
             type="text"
@@ -369,7 +378,72 @@ export default function ContactSection() {
           >
             {isSubmitting ? 'Se pregătește...' : 'Trimite pe Email'}
           </button>
-        </form>
+            </form>
+          </div>
+
+          {/* Butonul WhatsApp */}
+          <div className="w-full lg:w-1/3 flex justify-center items-center mt-8 lg:mt-50">
+            <div className="relative group">
+              {/* SVG "Apasă aici" cu animație */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <img
+                  src="/image/apasa aici.svg"
+                  alt="Apasă aici"
+                  className="w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] h-auto"
+                  style={{
+                    animation: 'bounce-gentle 2s ease-in-out infinite',
+                    maxWidth: '100%',
+                    height: 'auto',
+                    filter: 'invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)',
+                    opacity: 0.8
+                  }}
+                />
+              </div>
+              
+              {/* Butonul WhatsApp */}
+              <button
+                onClick={handleWhatsAppClick}
+                className="relative z-10"
+                aria-label="Contactează-ne pe WhatsApp"
+                style={{ 
+                  background: 'transparent',
+                  border: 'none',
+                  outline: 'none',
+                  padding: '0',
+                  margin: '0',
+                  width: 'fit-content',
+                  height: 'fit-content',
+                  boxShadow: 'none',
+                  borderRadius: '0',
+                  cursor: 'pointer'
+                }}
+                onMouseDown={(e) => e.preventDefault()}
+                onMouseUp={(e) => e.preventDefault()}
+                onFocus={(e) => e.target.style.outline = 'none'}
+                onBlur={(e) => e.target.style.outline = 'none'}
+              >
+                <img
+                  src="/image/whatsapp-button.png"
+                  alt="Contactează-ne pe WhatsApp"
+                  className="w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[28rem] h-auto transition-all duration-300 hover:scale-105"
+                  style={{ 
+                    maxWidth: '100%', 
+                    height: 'auto',
+                    display: 'block',
+                    background: 'transparent',
+                    border: 'none',
+                    outline: 'none',
+                    boxShadow: 'none'
+                  }}
+                  onError={(e) => {
+                    console.error('Error loading WhatsApp image:', e);
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

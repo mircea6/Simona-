@@ -875,3 +875,28 @@ html, body {
     z-index: 9999999 !important;
     position: relative;
 }
+
+/* Animație personalizată pentru "Apasă aici" */
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Animație pentru efectul de "apasă aici" */
+@keyframes press-effect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

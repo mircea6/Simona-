@@ -566,6 +566,8 @@ html, body {
     object-fit: cover;
     z-index: 0;
     pointer-events: none;
+    filter: blur(4px) brightness(0.95) !important;
+
 }
 
 /* Footer wave SVG */
@@ -628,7 +630,6 @@ html, body {
     /* Ensure video is visible on mobile */
     .hero-video {
         opacity: 0.9 !important;
-        filter: blur(4px) brightness(0.95) !important;
     }
 }
 
@@ -645,7 +646,6 @@ html, body {
     /* Ensure video is visible on very small screens */
     .hero-video {
         opacity: 0.95 !important;
-        filter: blur(2.5px) brightness(1) !important;
     }
 }
 

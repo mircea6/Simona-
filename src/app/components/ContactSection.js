@@ -33,7 +33,7 @@ export default function ContactSection() {
   useEffect(() => {
     const getCsrfToken = async () => {
       try {
-        const response = await fetch('/api/contact');
+        const response = await fetch('/api/contact-gmail');
         const data = await response.json();
         setCsrfToken(data.csrfToken);
       } catch (error) {
@@ -133,7 +133,7 @@ export default function ContactSection() {
     setErrors({});
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/contact-gmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

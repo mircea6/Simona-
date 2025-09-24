@@ -123,7 +123,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const emailResult = await resend.emails.send({
       from: 'Mimi Dance Academy <noreply@mimidance.ro>',
-      to: ['academy.mimidance@gmail.com'],
+      to: ['aoistol5395@gmail.com'],
       subject: `Mesaj nou de la ${nume} ${prenume} - Mimi Dance Academy`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">

@@ -2,6 +2,7 @@
 import "./globals.css";
 import MouseFollower from "./components/MouseFollower";
 import LoadingScreen from "./components/LoadingScreen";
+import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 export const metadata = {
   title: "Mimi Dance Academy",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <LoadingScreen />
         <MouseFollower />
         {children}
+        <FloatingWhatsAppButton />
       </body>
     </html>
   );

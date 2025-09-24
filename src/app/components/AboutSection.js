@@ -42,7 +42,7 @@ export default function AboutSection({ menuOpen = false }) {
           }`}
       >
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-pink mb-3 sm:mb-4 md:mb-6 lg:mb-10 text-center px-2" style={{ fontFamily: 'Courgette, cursive' }}>Despre noi</h2>
-        <p className="w-full md:w-120 text-sm sm:text-base md:text-lg lg:text-xl xl:text-3xl text-gray-700 text-center font-bold leading-relaxed mb-8 sm:mb-10 md:mb-12 px-2" style={{ fontFamily: 'Dancing Script, cursive' }}>La Mimi Dance Academy inspirăm copiii și adulții să își descopere pasiunea pentru dans într-un mediu prietenos și colorat. Descoperă povestea noastră, viziunea și experiența care ne definesc!</p>
+        <p className="w-full md:w-120 text-md sm:text-base md:text-lg lg:text-xl xl:text-3xl text-gray-700 text-center font-bold leading-relaxed mb-8 sm:mb-10 md:mb-12 px-2" style={{ fontFamily: 'Courgette, cursive' }}>La Mimi Dance Academy inspirăm copiii și adulții să își descopere pasiunea pentru dans într-un mediu prietenos și colorat. Descoperă povestea noastră, viziunea și experiența care ne definesc!</p>
         <a href="/despre-noi" className="inline-block bg-[#a7d8ff] text-white text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl font-bold px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-2.5 md:py-3 lg:py-4 xl:py-3 rounded-full shadow-lg hover:bg-[#8bc5ff] transition text-center w-full md:w-max max-w-xs sm:max-w-none" style={{ fontFamily: 'Dancing Script, cursive' }}>Află mai multe</a>
       </div>
     </section>

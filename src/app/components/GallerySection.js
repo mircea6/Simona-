@@ -26,14 +26,36 @@ export default function GallerySection({ menuOpen = false }) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Sample gallery images - replace with your actual images
+  // Galerie cu pozele Mimi Dance
   const galleryImages = [
-    '/image/dans-cu-copii-fericiti.png',
-    '/image/dans-cu-panglici.png',
-    '/image/vals-pe-dansul-mirilor.png',
-    '/image/dansul-mirilor.png',
-    '/image/magic-ribbons.png',
-    '/image/happy-dance.png.webp'
+    '/image/Poze Mimi Dance/IMG_0052.jpeg',
+    '/image/Poze Mimi Dance/IMG_0053.jpeg',
+    '/image/Poze Mimi Dance/IMG_0054.jpeg',
+    '/image/Poze Mimi Dance/IMG_0055.jpeg',
+    '/image/Poze Mimi Dance/IMG_0056.jpeg',
+    '/image/Poze Mimi Dance/IMG_0057.jpeg',
+    '/image/Poze Mimi Dance/IMG_0058.jpeg',
+    '/image/Poze Mimi Dance/IMG_0059.jpeg',
+    '/image/Poze Mimi Dance/IMG_0060.jpeg',
+    '/image/Poze Mimi Dance/IMG_0061.jpeg',
+    '/image/Poze Mimi Dance/IMG_0063.jpeg',
+    '/image/Poze Mimi Dance/IMG_0064.jpeg',
+    '/image/Poze Mimi Dance/IMG_0065.jpeg',
+    '/image/Poze Mimi Dance/IMG_0066.jpeg',
+    '/image/Poze Mimi Dance/IMG_0068.jpeg',
+    '/image/Poze Mimi Dance/IMG_0069.jpeg',
+    '/image/Poze Mimi Dance/IMG_0070.jpeg',
+    '/image/Poze Mimi Dance/IMG_0071.jpeg',
+    '/image/Poze Mimi Dance/IMG_0072.jpeg',
+    '/image/Poze Mimi Dance/IMG_0073.jpeg',
+    '/image/Poze Mimi Dance/IMG_0075.jpeg',
+    '/image/Poze Mimi Dance/IMG_0076.jpeg',
+    '/image/Poze Mimi Dance/IMG_0078.jpeg',
+    '/image/Poze Mimi Dance/IMG_0079.jpeg',
+    '/image/Poze Mimi Dance/IMG_0080.jpeg',
+    '/image/Poze Mimi Dance/IMG_0081.jpeg',
+    '/image/Poze Mimi Dance/IMG_0082.jpeg',
+    '/image/Poze Mimi Dance/IMG_0084.jpeg'
   ];
 
   useEffect(() => {

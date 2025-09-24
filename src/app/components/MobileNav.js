@@ -8,10 +8,10 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
   return (
     <>
       <div className="flex justify-between items-center w-full py-4 relative">
-        {/* Logo - se mișcă în dreapta când meniul e deschis */}
+        {/* Logo - se ascunde când meniul e deschis */}
          <div
            className={`flex items-center transition-all duration-500 ease-in-out relative z-50 ${
-             menuOpen ? "translate-x-[70%]" : "translate-x-[5%]"
+             menuOpen ? "opacity-0 invisible" : "opacity-100 visible translate-x-[5%]"
            }`}
          >
           <Link href="/" onClick={() => setMenuOpen(false)}>
@@ -42,7 +42,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         </div>
       </div>
 
-      {/* Meniul care se deschide din stânga */}
+      {/* Meniul care se deschide din dreapta */}
       {/* Overlay pentru fundal */}
       <div
         className={`fixed inset-0 bg-black/20 backdrop-blur-md z-40 transition-all duration-300 ease-in-out ${
@@ -68,8 +68,8 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
       </div>
 
       {/* Meniul propriu-zis */}
-      <div className={`fixed top-0 left-0 w-1/2 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
-        menuOpen ? 'translate-x-0' : '-translate-x-full'
+      <div className={`fixed top-0 right-0 w-1/2 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+        menuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="flex flex-col gap-8 pt-45 px-6">
           <Link

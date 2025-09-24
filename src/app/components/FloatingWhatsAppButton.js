@@ -1,22 +1,48 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-export default function FloatingWhatsAppButton() {
+export default function FloatingWhatsAppButton({ menuOpen = false }) {
   const [isVisible, setIsVisible] = useState(false);
+  const [screenSize, setScreenSize] = useState('desktop');
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // Show button after scrolling down 300px
-      if (window.pageYOffset > 300) {
+      // Show button after scrolling down 300px, but only if menu is not open
+      if (window.pageYOffset > 300 && !menuOpen) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
 
+    const updateScreenSize = () => {
+      if (window.innerWidth <= 480) {
+        setScreenSize('mobile');
+      } else if (window.innerWidth <= 768) {
+        setScreenSize('tablet');
+      } else {
+        setScreenSize('desktop');
+      }
+    };
+
+    // Initial screen size check
+    updateScreenSize();
+
     window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
+    window.addEventListener('resize', updateScreenSize);
+    
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener('resize', updateScreenSize);
+    };
+  }, [menuOpen]);
+
+  // Hide button when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      setIsVisible(false);
+    }
+  }, [menuOpen]);
 
   const handleWhatsAppClick = () => {
     const phoneNumber = '40766694224';
@@ -27,48 +53,62 @@ export default function FloatingWhatsAppButton() {
 
   return (
     <div
-      className={`floating-whatsapp-button ${
-        isVisible ? 'visible' : 'hidden'
-      }`}
+      style={{
+        position: 'fixed',
+        right: '1rem',
+        bottom: '1rem',
+        zIndex: 50,
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(1rem)',
+        transition: 'all 0.3s ease-in-out',
+        pointerEvents: isVisible ? 'auto' : 'none',
+        background: 'transparent',
+        border: 'none',
+        outline: 'none',
+        boxShadow: 'none',
+        borderRadius: '0'
+      }}
     >
       <button
         onClick={handleWhatsAppClick}
-        className="group relative focus:outline-none"
         aria-label="Contactează-ne pe WhatsApp"
         style={{ 
-          background: 'transparent !important',
-          border: 'none !important',
-          outline: 'none !important',
+          background: 'transparent',
+          border: 'none',
+          outline: 'none',
           padding: '0',
           margin: '0',
           width: 'fit-content',
           height: 'fit-content',
-          boxShadow: 'none !important',
-          borderRadius: '0 !important'
+          boxShadow: 'none',
+          borderRadius: '0',
+          cursor: 'pointer',
+          transition: 'transform 0.3s ease'
         }}
+        onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
       >
         <img
           src="/image/Mesaj pe WhatsApp pentru dans.png"
           alt="Contactează-ne pe WhatsApp"
-          className="whatsapp-banner-image"
           style={{ 
-            maxWidth: '100%', 
+            width: screenSize === 'mobile' ? '180px' : screenSize === 'tablet' ? '200px' : '250px',
             height: 'auto',
+            maxWidth: screenSize === 'mobile' ? '180px' : screenSize === 'tablet' ? '200px' : '250px',
             display: 'block',
-            background: 'transparent !important',
+            background: 'transparent',
             border: 'none',
             outline: 'none',
-            boxShadow: 'none !important',
-            borderRadius: '0 !important'
+            boxShadow: 'none',
+            borderRadius: '0',
+            padding: '0',
+            margin: '0'
           }}
           onError={(e) => {
             console.error('Error loading WhatsApp banner image:', e);
             e.target.style.display = 'none';
           }}
         />
-        
-        {/* Pulse animation */}
-        <div className="pulse-animation"></div>
       </button>
     </div>
   );

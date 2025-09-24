@@ -8,6 +8,7 @@ import GallerySection from "./components/GallerySection";
 import ContactSection from "./components/ContactSection";
 import FooterSection from "./components/FooterSection";
 import VideoBackground from "./components/VideoBackground";
+import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 import Image from "next/image";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
         <ContactSection />
         <FooterSection />
       </main>
+      <FloatingWhatsAppButton menuOpen={menuOpen} />
     </>
   );
 }

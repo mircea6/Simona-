@@ -23,6 +23,15 @@ html, body {
   * {
     box-sizing: border-box;
   }
+  
+  /* Ensure custom fonts work on mobile */
+  .hero-title, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courgette', cursive !important;
+  }
+  
+  .btn, button, .font-serif {
+    font-family: 'Dancing Script', cursive !important;
+  }
 }
 
 /* iPhone SE (375x667) */
@@ -383,6 +392,15 @@ html, body {
     justify-content: center !important;
     align-items: center !important;
   }
+  
+  /* Ensure custom fonts work on small mobile devices */
+  .hero-title, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courgette', cursive !important;
+  }
+  
+  .btn, button, .font-serif {
+    font-family: 'Dancing Script', cursive !important;
+  }
 }
 
 /* Optimizations for tablets */
@@ -738,6 +756,26 @@ html, body {
 .museo-font {
     font-family: 'Oswald', 'Montserrat', 'Poppins', sans-serif;
     font-weight: 900;
+}
+
+/* Ensure custom fonts are applied on all devices */
+.hero-title, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courgette', cursive !important;
+}
+
+.btn, button, .font-serif {
+    font-family: 'Dancing Script', cursive !important;
+}
+
+/* Force font loading on all devices */
+@font-face {
+    font-family: 'Courgette';
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    font-display: swap;
 }
 
 

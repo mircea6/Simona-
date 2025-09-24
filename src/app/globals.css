@@ -30,7 +30,7 @@ html, body {
   }
   
   .btn, button, .font-serif {
-    font-family: 'Dancing Script', cursive !important;
+    font-family: 'Courgette', cursive !important;
   }
 }
 
@@ -399,7 +399,7 @@ html, body {
   }
   
   .btn, button, .font-serif {
-    font-family: 'Dancing Script', cursive !important;
+    font-family: 'Courgette', cursive !important;
   }
 }
 
@@ -764,7 +764,7 @@ html, body {
 }
 
 .btn, button, .font-serif {
-    font-family: 'Dancing Script', cursive !important;
+    font-family: 'Courgette', cursive !important;
 }
 
 /* Force font loading on all devices */
@@ -774,7 +774,7 @@ html, body {
 }
 
 @font-face {
-    font-family: 'Dancing Script';
+    font-family: 'Courgette';
     font-display: swap;
 }
 

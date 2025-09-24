@@ -14,14 +14,14 @@ export default function HeroSection() {
           <a
             href="#classes"
             className="btn bg-pink text-[#69657e] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-1.5 sm:py-2 md:py-3 lg:py-3.5 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-bold shadow-custom transition hover:-translate-y-0.5 border-2 border-pink hover:bg-white hover:text-pink focus:outline-none focus:ring-2 focus:ring-pink font-serif text-center"
-            style={{ fontFamily: 'Dancing Script, cursive' }}
+            style={{ fontFamily: 'Courgette, cursive' }}
           >
             Vezi Cursurile
           </a>
           <a
             href="#contact"
             className="btn bg-pink text-[#69657e] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-1.5 sm:py-2 md:py-3 lg:py-3.5 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-bold shadow-custom transition hover:-translate-y-0.5 border-2 border-pink hover:bg-white hover:text-pink focus:outline-none focus:ring-2 focus:ring-pink font-serif text-center"
-            style={{ fontFamily: 'Dancing Script, cursive' }}
+            style={{ fontFamily: 'Courgette, cursive' }}
           >
             Contactează-ne
           </a>

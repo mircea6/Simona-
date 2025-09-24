@@ -92,7 +92,7 @@ export default function LoadingScreen() {
           
           <p className="text-white/90 text-lg md:text-xl font-medium mb-1" 
              style={{ 
-               fontFamily: 'Dancing Script, cursive',
+               fontFamily: 'Courgette, cursive',
                textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
              }}>
             by
@@ -100,7 +100,7 @@ export default function LoadingScreen() {
           
           <p className="text-white text-xl md:text-2xl font-bold" 
              style={{ 
-               fontFamily: 'Dancing Script, cursive',
+               fontFamily: 'Courgette, cursive',
                textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
              }}>
             Simona Moise

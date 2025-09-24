@@ -76,7 +76,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
             href={pathname !== "/" ? "/#about" : "#about"}
             onClick={() => setMenuOpen(false)}
             className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
-            style={{ fontFamily: 'Dancing Script, cursive' }}
+            style={{ fontFamily: 'Courgette, cursive' }}
           >
             Despre noi
           </Link>
@@ -84,7 +84,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
             href={pathname !== "/" ? "/#classes" : "#classes"}
             onClick={() => setMenuOpen(false)}
             className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
-            style={{ fontFamily: 'Dancing Script, cursive' }}
+            style={{ fontFamily: 'Courgette, cursive' }}
           >
             Cursuri
           </Link>
@@ -92,7 +92,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
             href={pathname !== "/" ? "/#gallery" : "#gallery"}
             onClick={() => setMenuOpen(false)}
             className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
-            style={{ fontFamily: 'Dancing Script, cursive' }}
+            style={{ fontFamily: 'Courgette, cursive' }}
           >
             Galerie
           </Link>
@@ -100,7 +100,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
             href={pathname !== "/" ? "/#contact" : "#contact"}
             onClick={() => setMenuOpen(false)}
             className="inline-block px-4 py-2 bg-white rounded-full text-gray-900 text-base font-extrabold tracking-wide shadow-lg border-2 border-pink-200 transition-all duration-200 hover:bg-pink-200 hover:text-white hover:border-pink-200 focus:bg-pink-200 focus:text-white focus:border-pink-200 no-underline text-center"
-            style={{ fontFamily: 'Dancing Script, cursive' }}
+            style={{ fontFamily: 'Courgette, cursive' }}
           >
             Contact
           </Link>

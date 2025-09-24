@@ -41,10 +41,10 @@ export default function FooterSection() {
               </Link>
               <div className="text-center lg:text-left">
                 <h3 className="text-2xl font-bold text-gray-800 font-serif" style={{ fontFamily: 'Courgette, cursive' }}>Mimi Dance</h3>
-                <p className="text-lg text-gray-700 font-serif" style={{ fontFamily: 'Dancing Script, cursive' }}>ACADEMY</p>
+                <p className="text-lg text-gray-700 font-serif" style={{ fontFamily: 'Courgette, cursive' }}>ACADEMY</p>
               </div>
             </div>
-            <p className="text-gray-700 text-center lg:text-left" style={{ fontFamily: 'Dancing Script, cursive' }}>
+            <p className="text-gray-700 text-center lg:text-left" style={{ fontFamily: 'Courgette, cursive' }}>
               Dezvoltare prin artă!
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function FooterSection() {
           {/* Newsletter Section */}
           <div>
             <h4 className="text-lg font-bold text-gray-800 font-serif mb-4" style={{ fontFamily: 'Courgette, cursive' }}>Newsletter</h4>
-            <p className="text-gray-700 mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
+            <p className="text-gray-700 mb-4" style={{ fontFamily: 'Courgette, cursive' }}>
               Abonează-te la newsletter pentru a avea acces la ultimele noutăți.
             </p>
 

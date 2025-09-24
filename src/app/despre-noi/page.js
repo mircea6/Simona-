@@ -32,18 +32,18 @@ export default function DespreNoi() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Courgette, cursive' }}>
             Povestea Mimi Dance
           </h2>
-          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             Sunt Simona, fondatorul Mimi Dance Academy, iar de la vârsta de 4 ani
             dansul si gimnastica au fost parte din viata mea si am crescut odată
             cu ele, transformându-se intr-o adevarata pasiune.
             </p>
-          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             Am făcut parte din lotul național de gimnastică aerobică pana la 
             vârsta de 16 ani, iar mai târziu mi-am continuat drumul in lumea
             spectacolelor alături de trupa de acrobați &quote;Xtreme&quote;, cu experiențe
             extraordinare pe scenele din Europa si Emiratele Arabe Unite.
           </p>
-          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             Datorită pasiunii pentru gimnastica si dans, am decis sa înființez in
             anul 2022 conceptul Mimi Dance. De 3 ani le transmit celor mici
             dragostea pentru mișcare, dans si armonie, intr-un mod jucăuș,
@@ -55,20 +55,20 @@ export default function DespreNoi() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Courgette, cursive' }}>
             Viziunea noastră
           </h2>
-          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             Credem că dansul si gimnastica sunt mai mult decât mișcare, sunt un
             limbaj al bucuriei, al disciplinei si al creativității. Prin dans si
             gimnastica cu panglici, ii învățăm pe copii să-și exprime emoțiile,
             să-și descopere corpul și să capete încredere in ei.
           </p>
-          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             Fiecare lectie este o combinatie intre joc, arta si educație, unde cei
             mici învăța să-și coordoneze mișcările, să-și dezvolte postura,
             flexibilitatea si gratia. In acelasi timp, invatam sa lucram impreuna,
             sa ne bucuram de reusitele fiecaruia si sa transformam sportul intr-o
             experienta plina de entuziasm.
           </p>
-          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             Ce ne face diferiti este modul in care imbinam sportul cu frumusetea
             dansului si cu jocul copilariei. La noi fiecare copil se simte vazut,
             apreciat si incurajat sa straluceasca in felul lui unic.
@@ -79,7 +79,7 @@ export default function DespreNoi() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Courgette, cursive' }}>
             Experiența noastră
           </h2>
-          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             In momentul de fata activam in peste 14 gradinite/afteschool-uri
             private, cat si de stat, acestea avand diferite sisteme aducationale
             precum Waldorf, Montessori sau cele clasice.
@@ -104,7 +104,7 @@ export default function DespreNoi() {
             </ul>
           </div>
           
-          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             De la educatia bazata pe explorare si creativitate, pana la invatarea
             structurata si orientata pe performanta, diversitatea sistemelor
             educationale reflecta nevoia de a oferii copiilor oportunități variate

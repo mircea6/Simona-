@@ -24,7 +24,7 @@ export default function DesktopNav() {
       {isScrolled && (
         <Link href="/" className="sticky-logo">
           <Image
-            src="/image/logo.png"
+            src="/image/logofull2.png"
             alt="Logo"
             width={60}
             height={60}
@@ -52,7 +52,7 @@ export default function DesktopNav() {
             </a>
             <Link href="/">
               <Image
-                src="/image/logo.png"
+                src="/image/logofull2.png"
                 alt="Logo"
                 width={100}
                 height={100}

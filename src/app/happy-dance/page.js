@@ -51,7 +51,7 @@ export default function HappyDancePage() {
       {isScrolled && !menuOpen && (
         <Link href="/" className="sticky-logo">
           <img
-            src="/image/logo.png"
+            src="/image/logofull2.png"
             alt="Logo"
             width={80}
             height={80}

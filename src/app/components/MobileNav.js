@@ -16,7 +16,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
          >
           <Link href="/" onClick={() => setMenuOpen(false)}>
             <Image
-              src="/image/logo.png"
+              src="/image/logofull2.png"
               alt="Logo"
               width={100}
               height={100}
@@ -57,7 +57,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
       }`}>
         <Link href="/" onClick={() => setMenuOpen(false)}>
           <Image
-            src="/image/logo.png"
+            src="/image/logofull2.png"
             alt="Logo"
             width={100}
             height={100}

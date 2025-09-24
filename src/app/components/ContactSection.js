@@ -221,7 +221,7 @@ export default function ContactSection() {
                   : 'opacity-0 -translate-x-full'
               }`}
             >
-              <label htmlFor="nume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Courgette, cursive' }}>Nume *</label>
+              <label htmlFor="nume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800 text-left md:text-center" style={{ fontFamily: 'Courgette, cursive' }}>Nume *</label>
               <input 
                 type="text" 
                 name="nume" 
@@ -243,7 +243,7 @@ export default function ContactSection() {
                   : 'opacity-0 translate-x-full'
               }`}
             >
-              <label htmlFor="prenume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Courgette, cursive' }}>Prenume *</label>
+              <label htmlFor="prenume" className="mb-1 text-sm sm:text-base font-semibold text-gray-800 text-left md:text-center" style={{ fontFamily: 'Courgette, cursive' }}>Prenume *</label>
               <input 
                 type="text" 
                 name="prenume" 
@@ -268,7 +268,7 @@ export default function ContactSection() {
                   : 'opacity-0 -translate-x-full'
               }`}
             >
-              <label htmlFor="email" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Courgette, cursive' }}>Email *</label>
+              <label htmlFor="email" className="mb-1 text-sm sm:text-base font-semibold text-gray-800 text-left md:text-center" style={{ fontFamily: 'Courgette, cursive' }}>Email *</label>
               <input 
                 type="email" 
                 name="email" 
@@ -290,7 +290,7 @@ export default function ContactSection() {
                   : 'opacity-0 translate-x-full'
               }`}
             >
-              <label htmlFor="telefon" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Courgette, cursive' }}>Telefon *</label>
+              <label htmlFor="telefon" className="mb-1 text-sm sm:text-base font-semibold text-gray-800 text-left md:text-center" style={{ fontFamily: 'Courgette, cursive' }}>Telefon *</label>
               <input 
                 type="tel" 
                 name="telefon" 
@@ -315,7 +315,7 @@ export default function ContactSection() {
                 : 'opacity-0 translate-y-full'
             }`}
           >
-            <label htmlFor="mesaj" className="mb-1 text-sm sm:text-base font-semibold text-gray-800" style={{ fontFamily: 'Courgette, cursive' }}>Mesaj *</label>
+            <label htmlFor="mesaj" className="mb-1 text-sm sm:text-base font-semibold text-gray-800 text-left md:text-center" style={{ fontFamily: 'Courgette, cursive' }}>Mesaj *</label>
             <textarea 
               name="mesaj" 
               id="mesaj" 

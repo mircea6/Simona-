@@ -69,7 +69,7 @@ export default function LoadingScreen() {
           }}
         >
           <Image
-            src="/image/logo.png"
+            src="/image/logofull2.png"
             alt="Mimi Dance Academy Logo"
             width={200}
             height={200}

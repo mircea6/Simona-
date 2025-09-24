@@ -29,22 +29,18 @@ export default function FooterSection() {
 
           {/* Logo and Slogan Section */}
           <div className="flex flex-col items-center lg:items-start">
-            <div className="flex flex-col items-center lg:items-start mb-4">
+            <div className="flex flex-col items-center lg:items-start">
               <Link href="/">
                 <Image
-                  src="/image/logo.png"
+                  src="/image/logofull2.png"
                   alt="Mimi Dance Academy Logo"
                   width={120}
                   height={120}
                   className="mb-2 cursor-pointer"
                 />
               </Link>
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold text-gray-800 font-serif" style={{ fontFamily: 'Courgette, cursive' }}>Mimi Dance</h3>
-                <p className="text-lg text-gray-700 font-serif" style={{ fontFamily: 'Courgette, cursive' }}>ACADEMY</p>
-              </div>
             </div>
-            <p className="text-gray-700 text-center lg:text-left" style={{ fontFamily: 'Courgette, cursive' }}>
+            <p className="text-gray-700 text-center text-2xl lg:text-left" style={{ fontFamily: 'Courgette, cursive' }}>
               Dezvoltare prin artă!
             </p>
           </div>

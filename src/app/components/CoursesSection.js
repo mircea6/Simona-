@@ -3,33 +3,14 @@ import useFormAnimation from "../hooks/useFormAnimation";
 import { useEffect, useState } from "react";
 
 export default function CoursesSection() {
-  const [ref, isVisible] = useFormAnimation();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   return (
     <section
       id="classes"
-      className="py-16 sm:py-20 md:py-20 min-h-[80vh] sm:min-h-[90vh] md:h-screen bg-white mb-8 sm:mb-12 md:mb-0 flex items-center justify-center"
+      className="py-16 sm:py-20 md:py-20 min-h-[100vh] bg-white mb-8 sm:mb-12 md:mb-0 flex items-center justify-center"
     >
       <div
-        ref={ref}
-        className={`w-full max-w-6xl mx-auto px-2 md:px-4 relative flex flex-col justify-center items-center min-h-[80vh] sm:min-h-[90vh] md:h-full ${
-          isMobile
-            ? "opacity-100 translate-x-0"
-            : `${isMobile ? '' : 'transition-all duration-700 ease-out'} ${
-                isVisible ? "translate-x-0" : "translate-x-full"
-              }`
-        }`}
+        className={`w-full max-w-6xl mx-auto px-2 md:px-4 relative flex flex-col justify-center items-center min-h-[80vh] sm:min-h-[90vh] md:h-full`}
       >
         <h2
           className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-pink mb-3 sm:mb-4 md:mb-6 lg:mb-8 pb-8 sm:pb-12 md:pb-16 text-center px-2"

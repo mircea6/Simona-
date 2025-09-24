@@ -89,7 +89,7 @@ export default function FloatingWhatsAppButton({ menuOpen = false }) {
         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
       >
         <img
-          src="/image/Mesaj pe WhatsApp pentru dans.png"
+          src="/image/whatsapp.png"
           alt="Contactează-ne pe WhatsApp"
           style={{ 
             width: screenSize === 'mobile' ? '180px' : screenSize === 'tablet' ? '200px' : '250px',

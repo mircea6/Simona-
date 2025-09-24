@@ -193,21 +193,6 @@ export default function GallerySection({ menuOpen = false }) {
           </div>
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center mt-8 space-x-4 sm:space-x-5 md:space-x-6">
-          {galleryImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              disabled={isAnimating}
-              className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-pink scale-125' 
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Navigation Arrows - positioned relative to gallery section */}

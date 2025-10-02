@@ -29,15 +29,24 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         {/* Meniu mobil în dreapta */}
         <div className="flex items-center">
           <button
-            className={`p-2 ${pathname === '/despre-noi' ? 'bg-pink-200' : ''} hover:bg-[#a7d8ff] rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl`}
+            className={`p-2 ${pathname === '/despre-noi' || pathname === '/politica-confidentialitate' ? 'bg-pink-200' : ''} hover:bg-[#a7d8ff] rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl`}
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Meniu"
           >
-            <img 
-              src="/image/menu-svgrepo-com.svg" 
-              alt="Menu" 
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
-            />
+            <svg 
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
+              fill="none" 
+              stroke="white" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M4 6h16M4 12h16M4 18h16" 
+              />
+            </svg>
           </button>
         </div>
       </div>

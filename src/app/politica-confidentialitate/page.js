@@ -1,13 +1,16 @@
 "use client";
+import { useState } from 'react';
 import Navigation from "../components/Navigation";
 
 export default function PoliticaConfidentialitate() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-blue-50">
-      <Navigation />
+      <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       {/* Hero Section */}
-      <div className="pt-24 pb-16">
+      <div className={`pt-24 pb-16 transition-all duration-300 ${menuOpen ? 'blur-md' : 'blur-0'}`}>
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-black text-pink mb-8 text-center">
             Politica de Confidențialitate
@@ -17,7 +20,7 @@ export default function PoliticaConfidentialitate() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-4xl mx-auto px-4 pb-16">
+      <div className={`max-w-4xl mx-auto px-4 pb-16 transition-all duration-300 ${menuOpen ? 'blur-md' : 'blur-0'}`}>
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12 border border-pink-100">
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
@@ -42,19 +45,19 @@ export default function PoliticaConfidentialitate() {
                   >
                     www.mimidanceacademy.ro
                   </a>{" "}
-                  este administrat de <strong>SC Mimi Dance Academy SRL</strong>
+                  este administrat de <strong>Mimi Dance SRL</strong>
                   , cu sediul social în București, România, înregistrată la
-                  Registrul Comerțului sub nr. J40/XXXX/2025, având CUI
-                  XXXXXXXX.
+                  Registrul Comerțului sub nr. J40/4968/2024, având CUI
+                  49726937.
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-4">
                   Pentru orice întrebări legate de protecția datelor, ne poți
                   contacta la adresa{" "}
                   <a
-                    href="mailto:contact@mimidanceacademy.ro"
+                    href="mailto:academy.mimidance@gmail.com"
                     className="text-pink hover:text-pink-600 underline"
                   >
-                    contact@mimidanceacademy.ro
+                    academy.mimidance@gmail.com
                   </a>
                   .
                 </p>
@@ -86,10 +89,6 @@ export default function PoliticaConfidentialitate() {
                   <li>Adresă de e-mail</li>
                   <li>Adresă poștală (dacă este cazul)</li>
                   <li>
-                    Date de facturare și date bancare (dacă se solicită servicii
-                    contra cost)
-                  </li>
-                  <li>
                     Informații furnizate prin formulare online, chat sau rețele
                     sociale
                   </li>
@@ -105,7 +104,7 @@ export default function PoliticaConfidentialitate() {
                     Prin completarea formularelor de contact sau înscriere de pe
                     site
                   </li>
-                  <li>Prin corespondență pe e-mail sau telefon</li>
+                  <li>Prin corespondență pe e-mail, telefon sau WhatsApp</li>
                   <li>
                     Prin participarea la evenimente sau înscriere la cursuri
                   </li>

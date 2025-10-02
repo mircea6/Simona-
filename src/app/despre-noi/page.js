@@ -40,7 +40,7 @@ export default function DespreNoi() {
           <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>
             Am făcut parte din lotul național de gimnastică aerobică pana la 
             vârsta de 16 ani, iar mai târziu mi-am continuat drumul in lumea
-            spectacolelor alături de trupa de acrobați "Xtreme", cu experiențe
+            spectacolelor alături de trupa de acrobați &ldquo;Xtreme&rdquo;, cu experiențe
             extraordinare pe scenele din Europa si Emiratele Arabe Unite.
           </p>
           <p className="text-lg text-gray-700 mb-6" style={{ fontFamily: 'Courgette, cursive' }}>

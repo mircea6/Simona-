@@ -92,7 +92,7 @@ export default function GallerySection({ menuOpen = false }) {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [currentIndex]);
+  }, [currentIndex, isMobile]);
 
   const goToSlide = (index) => {
     if (isAnimating || index === currentIndex) return;

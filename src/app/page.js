@@ -16,12 +16,13 @@ export default function Home() {
 
   return (
     <>
+      <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
       <main className="w-full overflow-x-hidden relative z-0">
         {/* HERO + NAVBAR cu Tailwind și meniu responsive corect */}
         {/* HERO + NAVBAR cu video background */}
         <div className="hero-bg relative w-full min-h-screen flex flex-col overflow-hidden">
           <VideoBackground />
-          <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <HeroSection />
 
           <div className="wave-svg"></div>

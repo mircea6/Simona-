@@ -25,7 +25,7 @@ export default function Navigation({ menuOpen, setMenuOpen }) {
   return (
     <header className="header relative z-10 w-full bg-transparent">
       <div className="navwrap w-full flex flex-col items-center justify-start pt-6 px-4">
-        <header className="w-full z-20">
+        <header className="w-full z-20" style={{ zIndex: '1000' }}>
           {isMobile ? (
             <MobileNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           ) : (

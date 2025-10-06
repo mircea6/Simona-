@@ -66,7 +66,7 @@ export default function DansulMirilorPage() {
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       {/* Main Content - întreaga pagină cu video background */}
-      <div className={`relative z-0 transition-all duration-300 ${menuOpen ? 'blur-md' : 'blur-0'}`}>
+      <div className={`relative z-0 transition-all duration-300 ${menuOpen ? 'blur-md' : 'blur-0'} pt-28 lg:pt-50`}>
         {/* Prima secțiune - Hero cu video background */}
         <div className="flex items-center justify-center px-4 py-8">
           <div className="max-w-4xl mx-auto text-center">

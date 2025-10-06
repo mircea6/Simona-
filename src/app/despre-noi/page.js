@@ -21,7 +21,7 @@ export default function DespreNoi() {
       {/* Overlay pentru a îmbunătăți lizibilitatea */}
       <div className="absolute inset-0 bg-white/80"></div>
       
-      <div className="relative z-10 w-full flex flex-col items-center">
+      <div className="relative z-10 w-full flex flex-col items-center pt-28 lg:pt-50">
         <h1 className="text-5xl font-extrabold text-pink mb-12 text-center animate-fade-in-left" style={{ fontFamily: 'Courgette, cursive' }}>
           Despre noi
         </h1>

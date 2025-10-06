@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 export default function MobileNav({ menuOpen, setMenuOpen }) {
   const pathname = usePathname();
 
+
   return (
     <>
       <div className="flex justify-between items-center w-full py-4 relative">
@@ -27,9 +28,9 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         </div>
 
         {/* Meniu mobil în dreapta */}
-        <div className="flex items-center" style={{ zIndex: '1000' }}>
+        <div className={`flex items-center right-4 ${ menuOpen ? 'fixed' : '' }`} style={{ zIndex: '1000' }}>
           <button
-            className={`p-2 ${pathname === '/despre-noi' || pathname === '/politica-confidentialitate' ? 'bg-pink-200' : ''} hover:bg-[#a7d8ff] rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl`}
+            className={`p-2 ${pathname === '/despre-noi' || pathname === '/politica-confidentialitate' ? 'bg-pink-200' : ''} ${menuOpen ? 'bg-[#a7d8ff]' : ''} rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl`}
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Meniu"
           >

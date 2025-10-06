@@ -23,7 +23,7 @@ export default function Navigation({ menuOpen, setMenuOpen }) {
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   return (
-    <header className="header absolute z-10 w-full bg-transparent">
+    <header className="header absolute z-90 w-full bg-transparent">
       <div className="navwrap w-full flex flex-col items-center justify-start pt-6 px-4">
         <header className="w-full z-20" style={{ zIndex: '1000' }}>
           {isMobile ? (
